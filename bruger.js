@@ -1,8 +1,15 @@
 class Bruger {
-    constructor(type){
-        this.type = type;
+    constructor(navn, brugernavn, password, adresse, telefon, email){
+        this.navn = navn;
+        this.brugernavn = brugernavn;
+        this.password = password;
+        this.adresse = adresse;
+        this.telefon = telefon;
+        this.email = email;
     }
-    speak(line){
 
+    // her skal funktionen opret bruger være
+    opretBruger() {
     }
+
 }
