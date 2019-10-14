@@ -9,4 +9,4 @@ class Dyr {
     }
 
     // her skal funktionen returnDyr være
-
+//Hej Pa
