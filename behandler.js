@@ -6,8 +6,6 @@ class Practitioner {
     }
 }
 // Insert edit booking function here
-function createUser() {
-}
 
 // Insert edit priceFunction here
 
