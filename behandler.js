@@ -16,4 +16,4 @@ function opretBruger() {
 // her skal funktionen redigerInfoOmMig være
 
 // her skal funktionen redigerJournal være
-
+//tette
