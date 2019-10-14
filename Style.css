@@ -5,7 +5,7 @@
     padding: 0;
 }
 body {
-    Background: url('Horse1.jpg') no-repeat;
+    Background:
     background-size: cover;
     background-position: center;
     background-color:#ecf2f9;
@@ -53,54 +53,13 @@ ul li ul li {
 ul li:hover ul li {
     display: block;
 }
-/* Create three columns of equal width */
-.columns {
-    float: left;
-    width: 15%;
-    padding: 3%;
-}
-/* Pricing header */
-.price .header {
-    background-color: #21201a;
-    color: white;
-    font-size: 22px;
-    height: 30px;
-    opacity: 0.9;
-}
-
-/* List items */
-.price li {
-    border-bottom: 3px solid #696060;
-    border-left: 3px solid #696060;
-    border-right: 3px solid #696060;
-    border-top: 3px solid #696060;
-    padding: 20px;
+div.Log-In h1 {
+    font-size: 20px;
     text-align: center;
-    opacity: 0.9;
-    width: 100%;
-    background-color: #21201a;
 }
-
-/* Bestil knap */
-.button {
-    background-color: #19b21f;
-    color: white;
-    padding: 5px 10px;
+div.Log-In input {
     text-align: center;
-    font-size: 18px;
 }
-
-.billede1 {
-    float: left;
-    width: 15%;
-    padding: 3%;
-}
-div.billede1 {
-    content: url('GeaHest.jpg');
-    width: 30%;
-}
-.ommig {
-    float: left;
-    width: 11%;
-    padding: 3%;
+div.Log-In input.button {
+    text-align: center;
 }
