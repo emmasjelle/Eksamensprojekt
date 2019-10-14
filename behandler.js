@@ -1,19 +1,18 @@
-class Behandler {
-    constructor(infoOmMig, behandlingsTyper, priser) {
-        this.infoOmMig = infoOmMig;
-        this.behandlingsTyper = behandlingsTyper;
-        this.priser = priser;
+class Practitioner {
+    constructor(aboutMe, treatmentTypes, prices) {
+        this.aboutMe = aboutMe;
+        this.treatmentTypes = treatmentTypes;
+        this.prices = prices;
     }
 }
-// her skal funktionen redigerBooking være
-function opretBruger() {
+// Insert edit booking function here
+function createUser() {
 }
 
-// her skal funktionen redigerPris være
+// Insert edit priceFunction here
 
-// her skal funktionen redigerBehandlingstyper være
+// Insert edit treatmenttypes function here
 
-// her skal funktionen redigerInfoOmMig være
+// Insert edit aboutMe function here
 
-// her skal funktionen redigerJournal være
-//tette
+// Insert edit journal function here

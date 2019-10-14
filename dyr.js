@@ -1,12 +1,13 @@
-class Dyr {
-    constructor(typeDyr, alder, race, skader, storrelse, adresse) {
-        this.typeDyr = typeDyr;
-        this.alder = alder;
+class Animal {
+    constructor(animalType, age, race, injury, size, adress) {
+        this.animalType = animalType;
+        this.age = age;
         this.race = race;
-        this.skader = skader;
-        this.storrelse = storrelse;
-        this.adresse = adresse;
+        this.injury = injury;
+        this.size = size;
+        this.adress = adress;
     }
+}
 
-    // her skal funktionen returnDyr være
-//Hej Pa
+    // Insert function returnAnimal here
+

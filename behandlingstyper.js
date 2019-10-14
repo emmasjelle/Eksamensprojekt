@@ -1,15 +1,15 @@
-class Behandlingstyper {
-    constructor(pris, varighed, lokation, foreslaaetBehandling, behandlingsInfo) {
-        this.pris = pris;
-        this.varighed = varighed;
-        this.lokation = lokation;
-        this.foreslaaetBehandling = foreslaaetBehandling;
-        this.behandlingsInfo = behandlingsInfo;
+class TreatmentTypes {
+    constructor(price, duration, location, recommendedTreatment, treatmentInfo) {
+        this.price = price;
+        this.duration = duration;
+        this.location = location;
+        this.recommendedTreatment = recommendedTreatment;
+        this.treatmentInfo = treatmentInfo;
     }
 }
-// her skal funktionen tilføjBehandling() indsættes
-function opretBruger() {
+// Insert add treatment function here
+function createUser() {
 
 }
 
-// her skal funktionen redigerBehandling() indsættes
+// Insert editTreatment function here

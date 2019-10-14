@@ -1,15 +1,15 @@
-class Bruger {
-    constructor(navn, brugernavn, password, adresse, telefon, email) {
-        this.navn = navn;
-        this.brugernavn = brugernavn;
+class User {
+    constructor(name, username, password, address, telephone, email) {
+        this.name = name;
+        this.username = username;
         this.password = password;
-        this.adresse = adresse;
-        this.telefon = telefon;
+        this.address = address;
+        this.telephone = telephone;
         this.email = email;
     }
 }
-    // her skal funktionen opret bruger være
-function opretBruger() {
+    // Insert create user function here
+function createUser() {
 
     var user = document.getElementById('username');
     var pass = document.getElementById('password');
@@ -34,8 +34,8 @@ function opretBruger() {
 }
 
 
-// her skal funktionen sletBruger være
+// Insert delete user function here
 
 
 
-// her skal funktionen redigerBruger være
+// Insert edit user function here

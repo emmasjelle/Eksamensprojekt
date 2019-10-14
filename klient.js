@@ -1,15 +1,15 @@
-class Klient {
-    constructor(dyr) {
-        this.pris = dyr;
+class Client {
+    constructor(animal) {
+        this.pris = animal;
     }
 }
 
-// her skal funktionen booking være
+// Insert booking function here
 
-// her skal funktionen seJournal være
+// Insert seeJournal function here
 
-// her skal funktionen tilføjDyr være
+// Insert addAnimal function here
 
-// her skal funktionen fjernDyr være
+// Insert removeAnimal function here
 
-// her skal funktionen redigerDyr være
+// Insert editAnimal function here

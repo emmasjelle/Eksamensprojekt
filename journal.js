@@ -1,13 +1,14 @@
 class Journal {
-    constructor(brugernavn, dyretsNavn, tid, sted, behandlingstype) {
-        this.brugernavn = brugernavn;
-        this.dyretsNavn = dyretsNavn;
-        this.tid = tid;
-        this.sted = sted;
-        this.behandlingstype = behandlingstype;
+    constructor(username, animalName, time, date, location, treatmentType) {
+        this.username = username;
+        this.animalName = animalName;
+        this.time = time;
+        this.date = date;
+        this.location = location;
+        this.treatmentType = treatmentType;
     }
 }
-// her skal funktionen download journal være
+// Insert download journal function here
 
 
-// her skal funktionen hent journal være
+// Insert pull journal function here
