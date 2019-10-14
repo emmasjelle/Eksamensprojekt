@@ -12,47 +12,31 @@ body {
     min-height: 100vh;
     /* 100vh sætter "view-heigh" til 100%*/
 }
-
-ul {
-    list-style: none;
-    color: white;
-    width: 100%;
-}
-ul li {
-    float: left;
-    width: 20%;
-    min-width: 100px;
-    height 40px;
-    background-color: black;
+/*Rediger Navigation bar*/
+.NavigationBar ul {
+    list-style-type: none;
+    margin: 15px;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
     opacity: 0.5;
-    line-height: 40px;
-    text-align: center;
+}
+.NavigationBar ul li {
     font-size: 20px;
+    float: left;
 }
-ul li ul li {
-    width: 100%;
-    float: none;
-}
-
-/*Laver ul li <a> om til en hel blok*/
-ul li a {
-    text-decoration: none;
+.NavigationBar ul li a {
+    display: block;
     color: white;
-    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.NavigationBar ul li a:hover {
+    color: green;
 }
 
-/*Når musen hover over ul li - skift farve*/
-ul li a:hover{
-    background-color:#403d00;
-}
-
-/*Gemmer sub-menuen under ul li ul li(Se html)*/
-ul li ul li {
-    display: none;
-}
-ul li:hover ul li {
-    display: block;
-}
+/*Rediger Log-in side*/
 div.Log-In h1 {
     font-size: 20px;
     text-align: center;

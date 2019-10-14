@@ -6,19 +6,26 @@
     <title>Login</title>
 </head>
 <body>
+
 <!--Drop down menuer-->
-<ul>
-    <li><a href="Forside.html">Forside</a></li>
-    <li><a href="BehandlingsTyper.html">Kalender</a></li>
-    <li><a href="LogIn.html">Log ind</a></li>
-</ul>
+<div class="NavigationBar">
+    <ul>
+        <li><a href="Forside.html">Forside</a></li>
+        <li><a href="BehandlingsTyper.html">Behandlingstyper</a></li>
+        <li><a href="LogIn.html">Log ind</a></li>
+    </ul>
+</div>
 
 <div class="Log-In">
     <h1>Log ind</h1>
 <!--Log in function-->
-    <input type="text" id="username" placeholder="Username"><br />
+    <input type="text" id="username" placeholder="Brugernavn"><br />
     <input type="password" id="password" placeholder="Password"><br />
-    <input type="button" value="Log on" onClick="opretBruger()">
+    <br/>
+    <input type="button" value="Log ind" onClick="createUser()">
+    <br/>
+    <input type="button" value="Opret bruger" onClick="">
+
     <!-- Her refere man til opretbruger funktionen i js -->
 
 <script type="text/JavaScript" src="bruger.js"></script>
