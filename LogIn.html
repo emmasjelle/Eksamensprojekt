@@ -16,17 +16,26 @@
     </ul>
 </div>
 
-<div class="Log-In">
+<div class="Login/Register">
     <h1>Log ind</h1>
-<!--Log in function-->
-    <input type="text" id="username" placeholder="Brugernavn"><br />
-    <input type="password" id="password" placeholder="Password"><br />
+<!--Log in form-->
+    <form id="login">
+    <input type="text" id="userName" placeholder="Brugernavn" value=""/><br />
+    <input type="password" id="userPw" placeholder="Password" value=""/><br />
     <br/>
-    <input type="button" value="Log ind" onClick="createUser()">
+    <input type="button" value="Login" onClick="Login()">
     <br/>
-    <input type="button" value="Opret bruger" onClick="">
-
-    <!-- Her refere man til opretbruger funktionen i js -->
+    <br/>
+    </form>
+<!--Register form-->
+    <h1>Registrer</h1>
+    <form id="register">
+    <input type="text" id="nm" placeholder="Vælg brugernavn" value=""/><br />
+    <input type="password" id="pw" placeholder="Vælg password" value=""/><br />
+    <br/>
+    <input type="button" value="CreateUser" onClick="StoreUser()">
+    </form>
+    <!-- Her referer man til opretbruger funktionen i js -->
 
 <script type="text/JavaScript" src="bruger.js"></script>
 </div>

@@ -1,41 +1,44 @@
-class User {
-    constructor(name, username, password, address, telephone, email, admin) {
-        this.name = name;
+/* class User {
+    constructor(realName, username, userPassword, address, telephone, email, admin) {
+        this.realName = realName;
         this.username = username;
-        this.password = password;
+        this.userPassword = userPassword;
         this.address = address;
         this.telephone = telephone;
         this.email = email;
         this.admin = admin;
     }
 }
-    // Insert create user function here
-BrugerTest = new User("Sanel","BrugerTest","123","Dalgas Have", "20202020","test@test.dk","False");
+//Testbrugere
+BrugerTest = new User("Sanel","test","123","Dalgas Have", "20202020","test@test.dk","False");
+*/
 
-function createUser() {
+var nm = document.getElementById('nm');
+var pw = document.getElementById('pw');
 
-    var user = document.getElementById('username');
-    var pass = document.getElementById('password');
-
-    var coruser = User.username;
-    var corpass = User.password;
-
-    if(user.value == coruser) {
-
-        if(pass.value == corpass) {
-
-            window.alert("You are logged in as " + user.value);
-
-        } else {
-
-            window.alert("incorrect username or password!");
-        }
-
-    } else {
-        window.alert("Incorrect username or password!");
-}
+// Store user function
+function StoreUser() {
+    localStorage.setItem('nm', nm.value);
+    localStorage.setItem('pw', pw.value);
+    alert("Din bruger er oprettet - log ind i log ind feltet.");
 }
 
+// Insert create user function here
+function Login() {
+    var storedName = localStorage.getItem('nm');
+    var storedPw = localStorage.getItem('pw');
+
+    var userName = document.getElementById('userName');
+    var userPw = document.getElementById('userPw');
+
+    if(userName.value == storedName && userPw.value == storedPw) {
+        alert("jaa");
+    }
+    else {
+        alert("kæmpe fejl");
+    }
+
+}
 
 // Insert delete user function here
 
