@@ -30,13 +30,13 @@ function Login() {
 
 //Hvis den lokale brugers username og password er korrekt = log ind
     if(userName.value == storedName && userPw.value == storedPw) {
-        window.location.href = "http://localhost:63342/Projekt/Eksamensprojekt/BookingLB.html"
+        window.location.href = "BookingLB.html"
     }
 
     // Hvordan får man den til at læse User class i stedet for Testbruger?
 //Hvis den prædefinerede testbruger(User) username og password er korrekt = log ind
     else if(userName.value == Testbruger.nm && userPw.value == Testbruger.pw) {
-        window.location.href = "http://localhost:63342/Projekt/Eksamensprojekt/BookingLB.html";
+        window.location.href = "BookingLB.html";
     }
     else {
         alert("Forkert brugernavn/password!");
