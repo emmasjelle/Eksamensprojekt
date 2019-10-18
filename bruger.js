@@ -7,6 +7,14 @@ class User {
 }
 //Testbruger(Ikke-admin)
 Testbruger = new User("Sanel","123");
+Testbruger2 = new User("Emma","321");
+Testbruger3 = new User("Patrick","111");
+
+var nmArray = [];
+var pwArray = [];
+
+nmArray.push(Testbruger.nm,Testbruger2.nm,Testbruger3.nm);
+pwArray.push(Testbruger.pw,Testbruger2.pw,Testbruger3.pw);
 
 //Henter Username(nm) og password(pw) fra vores register form
 var nm = document.getElementById('nm');
@@ -27,19 +35,24 @@ function Login() {
     var userName = document.getElementById('userName');
     var userPw = document.getElementById('userPw');
 
-//Hvis den lokale brugers username og password er korrekt = log ind
-    if(userName.value == storedName && userPw.value == storedPw) {
-        window.location.href = "BookingLB.html"
+/*  Hvis den prædefinerede testbruger(User) username og password er korrekt = log ind
+    
+ */
+    var valid = false;
+    var invalid = true;
+    for (var i = 0; i < nmArray.length; i++) {
+        if (userName.value == nmArray[i] && userPw.value == pwArray[i] || userName.value == storedName && userPw.value == storedPw) {
+            valid = true;
+        }
     }
-
-    // Hvordan får man den til at læse User class i stedet for Testbruger?
-//Hvis den prædefinerede testbruger(User) username og password er korrekt = log ind
-    else if(userName.value == Testbruger.nm && userPw.value == Testbruger.pw) {
+    if (valid) {
         window.location.href = "BookingLB.html";
     }
-    else {
-        alert("Forkert brugernavn/password!");
+    else if (invalid) {
+        alert("Brugernavn eller password er forkert.");
+        return true;
     }
+
 }
 
 // Insert delete user function here
