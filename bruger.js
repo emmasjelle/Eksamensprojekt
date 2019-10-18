@@ -8,7 +8,6 @@ class User {
 //Testbruger(Ikke-admin)
 Testbruger = new User("Sanel","123");
 
-
 //Henter Username(nm) og password(pw) fra vores register form
 var nm = document.getElementById('nm');
 var pw = document.getElementById('pw');
