@@ -33,7 +33,12 @@ monthArray.push(December5.month, December6.month, December7.month);
 dateArray.push(December5.date, December6.date, December7.date);
 timeArray.push(December5.time, December6.time, December7.time);
 
+var date = document.getElementById("choosenDate");
 
+function searchDate() {
+    localStorage.setItem('date', date.value);
+    alert(date);
+}
 /*
 // booking array for time, month, date,
 
