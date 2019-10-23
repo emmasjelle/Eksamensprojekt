@@ -10,30 +10,48 @@ Testbruger = new User("Sanel","123");
 Testbruger2 = new User("Emma","321");
 Testbruger3 = new User("Patrick","111");
 
-//Array over brugerne
 var nmArray = [];
 var pwArray = [];
 
 nmArray.push(Testbruger.nm,Testbruger2.nm,Testbruger3.nm);
 pwArray.push(Testbruger.pw,Testbruger2.pw,Testbruger3.pw);
 
-var nm = "Sanel";
+//Henter Username(nm) og password(pw) fra vores register form
+var nm = document.getElementById('nm');
+var pw = document.getElementById('pw');
 
-function validate {
-    for (var i=0; i<nmArray.length; i++) {
-    if (nm == nmArray[i])
-        alert("succes");
+// Store user funktionen - brugeren gemmes lokalt
+function StoreUser() {
+    localStorage.setItem('nm', nm.value);
+    localStorage.setItem('pw', pw.value);
+    alert("Din bruger er oprettet - log ind i log ind feltet.");
 }
 
-    //Hvis den lokale brugers username og password er korrekt = log ind
-    if(userName.value == storedName && userPw.value == storedPw) {
-        window.location.href = "BookingLB.html"
+// Henter localoprettet brugerinfo
+function Login() {
+    var storedName = localStorage.getItem('nm');
+    var storedPw = localStorage.getItem('pw');
+
+    var userName = document.getElementById('userName');
+    var userPw = document.getElementById('userPw');
+
+    /*  Hvis den prædefinerede testbruger(User) username og password er korrekt = log ind
+
+     */
+    var valid = false;
+    var invalid = true;
+    for (var i = 0; i < nmArray.length; i++) {
+        if (userName.value == nmArray[i] && userPw.value == pwArray[i] || userName.value == storedName && userPw.value == storedPw) {
+            valid = true;
+        }
+    }
+    if (valid) {
+        window.location.href = "BookingLB.html";
+        LocalStorage.setItem("loggedIn", true);
+    }
+    else if (invalid) {
+        alert("Brugernavn eller password er forkert.");
+        return true;
     }
 
-
-/* else if(userName.value == Testbruger.nm && userPw.value == Testbruger.pw) {
- window.location.href = "BookingLB.html";
 }
-else {
- alert("Forkert brugernavn/password!");
-} */
