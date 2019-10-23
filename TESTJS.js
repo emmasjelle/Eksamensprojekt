@@ -1,28 +1,23 @@
-// Her laves en funktion over alle prædefineret tider, som kan bruges på alle dage
-function tider() {
-    tiderne = ["8.00-9.30", "10.00-11.30", "12.00-13.30", "14.00-15.30"] // De defineret tider
-
-    return tiderne
-}
-
 // Oprettelse af class
 class booking {
-    constructor(time, date, month) {
-        this.time = tider();
+    constructor(date) {
         this.date = date;
-        this.month = month;
-    }}
+    }
+}
+//Her oprettes ledige bookingtider, 5,6,7, december.
+Oktober23 = new booking("2019-10-23");
+Oktober24 = new booking("2019-10-24");
 
-//Her oprettes ledige bookingtider
-December5 = new booking(tider(), 5, 12);
-December6 = new booking(tider(), 6, 12);
-December7 = new booking(tider(), 7, 12);
+var times = [];
+times.push(Oktober23, Oktober24);
 
-var timeArray = [];
-var dateArray = [];
-var monthArray = [];
+function test() {
+    for (var i = 0; i < times.length; i++){
+        if("2019-10-23" == times[i].date) {
+        console.log("lol");
+    }
+    }
+}
+test();
 
-timeArray.push(December5.time, December6.time, December7.time);
-dateArray.push(December5.date, December6.date, December7.date);
-monthArray.push(December5.month, December6.month, December7.month);
 
