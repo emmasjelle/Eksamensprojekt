@@ -17,7 +17,7 @@ class booking {
         this.month = month;
 }}
 
-//Her oprettes ledige bookingtider
+//Her oprettes ledige bookingtider, 5,6,7, december.
 December5 = new booking(tider(), 5, 12);
 December6 = new booking(tider(), 6, 12);
 December7 = new booking(tider(), 7, 12);
@@ -30,25 +30,9 @@ var timeArray = [];
 var dateArray = [];
 var monthArray = [];
 
-timeArray.push(December5.time, December6.time, December7.time);
-dateArray.push(December5.date, December6.date, December7.date);
 monthArray.push(December5.month, December6.month, December7.month);
-/*
-var valid = false;
-var invalid = true;
-
-for (var i = 0; i < nmArray.length; i++) {
-    if (userName.value == nmArray[i] && userPw.value == pwArray[i] || userName.value == storedName && userPw.value == storedPw) {
-        valid = true;
-    }
-}
-if (valid) {
-    window.location.href = "BookingLB.html";
-}
-else if (invalid) {
-    alert("Brugernavn eller password er forkert.");
-    return true;
-}
+dateArray.push(December5.date, December6.date, December7.date);
+timeArray.push(December5.time, December6.time, December7.time);
 
 
 /*
@@ -58,5 +42,4 @@ else if (invalid) {
 test = new booking(2, 23, 3);
 
 console.log(test.time); //Her laves en instance of a class for at teste tiderne
-
 */
