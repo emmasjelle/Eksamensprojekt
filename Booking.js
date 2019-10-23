@@ -1,11 +1,10 @@
 // Her laves en funktion over alle prædefineret tider, som kan bruges på alle dage
 function tider() {
-
     tiderne = ["8.00-9.30", "10.00-11.30", "12.00-13.30", "14.00-15.30"] // De defineret tider
 
 return tiderne
 }
-console.log(tider()) // Her tjekkes funktionen
+console.log(tider()); // Her tjekkes funktionen
 
 
 

@@ -1,57 +1,28 @@
-//Vi laver en User class som vi bruger til vores testbruger
-class User {
-    constructor(nm, pw) {
-        this.nm = nm;
-        this.pw = pw;
-    }
-}
-//Testbruger(Ikke-admin)
-Testbruger = new User("Sanel","123");
-Testbruger2 = new User("Emma","321");
-Testbruger3 = new User("Patrick","111");
+// Her laves en funktion over alle prædefineret tider, som kan bruges på alle dage
+function tider() {
+    tiderne = ["8.00-9.30", "10.00-11.30", "12.00-13.30", "14.00-15.30"] // De defineret tider
 
-var nmArray = [];
-var pwArray = [];
-
-nmArray.push(Testbruger.nm,Testbruger2.nm,Testbruger3.nm);
-pwArray.push(Testbruger.pw,Testbruger2.pw,Testbruger3.pw);
-
-//Henter Username(nm) og password(pw) fra vores register form
-var nm = document.getElementById('nm');
-var pw = document.getElementById('pw');
-
-// Store user funktionen - brugeren gemmes lokalt
-function StoreUser() {
-    localStorage.setItem('nm', nm.value);
-    localStorage.setItem('pw', pw.value);
-    alert("Din bruger er oprettet - log ind i log ind feltet.");
+    return tiderne
 }
 
-// Henter localoprettet brugerinfo
-function Login() {
-    var storedName = localStorage.getItem('nm');
-    var storedPw = localStorage.getItem('pw');
+// Oprettelse af class
+class booking {
+    constructor(time, date, month) {
+        this.time = tider();
+        this.date = date;
+        this.month = month;
+    }}
 
-    var userName = document.getElementById('userName');
-    var userPw = document.getElementById('userPw');
+//Her oprettes ledige bookingtider
+December5 = new booking(tider(), 5, 12);
+December6 = new booking(tider(), 6, 12);
+December7 = new booking(tider(), 7, 12);
 
-    /*  Hvis den prædefinerede testbruger(User) username og password er korrekt = log ind
+var timeArray = [];
+var dateArray = [];
+var monthArray = [];
 
-     */
-    var valid = false;
-    var invalid = true;
-    for (var i = 0; i < nmArray.length; i++) {
-        if (userName.value == nmArray[i] && userPw.value == pwArray[i] || userName.value == storedName && userPw.value == storedPw) {
-            valid = true;
-        }
-    }
-    if (valid) {
-        window.location.href = "BookingLB.html";
-        LocalStorage.setItem("loggedIn", true);
-    }
-    else if (invalid) {
-        alert("Brugernavn eller password er forkert.");
-        return true;
-    }
+timeArray.push(December5.time, December6.time, December7.time);
+dateArray.push(December5.date, December6.date, December7.date);
+monthArray.push(December5.month, December6.month, December7.month);
 
-}

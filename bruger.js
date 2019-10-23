@@ -27,6 +27,8 @@ function StoreUser() {
     alert("Din bruger er oprettet - log ind i log ind feltet.");
 }
 
+var logIn = true;
+localStorage.setItem("logIn", false);
 // Henter localoprettet brugerinfo
 function Login() {
     var storedName = localStorage.getItem('nm');
@@ -37,7 +39,6 @@ function Login() {
 //  Hvis den prædefinerede testbruger(User) username og password er korrekt = log ind
     var valid = false;
     var invalid = true;
-    var logIn = false;
     for (var i = 0; i < nmArray.length; i++) {
         if (userName.value == nmArray[i] && userPw.value == pwArray[i] || userName.value == storedName && userPw.value == storedPw) {
             valid = true;
@@ -45,6 +46,7 @@ function Login() {
     }
     if (valid) {
         window.location.href = "BookingLB.html";
+        localStorage.removeItem("logIn");
         localStorage.setItem("logIn", true);
     }
     else if (invalid) {
@@ -52,16 +54,15 @@ function Login() {
         return true;
     }
 }
-/*
+
 // Return user to log in page if not logged in
-    function isLoggedIn() {
+ /*   function isLoggedIn() {
     localStorage.getItem("logIn");
     if (logIn = true) {
         window.location.href = "LogIn.html";
     }
 }
 */
-
 // Insert delete user function here
 
 
