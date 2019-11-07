@@ -7,9 +7,10 @@
 </head>
 <body>
 
-<!--Navigationbar-->
+<!--Navigationbar oprettes med en div-->
 <div class="NavigationBar">
     <ul>
+        <!--Vi definerer de forskellige lister som er vores menuer i navigationbaren -->
         <li><a href="Forside.html">Forside</a></li>
         <li><a href="BehandlingsTyper.html">Behandlingstyper</a></li>
         <li><a href="LogIn.html">Booking</a></li>
@@ -25,6 +26,8 @@
 </div>
 
 <!-- Udvidelsen af hver enkelt boks (Skjult indtil man klikker) -->
+
+<!-- b1 defineres hvor man laver et event som kaldes "onclick", ved klik på "onclick" vises beskrivelsen af selve behandlingen -->
 <div id="b1" class="containerTab" style="display:none;background:lightblue">
        <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
     <h2>Beskrivelse</h2>
@@ -37,10 +40,12 @@
         Pris: 1100kr
         <br/>
         <br/>
+        <!-- Her oprettes en button som sender en videre til bookingsiden ved klik på den  -->
         <a class="button" href="BookingLB.html" style="vertical-align:middle"><span>Book her</span></a>
     </p>
 </div>
 
+<!-- Ny div = ny behandlingstype, onclick = event der trigges når man klikker på boxen -->
 <div id="b2" class="containerTab" style="display:none;background:lightskyblue">
     <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
     <h2>Beskrivelse</h2>
@@ -53,10 +58,12 @@
         Pris: 800kr.
         <br/>
         <br/>
+        <!-- Her oprettes en button som sender en videre til bookingsiden ved klik på den  -->
         <a class="button" href="BookingLB.html" style="vertical-align:middle"><span>Book her</span></a>
     </p>
 </div>
 
+<!-- Ny div = ny behandlingstype, onclick = event der trigges når man klikker på boxen -->
 <div id="b3" class="containerTab" style="display:none;background:lightsteelblue">
     <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
     <h2>Beskrivelse</h2>
@@ -69,11 +76,13 @@
         Pris: 1500kr.
         <br/>
         <br/>
+        <!-- Her oprettes en button som sender en videre til bookingsiden ved klik på den  -->
         <a class="button" href="BookingLB.html" style="vertical-align:middle"><span>Book her</span></a>
     </p>
 
 </div>
 
+<!-- Ny div = ny behandlingstype, onclick = event der trigges når man klikker på boxen -->
 <div id="b4" class="containerTab" style="display:none;background:cadetblue">
       <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
     <h2>Beskrivelse</h2>
@@ -86,11 +95,12 @@
         Pris: 1100kr
         <br/>
         <br/>
+        <!-- Her oprettes en button som sender en videre til bookingsiden ved klik på den  -->
         <a class="button" href="BookingLB.html" style="vertical-align:middle"><span>Book her</span></a>
     </p>
 </div>
 
-<!-- Funktionen som gør at man kan åbne og lukke for udvidelsesteksten -->
+<!-- Funktionen som gør at man kan åbne og lukke for udvidelsesteksten, funktionen defineres globalt -->
 <script>
     function openTab(tabName) {
         var i, x;
