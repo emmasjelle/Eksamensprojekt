@@ -56,11 +56,12 @@ function Login() {
     }
 }
 
-// Return user to log in page if not logged in
+// Return user to log in page if not logged in SPØRG MIKKEL
+//Se Session storage ifht. isLoggedIn - I stedet for logIn så sæt en active user
  function isLoggedIn() {
     localStorage.getItem("logIn");
     if (logIn == "0") {
-            window.location.href = "LogIn.html";
+            // window.location.href = "LogIn.html";
         }
     }
 
