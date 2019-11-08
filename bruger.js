@@ -25,9 +25,6 @@ function StoreUser() {
     alert("Din bruger er oprettet - log ind i log ind feltet.");
 }
 
-//Empty activeUser array for later use
-var activeUser = [];
-
 // Henter localoprettet brugerinfo
 function Login() {
     var storedName = localStorage.getItem('nm');
@@ -47,7 +44,8 @@ function Login() {
     }
     if (valid) {
         window.location.href = "BookingLB.html";
-        sessionStorage.setItem('acUser', userName.value);
+        //Creates an activeUser in the sessionStorage
+        sessionStorage.setItem('activeUser', userName.value);
     }
     else if (invalid) {
         alert("Brugernavnet \""+userName.value+"\" eller passwordet er forkert.");
@@ -58,7 +56,8 @@ function Login() {
 // Return user to log in page if not logged in
 //Se Session storage ifht. isLoggedIn - I stedet for logIn så sæt en active user
 function isLoggedIn() {
-    var i = sessionStorage.getItem('acUser');
+    sessionStorage.getItem('activeUser');
+    if ('activeUser')
 /*    for (var i = 0; i < users.length; i++) {
         if (activeUser == users[i].nm) {
             window.location.href = "LogIn.html";
