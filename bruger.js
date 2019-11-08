@@ -50,7 +50,7 @@ function Login() {
         localStorage.setItem("logIn", 1);
     }
     else if (invalid) {
-        alert("Brugernavn eller password er forkert.");
+        alert("Brugernavnet \""+userName.value+"\" eller password er forkert.");
         return true;
         localStorage.setItem("logIn", 0);
     }
