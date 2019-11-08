@@ -47,8 +47,7 @@ function Login() {
     }
     if (valid) {
         window.location.href = "BookingLB.html";
-        sessionStorage.setItem('activeUser', userName.value);
-        activeUser.push(JSON.parse(sessionStorage.getItem('activeUser')));
+        sessionStorage.setItem('acUser', userName.value);
     }
     else if (invalid) {
         alert("Brugernavnet \""+userName.value+"\" eller passwordet er forkert.");
@@ -59,7 +58,7 @@ function Login() {
 // Return user to log in page if not logged in
 //Se Session storage ifht. isLoggedIn - I stedet for logIn så sæt en active user
 function isLoggedIn() {
-
+    var i = sessionStorage.getItem('acUser');
 /*    for (var i = 0; i < users.length; i++) {
         if (activeUser == users[i].nm) {
             window.location.href = "LogIn.html";
