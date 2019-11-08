@@ -58,16 +58,13 @@ function Login() {
 }
 
 // Return user to log in page if not logged in
-//FEJL Starter loop of death FIX IT
- function isLoggedIn() {
+ /*function isLoggedIn() {
     localStorage.getItem("logIn");
     if (logIn = "1") {
-        window.open("BookingLB.html", "_blank");
+
     }
-        else {
-            window.location.href = "LogIn.html";
-        }
-    }
+
+  */
 // Insert delete user function here
 
 

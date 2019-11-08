@@ -13,16 +13,7 @@ December6 = new booking(2019, 12, 6);
 December7 = new booking(2019, 12, 7);
 
 var times = [];
-times.push(Oktober23, December5, December6, December7);
-
-function searchDate() {
-    var loadedDate = new Date(document.getElementById("choosenDate").value);
-    if(choosenDate.value == "2019-10-23"){
-        alert("lol");
-    }
-}
-
-
+//times.push(Oktober23, December5, December6, December7);
 
 /*
 // booking array for time, month, date,
