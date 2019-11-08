@@ -54,7 +54,7 @@ function Login() {
 }
 
 // Return user to log in page if not logged in
-//Se Session storage ifht. isLoggedIn - I stedet for logIn så sæt en active user
+//FÅ DEN HER TIL AT VIRKE
 function isLoggedIn() {
     sessionStorage.getItem('activeUser');
     for (var i = 0; i < users.length; i++) {
