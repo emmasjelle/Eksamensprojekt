@@ -26,7 +26,7 @@ function StoreUser() {
 }
 
 // Used when making the isLoggedIn function
-var logIn = document.getElementById("logIn");
+let logIn = 0;
 
 // Henter localoprettet brugerinfo
 function Login() {
@@ -34,7 +34,6 @@ function Login() {
     var storedPw = localStorage.getItem('pw');
     var userName = document.getElementById('userName');
     var userPw = document.getElementById('userPw');
-    localStorage.setItem("logIn", "0");
 
 /*  Three posibiliteis here: 1. A pre-made user succesfully logs in(from users array). 2. A newly created user logs in(Local storage).
     3.Username or password from pre-made or new user is incorrect = acces denied */
@@ -48,23 +47,26 @@ function Login() {
     }
     if (valid) {
         window.location.href = "BookingLB.html";
-        localStorage.setItem("logIn", "1");
+        localStorage.setItem("logIn", 1);
     }
     else if (invalid) {
-        alert("Brugernavn eller password er forkert.");
+        alert("Brugernavnet \""+userName.value+"\" eller password er forkert.");
         return true;
+        localStorage.setItem("logIn", 0);
     }
-    return logIn;
 }
 
 // Return user to log in page if not logged in
- /*function isLoggedIn() {
+//FEJL Starter loop of death FIX IT
+ function isLoggedIn() {
     localStorage.getItem("logIn");
     if (logIn = "1") {
-
+        window.open("BookingLB.html", "_blank");
     }
-
-  */
+        else {
+            window.location.href = "LogIn.html";
+        }
+    }
 // Insert delete user function here
 
 
