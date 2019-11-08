@@ -73,13 +73,8 @@ function logOut() {
     sessionStorage.clear();
 }
 
-function validateForm() {
-    var x = document.forms["login"]["Brugernavn"].value;
-    if (x == "") {
-        alert("Name must be filled out");
-        return false;
-    }
-}
+
+
 
 
 
