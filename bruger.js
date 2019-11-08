@@ -54,15 +54,18 @@ function Login() {
 }
 
 // Return user to log in page if not logged in
-//Se Session storage ifht. isLoggedIn - I stedet for logIn så sæt en active user
+//FÅ DEN HER TIL AT VIRKE
 function isLoggedIn() {
     sessionStorage.getItem('activeUser');
-    if ('activeUser')
-/*    for (var i = 0; i < users.length; i++) {
-        if (activeUser == users[i].nm) {
+    for (var i = 0; i < users.length; i++) {
+        if ('activeUser' === users[i].nm) {
+            console.log("test");
+            break
+        }
+        else {
             window.location.href = "LogIn.html";
         }
-    } */
+    }
 }
 
 //Log out user - Delete sessionstorage user
