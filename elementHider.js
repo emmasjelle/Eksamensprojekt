@@ -5,11 +5,11 @@ if(x==0) {
     document.getElementById("admintest").style.display = 'none';
 }
 
-if(x==1){
+if(x==0){
     document.getElementById("user").style.display = 'none';
 }
 
-if(x==1){
+if(x==0){
     document.getElementById("all").style.display = 'none';
 }
 
