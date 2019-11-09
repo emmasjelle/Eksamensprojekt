@@ -55,7 +55,7 @@ function Login() {
 
 // Return user to log in page if not logged in
 //FÅ DEN HER TIL AT VIRKE
-function isLoggedIn() {
+/* function isLoggedIn() {
     sessionStorage.getItem('activeUser');
     for (var i = 0; i < users.length; i++) {
         if ('activeUser' === users[i].nm) {
@@ -68,11 +68,15 @@ function isLoggedIn() {
     }
 }
 
+
+
 //Log out user - Delete sessionstorage user
 function logOut() {
     sessionStorage.clear();
 }
 
+
+ */
 
 
 

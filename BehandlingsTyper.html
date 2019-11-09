@@ -7,15 +7,49 @@
 </head>
 <body>
 
-<!--Navigationbar oprettes med en div-->
-<div class="NavigationBar">
+<!--Navigationbars-->
+
+<div class="NavigationBar" id="all">
+
     <ul>
-        <!--Vi definerer de forskellige lister som er vores menuer i navigationbaren -->
+        <!--Fælles navigationsbar-->
         <li><a href="Forside.html">Forside</a></li>
         <li><a href="BehandlingsTyper.html">Behandlingstyper</a></li>
         <li><a href="LogIn.html">Booking</a></li>
+        <li><a href="omMig.html">Om mig</a></li>
+        <li><a href="Kontakt.html">Kontakt</a></li>
     </ul>
 </div>
+
+<div class="NavigationBar" id="user">
+    <ul>
+        <!--Bruger navigationbar-->
+        <li><a href="Forside.html">Forside</a></li>
+        <li><a href="BehandlingsTyper.html">Behandlingstyper</a></li>
+        <li><a href="LogIn.html">Booking</a></li>
+        <li><a href="omMig.html">Om mig</a></li>
+        <li><a href="Kontakt.html">Kontakt</a></li>
+        <!--Bruger funktioner-->
+        <li><a href="seTiderB.html">Se mine tider</a></li>
+        <li><a onClick="logOut()" href="Forside.html">Log ud</a></li>
+    </ul>
+</div>
+
+<div class="NavigationBar" id="adm">
+    <ul>
+        <!--Admin navigationbar-->
+        <li><a href="Forside.html">Forside</a></li>
+        <li><a href="BehandlingsTyper.html">Behandlingstyper</a></li>
+        <li><a href="LogIn.html">Booking</a></li>
+        <li><a href="omMig.html">Om mig</a></li>
+        <li><a href="Kontakt.html">Kontakt</a></li>
+        <!--Admin funktioner-->
+        <li><a href="tilfoejTiderA.html">Tilføj tider</a></li>
+        <li><a href="seBooketTiderA.html">Se booket tider</a></li>
+        <li><a onClick="logOut()" href="Forside.html">Log ud</a></li>
+    </ul>
+</div>
+
 
 <!-- De tre boxes -->
 <div class="row">
