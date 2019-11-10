@@ -2,10 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link href='Style.css' rel='stylesheet'>
+    <link href='kalender.css' rel='stylesheet'>
     <script type="text/javascript" src="bruger.js"></script>
     <title>BookingLB</title>
 </head>
+<style>
+.grid-container {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 10% 10% 10% 10% 10% 10% 10%;
+    grid-gap: 2px;
+    background-color: #ecf2f9;
+    padding: 10px;
+}
+
+.grid-container > div {
+    background-color: lightgreen;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 20px;
+}
+</style>
 
 <body onload="searchDate()">
 
@@ -19,13 +36,158 @@
     </ul>
 </div>
 
-Velkommen til vores bookingside
+<br>
+<h1>Vælg dato</h1>
+<br>
+<p align="center" ><strong>December</strong> </p>
+
+<br>
+<br>
+
+<script>
+    var dates = [];
+
+    for(var i = 1; i <= 31; i++) {
+        dates.push(i);
+    }
+    console.log(dates)
+
+</script>
+
+<div class="grid-container">
+
+
+    <div onclick="openTab('b1');" style="background:lightgreen;">1</div>
+    <div onclick="openTab('b1');" style="background:lightgreen;">2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+    <div>10</div>
+    <div>11</div>
+    <div>12</div>
+    <div>13</div>
+    <div>14</div>
+    <div>15</div>
+    <div>16</div>
+    <div>17</div>
+    <div>18</div>
+    <div>19</div>
+    <div>20</div>
+    <div>21</div>
+    <div>22</div>
+    <div>23</div>
+    <div>24</div>
+    <div>25</div>
+    <div>26</div>
+    <div>27</div>
+    <div>28</div>
+    <div>29</div>
+    <div>30</div>
+    <div>31</div>
+
+</div>
+
+<div id="b1" class="containerTab" style="display:none;background:lightgrey">
+    <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+    <h2>Book tid</h2>
+    <br/>
+
+          <!-- Her oprettes en button som sender en videre til bookingsiden ved klik på den  -->
+        <a id="1.december 2019 kl. 8-10 " class="button" onclick="alert('Hello world'); onclick="goToMyPage()"; onclick="december011220190810()"; style="vertical-align:middle"><span>08.00 - 10.00</span></a>
+
+    <button onclick="goToMyPage(); onclick="december011220190810()">08.00-10.00</button>
+    <p id="1.december 2019 kl. 8-10"></p>
+
+
+    <script>
+        function goToMyPage() {
+            location.href='omMig.html';
+        }
+        
+        function december011220190810() {
+            document.getElementById("1.december 2019 kl. 8-10").innerHTML = "Din tid er booket";
+        }
+    </script>
+
+    </p>
+</div>
+
+<div id="b2" class="containerTab" style="display:none;background:lightgrey">
+    <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+    <h2>Book tid</h2>
+    <br/>
+    !-- Her oprettes en button som sender en videre til bookingsiden ved klik på den  -
+    <a class="button" href="BookingLB.html" style="vertical-align:middle"><span>10.00 - 11.00</span></a>
+    </p>
+</div>
+
+
+<!-- Skal nok ikke bruges
 <br/>
 Vælg en dato
 <input type="date" id="choosenDate" value="">
 <input type="button" value="Søg på dato" onclick="searchDate()">
 
 <script type="text/JavaScript" src="Booking.js"></script>
+-->
+
+
+
+<!--
+<div class="grid-container"
+    <div class="grid" onclick="openTab('b1');" style="background:lightgreen;">mandag</div>
+    <div class="grid" onclick="openTab('b2');" style="background:lightgreen;">tirsdag</div>
+    <div class="grid" onclick="openTab('b3');" style="background:lightgreen;">onsdag</div>
+
+</div>
+
+<div id="b1" class="containerTab" style="display:none;background:lightgrey">
+    <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+    <h2>Vælg tid</h2>
+    <br/>
+            <a class="button" href="BookingLB.html" style=":middle"><span>10.00 - 11.00</span></a>
+            <a class="button" href="BookingLB.html" style=":middle"><span>12.00 - 13.00</span></a>
+    </p>
+</div>
+-->
+
+<!-- Ny div = ny behandlingstype, onclick = event der trigges når man klikker på boxen -->
+<!--
+<div id="b2" class="containerTab" style="display:none;background:lightgrey">
+    <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
+    <h2>Beskrivelse</h2>
+    <br/>
+    <p>Er en mild behandlingsform, der tager udgangspunkt i kraniet og dets strukturer, disse forbindes med resten af bevægeapparatet og kroppen. Behandlingsmetoden har stor effekt på det bløde væv. Blodkar, nerver, lymfekar, organer, led og muskler.
+        <br/>
+        <br/>
+        Varighed: 1,5 time
+        <br/>
+        Pris: 800kr.
+        <br/>
+        <br/>
+        -->
+        <!-- Her oprettes en button som sender en videre til bookingsiden ved klik på den  -->
+<!--
+        <a class="button" href="BookingLB.html" style="vertical-align:middle"><span>Book her</span></a>
+    </p>
+</div>
+-->
+<!-- Funktionen som gør at man kan åbne og lukke for udvidelsesteksten, funktionen defineres globalt -->
+<script>
+    function openTab(tabName) {
+        var i, x;
+        x = document.getElementsByClassName("containerTab");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        document.getElementById(tabName).style.display = "block";
+    }
+</script>
+
 
 
 </body>

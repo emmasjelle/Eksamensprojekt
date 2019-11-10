@@ -6,20 +6,72 @@ class booking {
         this.date = date;
     }
 }
-//Her oprettes ledige bookingtider, 5,6,7, december.
-Oktober23 = new booking(2019, 10, 23);
-December5 = new booking(2019, 12, 5);
-December6 = new booking(2019, 12, 6);
-December7 = new booking(2019, 12, 7);
 
-var times = [];
-//times.push(Oktober23, December5, December6, December7);
 
-/*
-// booking array for time, month, date,
+var dates = [];
 
-//Vi laver en en ny ledig tid d: 23/03/2019 med tiderne defineret i funtionen.
-test = new booking(2, 23, 3);
+for(var i = 1; i <= 31; i++) {
+    dates.push(i);
+}
+console.log(dates)
 
-console.log(test.time); //Her laves en instance of a class for at teste tiderne
-*/
+let today = new Date();
+let currentMonth = today.getMonth();
+let currentYear = today.getFullYear();
+
+let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+let monthAndYear = document.getElementById("monthAndYear");
+showCalendar(currentMonth, currentYear);
+
+function showCalendar(month, year) {
+
+    let firstDay = (new Date(year, month)).getDay();
+    let daysInMonth = 32 - new Date(year, month, 32).getDate();
+
+    let tbl = document.getElementById("calendar-body"); // body of the calendar
+
+    // clearing all previous cells
+    tbl.innerHTML = "";
+
+    // filing data about month and in the page via DOM.
+    monthAndYear.innerHTML = months[month] + " " + year;
+    selectYear.value = year;
+    selectMonth.value = month;
+
+    // creating all cells
+    let date = 1;
+    for (let i = 0; i < 6; i++) {
+        // creates a table row
+        let row = document.createElement("tr");
+
+        //creating individual cells, filing them up with data.
+        for (let j = 0; j < 7; j++) {
+            if (i === 0 && j < firstDay) {
+                let cell = document.createElement("td");
+                let cellText = document.createTextNode("");
+                cell.appendChild(cellText);
+                row.appendChild(cell);
+            }
+            else if (date > daysInMonth) {
+                break;
+            }
+
+            else {
+                let cell = document.createElement("td");
+                let cellText = document.createTextNode(date);
+                if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
+                    cell.classList.add("bg-info");
+                } // color today's date
+                cell.appendChild(cellText);
+                row.appendChild(cell);
+                date++;
+            }
+
+
+        }
+
+        tbl.appendChild(row); // appending each row into calendar body.
+    }
+
+}
