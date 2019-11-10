@@ -8,7 +8,7 @@ body {
     Background:
     background-size: cover;
     background-position: center;
-    background-color:#ecf2f9;
+    background-color:white;
     min-height: 100vh;
     /* 100vh sætter "view-heigh" til 100%*/
 }
@@ -16,10 +16,11 @@ body {
 .NavigationBar ul {
     list-style-type: none;
     margin: 15px;
-    padding: 0;
+    padding: 0px;
     overflow: hidden;
     background-color: #333333;
     opacity: 0.5;
+    width: 85%;
 }
 .NavigationBar ul li {
     font-size: 20px;
@@ -47,3 +48,5 @@ div.Log-In input {
 div.Log-In input.button {
     text-align: center;
 }
+
+

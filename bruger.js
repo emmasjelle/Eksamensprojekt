@@ -56,17 +56,20 @@ function Login() {
     }
 }
 
-// Return user to log in page if not logged in
-//FEJL Starter loop of death FIX IT
+// Return user to log in page if not logged in SPØRG MIKKEL
+//Se Session storage ifht. isLoggedIn - I stedet for logIn så sæt en active user
  function isLoggedIn() {
     localStorage.getItem("logIn");
-    if (logIn = "1") {
-        window.open("BookingLB.html", "_blank");
-    }
-        else {
-            window.location.href = "LogIn.html";
+    if (logIn == "0") {
+            // window.location.href = "LogIn.html";
         }
     }
+
+//Log out user
+function logOut() {
+    localStorage.setItem("logIn", 0);
+}
+
 // Insert delete user function here
 
 
