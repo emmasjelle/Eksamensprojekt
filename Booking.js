@@ -1,3 +1,5 @@
+
+/*
 // Oprettelse af class
 class booking {
     constructor(year, month, date) {
@@ -6,7 +8,6 @@ class booking {
         this.date = date;
     }
 }
-
 
 var dates = [];
 
@@ -75,3 +76,6 @@ function showCalendar(month, year) {
     }
 
 }
+
+
+ */

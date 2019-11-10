@@ -61,7 +61,6 @@ function toggleDatePicker(e) {
     }
 }
 
-
 function populateDates () {
     days_element.innerHTML = "";
 
@@ -104,7 +103,7 @@ function checkEventPathForClass (path, selector) {
     return false;
 }
 
-// Helper function til at formatere datoen
+// Helper-function til at formatere datoen
 
 function formatDate(d) {
     let day = d.getDate();
@@ -122,9 +121,17 @@ function formatDate(d) {
     return day + " / " + month + " / " + year;
 }
 
+// denne funktion sørgger for at der dukker tider op under kalderen -> dog skal man definere hvordan en table med disse ser ud først
+function displayTime() {
+    document.getElementById("demo").innerHTML = Date();
 
+}
+
+
+/*
+// Her tjekkes om det virker når man klikker at den popper up -> spørg pat hvorfor ikke getElementById --> gider ikke
 var datesBtn = document.getElementsByClassName("days")
-/* console.log(datesBtn.length) */
+ // console.log(datesBtn.length)
 for(i=0; i < datesBtn.length; i++){
     console.log("error") // we check if we enter the for loop
     document.addEventListener('click', function() {
@@ -133,15 +140,10 @@ for(i=0; i < datesBtn.length; i++){
     })
 }
 
-
-
-
-
+*/
 
 /*
-
 console.log(selectedDate);
-
 datoer = []
 
 // Her console logger vi for at se om det hele fungere og om vi kan få den valgte dato vist på skærmen.

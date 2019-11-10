@@ -43,8 +43,8 @@ function Login() {
     for (var i = 0; i < users.length; i++) {
         if (userName.value == users[i].nm && userPw.value == users[i].pw || userName.value == storedName && userPw.value == storedPw) {
             /*
-            else if (admin.value == )
-            ny modelklasse for adm --> ryk funktionalitet fra logn til ny script til ny js der hedder lgon --> der kan man lave if og if else statements og kan man tildele den, så kan man lave en ny if valid for admin  -> login skal flyttes  */
+            !!!!!!!!!!! else if (admin.value == )
+            !!!!!!!!!!!  ny modelklasse for adm --> ryk funktionalitet fra logn til ny script til ny js der hedder lgon --> der kan man lave if og if else statements og kan man tildele den, så kan man lave en ny if valid for admin  -> login skal flyttes  */
             valid = true;
         }
     }

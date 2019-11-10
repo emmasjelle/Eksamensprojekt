@@ -70,7 +70,8 @@
             <div class="arrows next-mth">&gt;</div>
         </div>
 
-        <div id="henrikthorn" class="days">
+        <!-- Hvorfor virker det ikke med id -> ligemeget hvor man trykker vil den tælle op -->
+        <div id="henrikthorn" class="days" onclick="displayTime()">
             <div class="day">1</div>
             <div class="day">2</div>
             <div class="day">3</div>
@@ -79,8 +80,9 @@
             <div class="day">6</div>
             <div class="day">7</div>
         </div>
-
     </div>
+
+
 
     <!--  Leilas tabel som popper op -> virker sku ik
     <div>
@@ -99,7 +101,7 @@
     -->
 
 
-    <script src="Calender.js"></script>
+
 
 
 <!--
@@ -110,7 +112,7 @@ Vælg en dato
 <input type="button" value="Søg på dato" onClick="searchDate()">
 -->
 
-
+<script src="Calender.js"></script>
 <script type="text/JavaScript" src="Booking.js"></script>
 </body>
 
