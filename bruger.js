@@ -25,6 +25,9 @@ function StoreUser() {
     alert("Din bruger er oprettet - log ind i log ind feltet.");
 }
 
+// Used when making the isLoggedIn function
+let logIn = 0;
+
 // Henter localoprettet brugerinfo
 function Login() {
     var storedName = localStorage.getItem('nm');
@@ -47,42 +50,31 @@ function Login() {
     }
     if (valid) {
         window.location.href = "BookingLB.html";
-        //Creates an activeUser in the sessionStorage
-        sessionStorage.setItem('activeUser', userName.value);
+        localStorage.setItem("logIn", 1);
     }
     else if (invalid) {
-        alert("Brugernavnet \""+userName.value+"\" eller passwordet er forkert.");
+        alert("Brugernavnet \""+userName.value+"\" eller password er forkert.");
         return true;
+        localStorage.setItem("logIn", 0);
     }
 }
 
-// Return user to log in page if not logged in
-//FÅ DEN HER TIL AT VIRKE
-/* function isLoggedIn() {
-    sessionStorage.getItem('activeUser');
-    for (var i = 0; i < users.length; i++) {
-        if ('activeUser' === users[i].nm) {
-            console.log("test");
-            break
-        }
-        else {
-            window.location.href = "LogIn.html";
+// Return user to log in page if not logged in SPØRG MIKKEL
+//Se Session storage ifht. isLoggedIn - I stedet for logIn så sæt en active user
+ function isLoggedIn() {
+    localStorage.getItem("logIn");
+    if (logIn == "0") {
+            // window.location.href = "LogIn.html";
         }
     }
-}
 
-
-
-//Log out user - Delete sessionstorage user
+//Log out user
 function logOut() {
-    sessionStorage.clear();
+    localStorage.setItem("logIn", 0);
 }
 
-
- */
-
+// Insert delete user function here
 
 
 
-
-
+// Insert edit user function here
