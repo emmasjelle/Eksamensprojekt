@@ -1,3 +1,5 @@
+/*Contains User Parent class, subclasses and register functions*/
+
 //Parent User class in our system
 class User {
     constructor(un, pw, nm, uAddress, phoneNumber, email, admin) {

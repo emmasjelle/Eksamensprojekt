@@ -135,15 +135,16 @@ class bookingtidspunkt {
         this.tidspunkt = tidspunkt;
     }
 }
-Tidspunkt1 = new bookingtid("08:00-11:00");
-Tidspunkt2 = new bookingtid("12:00-15:00");
+Tidspunkt1 = new bookingtidspunkt("08:00-11:00");
+Tidspunkt2 = new bookingtidspunkt("12:00-15:00");
 
 var arbejdstider = [];
 arbejdstider.push(Tidspunkt1, Tidspunkt2);
 
 class bookingtid {
-    constructor(dato){
+    constructor(dato, tidspunkter){
         this.dato = dato;
+        this.tidspunkter = arbejdstider;
     }
 }
 
@@ -151,13 +152,6 @@ class bookingtid {
 Tid1 = new bookingtid("21/11/2019");
     times = [];
     times.push(Tid1);
-
-    var
-
-    //Datoer
-
-
-    //Tidspunkter
 
 
 var datesBtn = document.getElementsByClassName("days");
@@ -169,7 +163,7 @@ for(i=0; i < datesBtn.length; i++){
         // her laves et forloop for at tjekke om den rigtige format af datoen passer med en prædefineret dato
         for(var i=0; i < times.length; i++){
             if(selected_date_element.textContent == times[i].dato){
-                console.log(times[i].tid);
+                console.log(arbejdstider);
             }
         }
 
