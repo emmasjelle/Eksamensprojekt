@@ -130,17 +130,34 @@ function formatDate(d) {
 
 // denne funktion sørgger for at der dukker tider op under kalderen -> dog skal man definere hvordan en table med disse ser ud først
 
+class bookingtidspunkt {
+    constructor(tidspunkt) {
+        this.tidspunkt = tidspunkt;
+    }
+}
+Tidspunkt1 = new bookingtid("08:00-11:00");
+Tidspunkt2 = new bookingtid("12:00-15:00");
+
+var arbejdstider = [];
+arbejdstider.push(Tidspunkt1, Tidspunkt2);
+
 class bookingtid {
-    constructor(tid, dato){
-        this.tid = tid;
+    constructor(dato){
         this.dato = dato;
     }
 }
 
 // Her defineres den predefineret tid
-Tid1 = new bookingtid("08:00-10:00","21/11/2019");
+Tid1 = new bookingtid("21/11/2019");
     times = [];
     times.push(Tid1);
+
+    var
+
+    //Datoer
+
+
+    //Tidspunkter
 
 
 var datesBtn = document.getElementsByClassName("days");
@@ -152,7 +169,7 @@ for(i=0; i < datesBtn.length; i++){
         // her laves et forloop for at tjekke om den rigtige format af datoen passer med en prædefineret dato
         for(var i=0; i < times.length; i++){
             if(selected_date_element.textContent == times[i].dato){
-                alert(times[i].tid);
+                console.log(times[i].tid);
             }
         }
 
