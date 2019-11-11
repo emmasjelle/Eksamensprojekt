@@ -13,20 +13,25 @@ const days_element = document.querySelector(".date-picker .dates .days");
 const months = ['Januar', 'Febuar', "Marts", "April", "Maj", "Juni", "Juli", "August", "September", "Oktober",
     "November", "December"];
 
-/*
+
 // slet
 // her omformateres datoen til dansk forståelig
-let current_datetime = new Date()
-let formatted_date = current_datetime.getDate() + "-" + (current_datetime.getMonth() + 1) + "-" + current_datetime.getFullYear()
+let datee = new Date()
+let formatted_date = datee.getDate() + "-" + (datee.getMonth() + 1) + "-" + datee.getFullYear()
 console.log(formatted_date)
 
 // her oprettes således at den dato som vælges - skrives på den ønskede måde
 let date = formatted_date;
-let day = current_datetime.getDate();
-let month = current_datetime.getMonth();
-let year = current_datetime.getFullYear();
+let day = datee.getDate();
+let month = datee.getMonth();
+let year = datee.getFullYear();
 
- */
+let selectedDate = date;
+let selectedDay = day;
+let selectedMonth = month;
+let selectedYear = year;
+
+/*
 
 // Dagens dato hentes og defineres som day, month og year
 let date = new Date();
@@ -41,12 +46,14 @@ let selectedDay = day;
 let selectedMonth = month;
 let selectedYear = year;
 
+ */
+
 // her gider selected date ikke at omskrices til dnask læselig
 console.log(selectedDate);
 
 mth_element.textContent = months[month] + " " + year;
 
-selected_date_element.textContent = formatDate(date);
+selected_date_element.textContent = formatDate(datee);
 selected_date_element.dataset.value = selectedDate;
 
 populateDates();
@@ -118,40 +125,57 @@ function formatDate(d) {
     }
     let year = d.getFullYear();
 
-    return day + " / " + month + " / " + year;
+    return day + "/" + month + "/" + year;
 }
 
 // denne funktion sørgger for at der dukker tider op under kalderen -> dog skal man definere hvordan en table med disse ser ud først
-function displayTime() {
-    document.getElementById("demo").innerHTML = Date();
 
+class bookingtidspunkt {
+    constructor(tidspunkt) {
+        this.tidspunkt = tidspunkt;
+    }
+}
+Tidspunkt1 = new bookingtid("08:00-11:00");
+Tidspunkt2 = new bookingtid("12:00-15:00");
+
+var arbejdstider = [];
+arbejdstider.push(Tidspunkt1, Tidspunkt2);
+
+class bookingtid {
+    constructor(dato){
+        this.dato = dato;
+    }
 }
 
+// Her defineres den predefineret tid
+Tid1 = new bookingtid("21/11/2019");
+    times = [];
+    times.push(Tid1);
 
-/*
-// Her tjekkes om det virker når man klikker at den popper up -> spørg pat hvorfor ikke getElementById --> gider ikke
-var datesBtn = document.getElementsByClassName("days")
- // console.log(datesBtn.length)
+    var
+
+    //Datoer
+
+
+    //Tidspunkter
+
+
+var datesBtn = document.getElementsByClassName("days");
+// console.log(datesBtn.length)
 for(i=0; i < datesBtn.length; i++){
-    console.log("error") // we check if we enter the for loop
+    console.log("hello emsen"); // we check if we enter the for loop
+    // vi opretter en eventlistenter --> den sørger for at når vi trykker på den oprettet dato, så vil den vise en tabel med de ledige tider den dag
     document.addEventListener('click', function() {
-        console.log("Click") // we check if we enter the event listener.
-        document.getElementById("hello").style.display = "block";
+        // her laves et forloop for at tjekke om den rigtige format af datoen passer med en prædefineret dato
+        for(var i=0; i < times.length; i++){
+            if(selected_date_element.textContent == times[i].dato){
+                console.log(times[i].tid);
+            }
+        }
+
+        // we check if we enter the event listener.
+
+       // document.getElementById("hello").style.display = "block"; -> leila funktion
     })
 }
 
-*/
-
-/*
-console.log(selectedDate);
-datoer = []
-
-// Her console logger vi for at se om det hele fungere og om vi kan få den valgte dato vist på skærmen.
-if (selectedDate = ) {
-    console.log("hej")
-} else {
-    console.log("virker ikke")
-}
-
-
- */
