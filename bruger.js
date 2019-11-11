@@ -5,10 +5,13 @@ class User {
         this.pw = pw;
     }
 }
+
 //Testbruger(Ikke-admin)
 Testbruger = new User("Sanel","123");
 Testbruger2 = new User("Emma","321");
 Testbruger3 = new User("Patrick","111");
+
+//Testbruger(Admin)
 
 //Users from the User class pushed into array for later use
 var users = [];

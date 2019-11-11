@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href='Style.css' rel='stylesheet'>
+    <title>Login</title>
+</head>
+<body>
+
+<!--Navigationbars-->
+<div class="NavigationBar" id="all">
+
+    <ul>
+        <!--Fælles navigationsbar-->
+        <li><a href="Forside.html">Forside</a></li>
+        <li><a href="BehandlingsTyper.html">Behandlingstyper</a></li>
+        <li><a href="LogIn.html">Booking</a></li>
+        <li><a href="omMig.html">Om mig</a></li>
+        <li><a href="Kontakt.html">Kontakt</a></li>
+    </ul>
+</div>
+
+<div class="NavigationBar" id="user">
+    <ul>
+        <!--Bruger navigationbar-->
+        <li><a href="Forside.html">Forside</a></li>
+        <li><a href="BehandlingsTyper.html">Behandlingstyper</a></li>
+        <li><a href="LogIn.html">Booking</a></li>
+        <li><a href="omMig.html">Om mig</a></li>
+        <li><a href="Kontakt.html">Kontakt</a></li>
+        <!--Bruger funktioner-->
+        <li><a href="seTiderB.html">Se mine tider</a></li>
+        <li><a onClick="logOut()" href="Forside.html">Log ud</a></li>
+    </ul>
+</div>
+
+<div class="NavigationBar" id="adm">
+    <ul>
+        <!--Admin navigationbar-->
+        <li><a href="Forside.html">Forside</a></li>
+        <li><a href="BehandlingsTyper.html">Behandlingstyper</a></li>
+        <li><a href="LogIn.html">Booking</a></li>
+        <li><a href="omMig.html">Om mig</a></li>
+        <li><a href="Kontakt.html">Kontakt</a></li>
+        <!--Admin funktioner-->
+        <li><a href="tilfoejTiderA.html">Tilføj tider</a></li>
+        <li><a href="seBooketTiderA.html">Se booket tider</a></li>
+        <li><a onClick="logOut()" href="Forside.html">Log ud</a></li>
+    </ul>
+</div>
+
+<!--Log ind/Register menu-->
+<div class="Login/Register">
+    <h1>Log ind</h1>
+
+    <!--Log in form-->
+    <form id="login" onsubmit="return validateForm()">
+    <input type="text" id="userName" placeholder="Brugernavn" value=""/><br />
+    <input type="password" id="userPw" placeholder="Password" value=""/><br />
+    <br/>
+
+    <!--Her referer vi til Login() funktionen-->
+    <input type="reset" value="Log ind" onClick="Login()">
+    <br/>
+    <br/>
+    </form>
+
+    <h1>Registrer</h1>
+
+    <!--Register form  her under name og id  -->
+    <form id="register">
+        <h3>Vælg et brugernavn og et password</h3>
+        <input type="text" id="un" placeholder="Vælg brugernavn" value=""/><br />
+        <input type="password" id="pw" placeholder="Vælg password" value=""/><br />
+        <h3>Personlige oplysninger</h3>
+        <input type="text" id="nm" placeholder="Fulde navn" value=""/><br />
+        <input type="text" id="address" placeholder="Addresse" value=""/><br />
+        <input type="text" id="phoneNumber" placeholder="Telefonnummer" value=""/><br />
+        <input type="text" id="email" placeholder="E-mail" value=""/><br />
+        <h5>Hvilket dyr har du?</h5>
+        <select name="Dyr" id="animal">
+            <option value="horse">Hest</option>
+            <option value="dog">Hund</option>
+            <option value="Cat">Kat</option>
+        </select><br />
+        <h5>Behandlerkode(Ikke nødvendig)</h5>
+        <input type="text" id="admin" placeholder="Behandler kode" value=""/><br />
+
+        <!--Knappen referer til StoreUser() funktionen-->
+    <input type="button" value="Opret bruger" onClick="StoreUser(); testForAdmin()">
+    </form>
+
+    <!-- Her referer vi til bruger.js i js -->
+<script type="text/JavaScript" src="Classes.js"></script>
+</div>
+
+</body>
+</html>
