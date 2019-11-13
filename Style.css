@@ -48,5 +48,12 @@ div.Log-In input {
 div.Log-In input.button {
     text-align: center;
 }
-
+#error_message{
+    margin-bottom: 20px;
+    background: #fe8b8e;
+    padding: 0px;
+    text-align: center;
+    font-size: 14px;
+    transition: all 0.5s ease;
+}
 
