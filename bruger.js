@@ -1,4 +1,4 @@
-//Vi laver en User class som vi bruger til vores testbruger
+ //Vi laver en User class som vi bruger til vores testbruger
 class User {
     constructor(nm, pw) {
         this.nm = nm;
