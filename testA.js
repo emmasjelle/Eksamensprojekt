@@ -1,6 +1,5 @@
 // Loaded(onload in body) on all HTML pages to check which Navigation Bar to display
 
-
 function navBar() {
     // When a pre-defined user or user from localStorage logs in, the system stores their unique username as an activeUser in sessionStorage.
     // sessionStorage is instead of localStorage, in order to prevent the system from saving the user as being logged in after the session is terminated.
