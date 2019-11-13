@@ -113,16 +113,6 @@ function isLoggedIn() {
         // window.location.href = "LogIn.html";
     } */
 }
-
-
-
-
-
-
-
-
-
-/*function lasdasd() {
-    localStorage.clear();
+function logOut(){
+    sessionStorage.clear();
 }
-lasdasd(); */
