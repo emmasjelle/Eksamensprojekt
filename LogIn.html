@@ -49,36 +49,49 @@
     </ul>
 </div>
 
-<!--Log ind/Registrer side-->
+<!--Log ind/Register menu-->
 <div class="Login/Register">
     <h1>Log ind</h1>
 
     <!--Log in form-->
     <form id="login" onsubmit="return validateForm()">
-    <input type="text" id="userName" placeholder="Brugernavn" value=""/><br />
-    <input type="password" id="userPw" placeholder="Password" value=""/><br />
-    <br/>
+        <input type="text" id="userName" placeholder="Brugernavn" value=""/><br />
+        <input type="password" id="userPw" placeholder="Password" value=""/><br />
+        <br/>
 
-    <!--Her referer vi til Login() funktionen-->
-    <input type="reset" value="Log ind" onClick="Login()">
-    <br/>
-    <br/>
+        <!--Her referer vi til Login() funktionen-->
+        <input type="reset" value="Log ind" onClick="Login()">
+        <br/>
+        <br/>
     </form>
 
     <h1>Registrer</h1>
 
     <!--Register form  her under name og id  -->
     <form id="register">
-        <input type="text" id="nm" placeholder="Vælg brugernavn" value=""/><br />
+        <h3>Vælg et brugernavn og et password</h3>
+        <input type="text" id="un" placeholder="Vælg brugernavn" value=""/><br />
         <input type="password" id="pw" placeholder="Vælg password" value=""/><br />
-    <br/>
+        <h3>Personlige oplysninger</h3>
+        <input type="text" id="nm" placeholder="Fulde navn" value=""/><br />
+        <input type="text" id="address" placeholder="Addresse" value=""/><br />
+        <input type="text" id="phoneNumber" placeholder="Telefonnummer" value=""/><br />
+        <input type="text" id="email" placeholder="E-mail" value=""/><br />
+        <h5>Hvilket dyr har du?</h5>
+        <select name="Dyr" id="animal">
+            <option value="horse">Hest</option>
+            <option value="dog">Hund</option>
+            <option value="Cat">Kat</option>
+        </select><br />
+        <h5>Behandlerkode(Ikke nødvendig)</h5>
+        <input type="text" id="admin" placeholder="Behandler kode" value=""/><br />
 
-     <!--Knappen referer til StoreUser() funktionen-->
-    <input type="button" value="Opret bruger" onClick="StoreUser()">
+        <!--Knappen referer til StoreUser() funktionen-->
+        <input type="button" value="Opret bruger" onClick="StoreUser(); testForAdmin()">
     </form>
 
     <!-- Her referer vi til bruger.js i js -->
-<script type="text/JavaScript" src="bruger.js"></script>
+    <script type="text/JavaScript" src="Classes.js"></script>
 </div>
 
 </body>

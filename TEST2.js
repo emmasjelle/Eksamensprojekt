@@ -1,71 +1,85 @@
-// Originale Script for bruger.js (I tilfælde af at den nye funktion ikke virker :P
-//Vi laver en User class som vi bruger til vores testbruger
-class User {
-    constructor(nm, pw) {
-        this.nm = nm;
-        this.pw = pw;
-    }
-}
-//Testbruger(Ikke-admin)
-Testbruger = new User("Sanel","123");
-Testbruger2 = new User("Emma","321");
-Testbruger3 = new User("Patrick","111");
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <link href='Style.css' rel='stylesheet'>
+    <title>Login</title>
+    </head>
+    <body>
 
-var nmArray = [];
-var pwArray = [];
+    <!--Navigationbars-->
+    <div class="NavigationBar" id="all">
 
-nmArray.push(Testbruger.nm,Testbruger2.nm,Testbruger3.nm);
-pwArray.push(Testbruger.pw,Testbruger2.pw,Testbruger3.pw);
+    <ul>
+    <!--Fælles navigationsbar-->
+<li><a href="Forside.html">Forside</a></li>
+<li><a href="BehandlingsTyper.html">Behandlingstyper</a></li>
+<li><a href="LogIn.html">Booking</a></li>
+<li><a href="omMig.html">Om mig</a></li>
+<li><a href="Kontakt.html">Kontakt</a></li>
+</ul>
+</div>
 
-//Henter Username(nm) og password(pw) fra vores register form
-var nm = document.getElementById('nm');
-var pw = document.getElementById('pw');
+<div class="NavigationBar" id="user">
+    <ul>
+    <!--Bruger navigationbar-->
+<li><a href="Forside.html">Forside</a></li>
+<li><a href="BehandlingsTyper.html">Behandlingstyper</a></li>
+<li><a href="LogIn.html">Booking</a></li>
+<li><a href="omMig.html">Om mig</a></li>
+<li><a href="Kontakt.html">Kontakt</a></li>
+<!--Bruger funktioner-->
+<li><a href="seTiderB.html">Se mine tider</a></li>
+<li><a onClick="logOut()" href="Forside.html">Log ud</a></li>
+</ul>
+</div>
 
-// Store user funktionen - brugeren gemmes lokalt
-function StoreUser() {
-    localStorage.setItem('nm', nm.value);
-    localStorage.setItem('pw', pw.value);
-    alert("Din bruger er oprettet - log ind i log ind feltet.");
-}
+<div class="NavigationBar" id="adm">
+    <ul>
+    <!--Admin navigationbar-->
+<li><a href="Forside.html">Forside</a></li>
+<li><a href="BehandlingsTyper.html">Behandlingstyper</a></li>
+<li><a href="LogIn.html">Booking</a></li>
+<li><a href="omMig.html">Om mig</a></li>
+<li><a href="Kontakt.html">Kontakt</a></li>
+<!--Admin funktioner-->
+<li><a href="tilfoejTiderA.html">Tilføj tider</a></li>
+<li><a href="seBooketTiderA.html">Se booket tider</a></li>
+<li><a onClick="logOut()" href="Forside.html">Log ud</a></li>
+</ul>
+</div>
 
-var logIn = true;
-localStorage.setItem("logIn", false);
-// Henter localoprettet brugerinfo
-function Login() {
-    var storedName = localStorage.getItem('nm');
-    var storedPw = localStorage.getItem('pw');
-    var userName = document.getElementById('userName');
-    var userPw = document.getElementById('userPw');
+<!--Log ind/Registrer side-->
+<div class="Login/Register">
+    <h1>Log ind</h1>
 
-//  Hvis den prædefinerede testbruger(User) username og password er korrekt = log ind
-    var valid = false;
-    var invalid = true;
-    for (var i = 0; i < nmArray.length; i++) {
-        if (userName.value == nmArray[i] && userPw.value == pwArray[i] || userName.value == storedName && userPw.value == storedPw) {
-            valid = true;
-        }
-    }
-    if (valid) {
-        window.location.href = "BookingLB.html";
-        localStorage.removeItem("logIn");
-        localStorage.setItem("logIn", true);
-    }
-    else if (invalid) {
-        alert("Brugernavn eller password er forkert.");
-        return true;
-    }
-}
+<!--Log in form-->
+<form id="login" onsubmit="return validateForm()">
+    <input type="text" id="userName" placeholder="Brugernavn" value=""/><br />
+    <input type="password" id="userPw" placeholder="Password" value=""/><br />
+    <br/>
 
-// Return user to log in page if not logged in
-/*   function isLoggedIn() {
-   localStorage.getItem("logIn");
-   if (logIn = true) {
-       window.location.href = "LogIn.html";
-   }
-}
-*/
-// Insert delete user function here
+    <!--Her referer vi til Login() funktionen-->
+<input type="reset" value="Log ind" onClick="Login()">
+    <br/>
+    <br/>
+    </form>
 
+    <h1>Registrer</h1>
 
+    <!--Register form  her under name og id  -->
+    <form id="register">
+    <input type="text" id="nm" placeholder="Vælg brugernavn" value=""/><br />
+    <input type="password" id="pw" placeholder="Vælg password" value=""/><br />
+    <br/>
 
-// Insert edit user function here
+    <!--Knappen referer til StoreUser() funktionen-->
+<input type="button" value="Opret bruger" onClick="StoreUser()">
+    </form>
+
+    <!-- Her referer vi til bruger.js i js -->
+    <script type="text/JavaScript" src="bruger.js"></script>
+    </div>
+
+    </body>
+    </html>
