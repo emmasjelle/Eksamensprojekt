@@ -23,7 +23,7 @@ function Login() {
     else if (invalid) {
         alert("Brugernavnet \""+userName.value+"\" eller password er forkert.");
         return true;
-        sessionStorage.setItem("activeUser", "");
+       // sessionStorage.setItem("activeUser", "");
     }
 }
 
