@@ -3,17 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <link href='boxes.css' rel='stylesheet'>
+    <script type="text/javascript" src="testA.js"></script>
     <title>Behandlingstyper</title>
 </head>
-<body>
+<body onload="navBar()">
+
+
 
 <!--Navigationbar oprettes med en div-->
-<div class="NavigationBar">
+<!--Navigationbars-->
+
+<!-- logo -->
+<img src="https://i.imgur.com/AiPTQKP.png"
+     style="width:13%;height:20%;float:right;padding:5px">
+
+<div class="NavigationBar" id="all">
+
     <ul>
-        <!--Vi definerer de forskellige lister som er vores menuer i navigationbaren -->
+        <!--Fælles navigationsbar-->
         <li><a href="Forside.html">Forside</a></li>
         <li><a href="BehandlingsTyper.html">Behandlingstyper</a></li>
         <li><a href="LogIn.html">Booking</a></li>
+        <li><a href="omMig.html">Om mig</a></li>
+        <li><a href="Kontakt.html">Kontakt</a></li>
+    </ul>
+</div>
+
+<div class="NavigationBar" id="user">
+    <ul>
+        <!--Bruger navigationbar-->
+        <li><a href="Forside.html">Forside</a></li>
+        <li><a href="BehandlingsTyper.html">Behandlingstyper</a></li>
+        <li><a href="LogIn.html">Booking</a></li>
+        <li><a href="omMig.html">Om mig</a></li>
+        <li><a href="Kontakt.html">Kontakt</a></li>
+        <!--Bruger funktioner-->
+        <li><a href="seTiderB.html">Se mine tider</a></li>
+        <li><a onClick="logOut()" href="Forside.html">Log ud</a></li>
+    </ul>
+</div>
+
+<div class="NavigationBar" id="adm">
+    <ul>
+        <!--Admin navigationbar-->
+        <li><a href="Forside.html">Forside</a></li>
+        <li><a href="BehandlingsTyper.html">Behandlingstyper</a></li>
+        <li><a href="LogIn.html">Booking</a></li>
+        <li><a href="omMig.html">Om mig</a></li>
+        <li><a href="Kontakt.html">Kontakt</a></li>
+        <!--Admin funktioner-->
+        <li><a href="tilfoejTiderA.html">Tilføj tider</a></li>
+        <li><a href="seBooketTiderA.html">Se booket tider</a></li>
+        <li><a onClick="logOut()" href="Forside.html">Log ud</a></li>
     </ul>
 </div>
 
