@@ -77,6 +77,8 @@ function testForAdmin(){
         }
 }
 
+let activeUser = "";
+
 function Login() {
     var storedName = localStorage.getItem('un');
     var storedPw = localStorage.getItem('pw');
@@ -94,22 +96,22 @@ function Login() {
     }
     if (valid) {
         window.location.href = "BookingLB.html";
-        localStorage.setItem("logIn", 1);
+        sessionStorage.setItem("activeUser", userName.value);
     }
     else if (invalid) {
         alert("Brugernavnet \""+userName.value+"\" eller password er forkert.");
         return true;
-        localStorage.setItem("logIn", 0);
+        sessionStorage.setItem("activeUser", "");
     }
 }
 
 // Return user to log in page if not logged in SPØRG MIKKEL
 //Se Session storage ifht. isLoggedIn - I stedet for logIn så sæt en active user
 function isLoggedIn() {
-   localStorage.getItem("logIn");
+  /* localStorage.getItem("logIn");
     if (logIn == "0") {
         // window.location.href = "LogIn.html";
-    }
+    } */
 }
 
 
@@ -120,7 +122,7 @@ function isLoggedIn() {
 
 
 
-/* function lasdasd() {
+/*function lasdasd() {
     localStorage.clear();
 }
 lasdasd(); */
