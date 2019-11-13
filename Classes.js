@@ -27,12 +27,14 @@ class Client extends User {
     }
 }
 //Practitioner test users
-PractionterTest = new Practitioner("Sanel","123","Sanel Gluhic","Dalgas Have 1","12345678","sanel@cbs.dk","true","");
+PractitionerTest = new Practitioner("Sanel","123","Sanel Gluhic","Dalgas Have 1","12345678","sanel@cbs.dk","true","");
 //Client test users
 ClientTest = new Client("Emma","123","Emma Sjelle","Dalgas Have 2","12345677","emma@cbs.dk","false","Horse");
 
-var users = [];
-users.push(PractionterTest,ClientTest);
+let users = [];
+users.push(PractitionerTest,ClientTest);
+//Saves the user
+//localStorage.setItem("Users", JSON.stringify(users));
 
 /* Test om begge subclasses kan pushes i samme array
 function test() {
@@ -76,4 +78,27 @@ function testForAdmin(){
             localStorage.setItem('admin', 'false');
             alert("Din bruger er oprettet - log ind i log ind feltet.");
         }
+}
+function localtoArray() {
+    var localAdmin = localStorage.getItem('admin');
+    if(localAdmin == "true") {
+        PractitionerLocal = new Practitioner(localStorage.un,localStorage.pw,localStorage.nm,localStorage.uAddress,localStorage.phoneNumber,localStorage.email,localStorage.admin);
+        users.push(PractitionerLocal);
+        localStorage.setItem("users",JSON.stringify(users));
+    }
+    else if (localAdmin == "false") {
+        ClientLocal = new Client(localStorage.un,localStorage.pw,localStorage.nm,localStorage.uAddress,localStorage.phoneNumber,localStorage.email,localStorage.admin);
+        users.push(ClientLocal);
+        localStorage.setItem("users",JSON.stringify(users));
+    }
+}
+/*dasdasds*/
+//Calls all our register functions (Remember to insert in LogIn.html)
+function register() {
+    StoreUser();
+    testForAdmin();
+    localtoArray();
+}
+function clearLocal(){
+    localStorage.clear();
 }

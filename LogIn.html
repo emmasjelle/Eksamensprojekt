@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <link href='Style.css' rel='stylesheet'>
     <script type="text/javascript" src="testA.js"></script>
-    <script type="text/javascript" src="Classes.js"></script>
     <title>Login</title>
 </head>
 <body onload="navBar()">
@@ -56,7 +55,7 @@
     <h1>Log ind</h1>
 
     <!--Log in form-->
-    <form id="login" onsubmit="">
+    <form id="login" onsubmit="return validateForm()">
         <input type="text" id="userName" placeholder="Brugernavn" value=""/><br />
         <input type="password" id="userPw" placeholder="Password" value=""/><br />
         <br/>
@@ -88,8 +87,8 @@
         <h5>Behandlerkode(Ikke nødvendig)</h5>
         <input type="text" id="admin" placeholder="Behandler kode" value=""/><br />
 
-        <!--Knappen registrerer og gemmer de inputs vi har fået i registrer formen- referer til StoreUser() funktionen-->
-            <input type="button" value="Opret bruger" onClick="StoreUser(); testForAdmin()">
+        <!--Knappen referer til StoreUser() funktionen-->
+        <input type="button" value="Opret bruger" onClick="StoreUser(); testForAdmin()">
     </form>
 
     <!-- Her referer vi til bruger.js i js -->

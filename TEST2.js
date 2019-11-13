@@ -1,85 +1,104 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-    <meta charset="UTF-8">
-    <link href='Style.css' rel='stylesheet'>
-    <title>Login</title>
-    </head>
-    <body>
+/*Contains User Parent class, subclasses and register functions*/
 
-    <!--Navigationbars-->
-    <div class="NavigationBar" id="all">
+//Parent User class in our system
+class User {
+    constructor(un, pw, nm, uAddress, phoneNumber, email, admin) {
+        this.un = un;
+        this.pw = pw;
+        this.nm = nm;
+        this.uAddress = uAddress;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.admin = admin;
+    }
+}
+//Practitioner(admin) User class from parent User
+class Practitioner extends User {
+    constructor(un, pw, nm, uAddress, phoneNumber, email, admin, infoAboutMe) {
+        super(un, pw, nm, uAddress, phoneNumber, email, admin);
+        this.infoAboutMe = infoAboutMe;
+    }
+}
+//Client User class from parent User
+class Client extends User {
+    constructor(un, pw, nm, uAddress, phoneNumber, email, admin, Animal) {
+        super(un, pw, nm, uAddress, phoneNumber, email, admin);
+        this.Animal = Animal;
+    }
+}
+//Practitioner test users
+PractitionerTest = new Practitioner("Sanel","123","Sanel Gluhic","Dalgas Have 1","12345678","sanel@cbs.dk","true","");
+//Client test users
+ClientTest = new Client("Emma","123","Emma Sjelle","Dalgas Have 2","12345677","emma@cbs.dk","false","Horse");
 
-    <ul>
-    <!--Fælles navigationsbar-->
-<li><a href="Forside.html">Forside</a></li>
-<li><a href="BehandlingsTyper.html">Behandlingstyper</a></li>
-<li><a href="LogIn.html">Booking</a></li>
-<li><a href="omMig.html">Om mig</a></li>
-<li><a href="Kontakt.html">Kontakt</a></li>
-</ul>
-</div>
+let users = [];
+users.push(PractitionerTest,ClientTest);
+//Saves the user
+//localStorage.setItem("Users", JSON.stringify(users));
 
-<div class="NavigationBar" id="user">
-    <ul>
-    <!--Bruger navigationbar-->
-<li><a href="Forside.html">Forside</a></li>
-<li><a href="BehandlingsTyper.html">Behandlingstyper</a></li>
-<li><a href="LogIn.html">Booking</a></li>
-<li><a href="omMig.html">Om mig</a></li>
-<li><a href="Kontakt.html">Kontakt</a></li>
-<!--Bruger funktioner-->
-<li><a href="seTiderB.html">Se mine tider</a></li>
-<li><a onClick="logOut()" href="Forside.html">Log ud</a></li>
-</ul>
-</div>
+/* Test om begge subclasses kan pushes i samme array
+function test() {
+    for (var i = 0; i < users.length; i++) {
+        if (ClientTest1.un == users[i].un) {
+        console.log("lækkert"); }
+    }
+}
+*/
 
-<div class="NavigationBar" id="adm">
-    <ul>
-    <!--Admin navigationbar-->
-<li><a href="Forside.html">Forside</a></li>
-<li><a href="BehandlingsTyper.html">Behandlingstyper</a></li>
-<li><a href="LogIn.html">Booking</a></li>
-<li><a href="omMig.html">Om mig</a></li>
-<li><a href="Kontakt.html">Kontakt</a></li>
-<!--Admin funktioner-->
-<li><a href="tilfoejTiderA.html">Tilføj tider</a></li>
-<li><a href="seBooketTiderA.html">Se booket tider</a></li>
-<li><a onClick="logOut()" href="Forside.html">Log ud</a></li>
-</ul>
-</div>
+//Get information from registerform
+var un = document.getElementById('un');
+var pw = document.getElementById('pw');
+var nm = document.getElementById('nm');
+var uAddress = document.getElementById('address');
+var phoneNumber = document.getElementById('phoneNumber');
+var email = document.getElementById('email');
+var animal = document.getElementById('animal');
+var admin = document.getElementById('admin');
 
-<!--Log ind/Registrer side-->
-<div class="Login/Register">
-    <h1>Log ind</h1>
+//When creating a Practitioner in Local Storage
+var adminKey = "888";
 
-<!--Log in form-->
-<form id="login" onsubmit="return validateForm()">
-    <input type="text" id="userName" placeholder="Brugernavn" value=""/><br />
-    <input type="password" id="userPw" placeholder="Password" value=""/><br />
-    <br/>
-
-    <!--Her referer vi til Login() funktionen-->
-<input type="reset" value="Log ind" onClick="Login()">
-    <br/>
-    <br/>
-    </form>
-
-    <h1>Registrer</h1>
-
-    <!--Register form  her under name og id  -->
-    <form id="register">
-    <input type="text" id="nm" placeholder="Vælg brugernavn" value=""/><br />
-    <input type="password" id="pw" placeholder="Vælg password" value=""/><br />
-    <br/>
-
-    <!--Knappen referer til StoreUser() funktionen-->
-<input type="button" value="Opret bruger" onClick="StoreUser()">
-    </form>
-
-    <!-- Her referer vi til bruger.js i js -->
-    <script type="text/JavaScript" src="bruger.js"></script>
-    </div>
-
-    </body>
-    </html>
+//Function that stores the registerinformation
+function StoreUser() {
+    localStorage.setItem('un', un.value);
+    localStorage.setItem('pw', pw.value);
+    localStorage.setItem('nm', nm.value);
+    localStorage.setItem('uAddress', uAddress.value);
+    localStorage.setItem('phoneNumber', phoneNumber.value);
+    localStorage.setItem('email', email.value);
+    localStorage.setItem('animal', animal.value);
+    localStorage.setItem('admin', admin.value);
+}
+function testForAdmin(){
+    if(admin.value == adminKey) {
+        localStorage.setItem('admin', 'true');
+        alert("Din bruger er oprettet - log ind i log ind feltet.");
+    }
+    else {
+        localStorage.setItem('admin', 'false');
+        alert("Din bruger er oprettet - log ind i log ind feltet.");
+    }
+}
+function localtoArray() {
+    var localAdmin = localStorage.getItem('admin');
+    if(localAdmin == "true") {
+        PractitionerLocal = new Practitioner(localStorage.un,localStorage.pw,localStorage.nm,localStorage.uAddress,localStorage.phoneNumber,localStorage.email,localStorage.admin);
+        users.push(PractitionerLocal);
+        localStorage.setItem("users",JSON.stringify(users));
+    }
+    else if (localAdmin == "false") {
+        ClientLocal = new Client(localStorage.un,localStorage.pw,localStorage.nm,localStorage.uAddress,localStorage.phoneNumber,localStorage.email,localStorage.admin);
+        users.push(ClientLocal);
+        localStorage.setItem("users",JSON.stringify(users));
+    }
+}
+/*dasdasds*/
+//Calls all our register functions (Remember to insert in LogIn.html)
+function register() {
+    StoreUser();
+    testForAdmin();
+    localtoArray();
+}
+function clearLocal(){
+    localStorage.clear();
+}
