@@ -4,6 +4,7 @@ function navBar() {
     // When a pre-defined user or user from localStorage logs in, the system stores their unique username as an activeUser in sessionStorage.
     // sessionStorage is instead of localStorage, in order to prevent the system from saving the user as being logged in after the session is terminated.
     var activeUserNow = sessionStorage.getItem("activeUser");
+    //The variables below are used in order to check the admin boolean value of a localStorage created user.
     var localUserNow = localStorage.getItem("un");
     var localUserAdmin = localStorage.getItem("admin");
 
@@ -34,8 +35,13 @@ function navBar() {
             }
         }
     }
+    //The if statments below work like the ones above. The only difference is the comparison between the current activeUserNow and the localUserNow instead of the user array.
     if (activeUserNow == localUserNow && localUserAdmin == "true") {
         document.getElementById("all").style.display = 'none';
         document.getElementById("user").style.display = 'none';
+    }
+    if (activeUserNow == localUserNow && localUserAdmin == "false") {
+        document.getElementById("all").style.display = 'none';
+        document.getElementById("adm").style.display = 'none';
     }
 }
