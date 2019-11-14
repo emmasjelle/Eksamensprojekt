@@ -18,7 +18,7 @@ function navBar() {
     //after a match is found between activeUser(username) and the usernames in the user array through an if statement, another if statement is triggered.
     //the next if statement checks if the indexed user[i] has an admin boolean value of "true".
     for (var i = 0; i < users.length; i++ ) {
-        if (activeUserNow == users[i].un || activeUserNow == localUserNow && localUserAdmin == "true") {
+        if (activeUserNow == users[i].un) {
             if (users[i].admin == "true") {
                 //if the above statements are met it will display the admin navigation bar.
                 document.getElementById("all").style.display = 'none';
@@ -33,5 +33,9 @@ function navBar() {
                 document.getElementById("adm").style.display = 'none';
             }
         }
+    }
+    if (activeUserNow == localUserNow && localUserAdmin == "true") {
+        document.getElementById("all").style.display = 'none';
+        document.getElementById("user").style.display = 'none';
     }
 }

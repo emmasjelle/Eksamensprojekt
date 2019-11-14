@@ -48,8 +48,6 @@ class Client extends User {
     return true;
 }
 
-
-
 //Practitioner test users
 PractitionerTest = new Practitioner("Sanel","123","Sanel Gluhic","Dalgas Have 1","12345678","sanel@cbs.dk","true","");
 //Client test users
