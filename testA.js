@@ -4,6 +4,9 @@ function navBar() {
     // When a pre-defined user or user from localStorage logs in, the system stores their unique username as an activeUser in sessionStorage.
     // sessionStorage is instead of localStorage, in order to prevent the system from saving the user as being logged in after the session is terminated.
     var activeUserNow = sessionStorage.getItem("activeUser");
+    var localUserNow = localStorage.getItem("un");
+    var localUserAdmin = localStorage.getItem("admin");
+
     //There is no current activeUser if the sessionStorage is empty (... == 0).
     //As the function loads on every page, the system knows that an empty sessionStorage should result in the "all"(guest) Navigation Bar to be displayed.
     if (sessionStorage.length == 0) {
@@ -14,7 +17,7 @@ function navBar() {
     //If there is an activeUser(admin true/false) the script runs the activeUserNow through a loop checking the users array.
     //after a match is found between activeUser(username) and the usernames in the user array through an if statement, another if statement is triggered.
     //the next if statement checks if the indexed user[i] has an admin boolean value of "true".
-    for (var i = 0; i < users.length; i++) {
+    for (var i = 0; i < users.length; i++ ) {
         if (activeUserNow == users[i].un) {
             if (users[i].admin == "true") {
                 //if the above statements are met it will display the admin navigation bar.

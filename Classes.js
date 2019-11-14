@@ -61,7 +61,7 @@ function StoreUser() {
 function testForAdmin(){
     if(admin.value == adminKey) {
         localStorage.setItem('admin', 'true');
-        alert("Din bruger er oprettet - log ind i log ind feltet.");
+        alert("Din bruger er oprettet som behandler - log ind i log ind feltet.");
     }
     else {
             localStorage.setItem('admin', 'false');
@@ -69,29 +69,29 @@ function testForAdmin(){
         }
 }
 
+/* Here we experimented with pushing local storage users to the same array as our pre-defined users are in. Did not work.
 function localtoArray() {
     var localAdmin = localStorage.getItem('admin');
     if(localAdmin == "true") {
         PractitionerLocal = new Practitioner(localStorage.un,localStorage.pw,localStorage.nm,localStorage.uAddress,localStorage.phoneNumber,localStorage.email,localStorage.admin);
         users.push(PractitionerLocal);
+        localStorage.setItem("users", users);
     }
     else if (localAdmin == "false") {
         ClientLocal = new Client(localStorage.un,localStorage.pw,localStorage.nm,localStorage.uAddress,localStorage.phoneNumber,localStorage.email,localStorage.admin);
         users.push(ClientLocal);
+        localStorage.setItem("users", users);
     }
 }
-
+*/
 //Calls all our register functions (Remember to insert in LogIn.html)
 function register() {
     StoreUser();
     testForAdmin();
-    localtoArray();
+//    localtoArray();
 }
 
 //Function used to clear local storage from the browser console
 function clearLocal(){
     localStorage.clear();
 }
-
-// Kommentarerer PHO til næste gang: "javascript local storage pushed to array disapears"
-// https://stackoverflow.com/questions/19635077/adding-objects-to-array-in-localstorage
