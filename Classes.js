@@ -54,17 +54,6 @@ ClientTest = new Client("Emma","123","Emma Sjelle","Dalgas Have 2","12345677","e
 
 let users = [];
 users.push(PractitionerTest,ClientTest);
-//Saves the user
-//localStorage.setItem("Users", JSON.stringify(users));
-
-/* Test om begge subclasses kan pushes i samme array
-function test() {
-    for (var i = 0; i < users.length; i++) {
-        if (ClientTest1.un == users[i].un) {
-        console.log("lækkert"); }
-    }
-}
-*/
 
 //Get information from registerform
 var un = document.getElementById('un');
@@ -100,26 +89,30 @@ function testForAdmin(){
             alert("Din bruger er oprettet - log ind i log ind feltet.");
         }
 }
+
 function localtoArray() {
     var localAdmin = localStorage.getItem('admin');
     if(localAdmin == "true") {
         PractitionerLocal = new Practitioner(localStorage.un,localStorage.pw,localStorage.nm,localStorage.uAddress,localStorage.phoneNumber,localStorage.email,localStorage.admin);
         users.push(PractitionerLocal);
-        localStorage.setItem("users",JSON.stringify(users));
     }
     else if (localAdmin == "false") {
         ClientLocal = new Client(localStorage.un,localStorage.pw,localStorage.nm,localStorage.uAddress,localStorage.phoneNumber,localStorage.email,localStorage.admin);
         users.push(ClientLocal);
-        localStorage.setItem("users",JSON.stringify(users));
     }
 }
-/*dasdasds*/
+
 //Calls all our register functions (Remember to insert in LogIn.html)
 function register() {
     StoreUser();
     testForAdmin();
     localtoArray();
 }
+
+//Function used to clear local storage from the browser console
 function clearLocal(){
     localStorage.clear();
 }
+
+// Kommentarerer PHO til næste gang: "javascript local storage pushed to array disapears"
+// https://stackoverflow.com/questions/19635077/adding-objects-to-array-in-localstorage
