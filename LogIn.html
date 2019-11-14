@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <link href='Style.css' rel='stylesheet'>
     <script type="text/javascript" src="testA.js"></script>
+    <script type="text/javascript" src="Classes.js"></script>
     <title>Login</title>
 </head>
 <body onload="navBar()">
@@ -67,9 +68,9 @@
     </form>
 
     <h1>Registrer</h1>
-
+    <div id="error_message"></div>
     <!--Register form  her under name og id  -->
-    <form id="register">
+    <form id="form" onsubmit="return validate();">
         <h3>Vælg et brugernavn og et password</h3>
         <input type="text" id="un" placeholder="Vælg brugernavn" value=""/><br />
         <input type="password" id="pw" placeholder="Vælg password" value=""/><br />

@@ -26,6 +26,27 @@ class Client extends User {
         this.Animal = Animal;
     }
 }
+
+function validate(){
+    var nm = document.getElementById("nm").value;
+    var pw = document.getElementById("pw").value;
+    var nm = document.getElementById("nm").value;
+    var uAddress = document.getElementById("uAddress").value;
+    var phoneNumber = document.getElementById("phoneNumber").value;
+    var email = document.getElementById("email").value;
+    var admin = document.getElementById("admin").value;
+    var error_message = document.getElementById("error_message");
+    var text;
+
+    error_message.style.padding = "10px";
+
+    var text;
+    if(nm.length < 5){
+        text = "Please Enter valid Name";
+        error_message.innerHTML = text;
+        return false;
+    }
+
 //Practitioner test users
 PractitionerTest = new Practitioner("Sanel","123","Sanel Gluhic","Dalgas Have 1","12345678","sanel@cbs.dk","true","");
 //Client test users
