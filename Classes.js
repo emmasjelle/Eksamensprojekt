@@ -1,4 +1,4 @@
-/*Contains User Parent class, subclasses and register functions*/
+//Contains User Parent class, subclasses and register functions
 
 //Parent User class in our system
 class User {
@@ -27,15 +27,14 @@ class Client extends User {
     }
 }
 
-function validate() {
+ function validate() {
     var un = document.getElementById("un").value;
     var pw = document.getElementById("pw").value;
     var nm = document.getElementById("nm").value;
-    /*var uAddress = document.getElementById("uAddress").value;
-    var phoneNumber = document.getElementById("phoneNumber").value;
-    var email = document.getElementById("email").value;*/
-    var admin = document.getElementById("admin").value;
-    var error_message = document.getElementById("error_message");
+    //var uAddress = document.getElementById("uAddress").value;
+    //var phoneNumber = document.getElementById("phoneNumber").value;
+    //var email = document.getElementById("email").value;
+    //var admin = document.getElementById("admin").value;
     var text;
 
 
@@ -44,9 +43,11 @@ function validate() {
         alert("Please Enter valid Name");
         return false;
     }
-    alert("Form Submitted Successfully!");
+    StoreUser();
+    testForAdmin();
     return true;
 }
+
 
 
 //Practitioner test users
@@ -72,7 +73,6 @@ var adminKey = "888";
 
 //Function that stores the registerinformation
 function StoreUser() {
-    console.log("virker");
     localStorage.setItem('un', un.value);
     localStorage.setItem('pw', pw.value);
     localStorage.setItem('nm', nm.value);
@@ -108,12 +108,7 @@ function localtoArray() {
     }
 }
 */
-//Calls all our register functions (Remember to insert in LogIn.html)
-function register() {
-    StoreUser();
-    testForAdmin();
-//    localtoArray();
-}
+
 
 //Function used to clear local storage from the browser console
 function clearLocal(){

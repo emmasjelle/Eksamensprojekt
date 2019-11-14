@@ -1,4 +1,4 @@
-/*Contains User Parent class, subclasses and register functions*/
+//Contains User Parent class, subclasses and register functions
 
 //Parent User class in our system
 class User {
@@ -79,26 +79,8 @@ function testForAdmin(){
         alert("Din bruger er oprettet - log ind i log ind feltet.");
     }
 }
-function localtoArray() {
-    var localAdmin = localStorage.getItem('admin');
-    if(localAdmin == "true") {
-        PractitionerLocal = new Practitioner(localStorage.un,localStorage.pw,localStorage.nm,localStorage.uAddress,localStorage.phoneNumber,localStorage.email,localStorage.admin);
-        users.push(PractitionerLocal);
-        localStorage.setItem("users",JSON.stringify(users));
-    }
-    else if (localAdmin == "false") {
-        ClientLocal = new Client(localStorage.un,localStorage.pw,localStorage.nm,localStorage.uAddress,localStorage.phoneNumber,localStorage.email,localStorage.admin);
-        users.push(ClientLocal);
-        localStorage.setItem("users",JSON.stringify(users));
-    }
-}
-/*dasdasds*/
-//Calls all our register functions (Remember to insert in LogIn.html)
-function register() {
-    StoreUser();
+
+function register(){
     testForAdmin();
-    localtoArray();
-}
-function clearLocal(){
-    localStorage.clear();
+    StoreUser;
 }
