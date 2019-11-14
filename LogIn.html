@@ -68,7 +68,7 @@
     </form>
 
     <h1>Registrer</h1>
-    <div id="error_message"></div>
+
     <!--Register form  her under name og id  -->
     <form id="form" onsubmit="return validate();">
         <h3>Vælg et brugernavn og et password</h3>
@@ -89,7 +89,7 @@
         <input type="text" id="admin" placeholder="Behandler kode" value=""/><br />
 
         <!--Knappen referer til StoreUser() funktionen-->
-        <input type="button" value="Opret bruger" onClick="register()">
+        <input type="button" value="Opret bruger" onClick="validate(); StoreUser(); testForAdmin(); ">
     </form>
 
     <!-- Her referer vi til bruger.js i js -->
