@@ -101,13 +101,9 @@ function populateDates () {
         }
 
          */
-
         days_element.appendChild(day_element);
     }
 }
-
-
-
 // Hjælper-funktion som hjælper med at formatere datoen, som skal vises øverst i den hvide box.
 function formatDate(d) {
     // Nedstående variabel tager blot dagens dato.
@@ -145,26 +141,21 @@ Tidspunkt2 = new bookingtidspunkt("12:00-15:00");
 var arbejdstider = [];
 arbejdstider.push(Tidspunkt1, Tidspunkt2);
 
-
-
 class bookingtid {
     constructor(dato, tidspunkter){
         this.dato = dato;
         this.tidspunkter = arbejdstider;
     }
 }
-
 // Her defineres den predefineret tid
 Tid1 = new bookingtid("21/11/2019");
+Tid2 = new bookingtid("28/11/2019");
     times = [];
-    times.push(Tid1);
-
-
+    times.push(Tid1,Tid2);
 
 var datesBtn = document.getElementsByClassName("days");
 // console.log(datesBtn.length)
 for(i=0; i < datesBtn.length; i++){
-    console.log("hello emsen"); // we check if we enter the for loop
     // vi opretter en eventlistenter --> den sørger for at når vi trykker på den oprettet dato, så vil den vise en tabel med de ledige tider den dag
     document.addEventListener('click', function() {
         // her laves et forloop for at tjekke om den rigtige format af datoen passer med en prædefineret dato

@@ -1,0 +1,21 @@
+.bg-info {
+    color: white;
+    background-color: lightseagreen;
+}
+#calendar-body {
+    background-color: lightgray;
+    text-align: center;
+    font-size: 110%;
+    justify-content: center;
+}
+.calButton {
+    align-content: center;
+    text-align: center;
+    width: 12%;
+}
+.calChooser {
+    text-align: center;
+}
+.tableChooser {
+    align-content: right;
+}
