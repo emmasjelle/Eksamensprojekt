@@ -32,3 +32,11 @@
         -ms-user-select: none;
             user-select: none;
 }
+.calButtonWrapper {
+    text-align: center;
+    margin: auto;
+}
+.calList {
+    margin-top: 10px;
+    width: 7.5%;
+}

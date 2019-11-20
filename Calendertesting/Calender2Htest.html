@@ -18,19 +18,19 @@
     </div>
     <div class="datesWrapper noselect">
         <div id="man-1"></div>
-        <div id="man-2"></div>
-        <div id="man-3"></div>
-        <div id="man-4"></div>
-        <div id="man-5"></div>
-        <div id="man-6"></div>
-        <div id="man-7"></div>
         <div id="tir-1"></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+        <div id="ons-1"></div>
+        <div id="tor-1"></div>
+        <div id="fre-1"></div>
+        <div id="lor-1"></div>
+        <div id="son-1"></div>
+        <div id="man-2"></div>
+        <div id="tir-2"></div>
+        <div id="ons-2"></div>
+        <div id="tor-2"></div>
+        <div id="fre-2"></div>
+        <div id="lor-2"></div>
+        <div id="son-2"></div>
         <div></div>
         <div></div>
         <div></div>
@@ -61,39 +61,31 @@
         <div></div>
     </div>
 </div>
-<div class="calChooser">
-    <div class="card">
-        <h3 class="card-header" id="monthAndYear"></h3>
-        <div class="form-inline">
-            <button class="calButton" id="previous" onclick="previous()">Previous</button>
+</br>
+<div class="calButtonWrapper">
+    <button class="calButton" id="previous">Forrige</button>
+    <button class="calButton" id="next">Næste</button>
+    </br>
+    <select class="calList" id="month1">
+        <option value="1">Jan</option>
+        <option value="2">Feb</option>
+        <option value="3">Mar</option>
+        <option value="4">Apr</option>
+        <option value="5">Maj</option>
+        <option value="6">Jun</option>
+        <option value="7">Jul</option>
+        <option value="8">Aug</option>
+        <option value="9">Sep</option>
+        <option value="10">Okt</option>
+        <option value="11">Nov</option>
+        <option value="12">Dec</option>
+    </select>
+    <select class="calList" id="year1">
+        <option value=2019>2019</option>
+    </select>
+    <button class="calSearch" id="search" onclick="checkDate()">Søg</button>
+</div>
+<script type="text/javascript" src="Calender2Test.js"></script>
 
-            <button class="calButton" id="next" onclick="next()">Next</button>
-        </div>
-        <br/>
-        <form class="form-inline">
-            <select class="form-control col-sm-4" name="month" id="month" onchange="jump()">
-                <option value=0>Jan</option>
-                <option value=1>Feb</option>
-                <option value=2>Mar</option>
-                <option value=3>Apr</option>
-                <option value=4>Maj</option>
-                <option value=5>Jun</option>
-                <option value=6>Jul</option>
-                <option value=7>Aug</option>
-                <option value=8>Sep</option>
-                <option value=9>Okt</option>
-                <option value=10>Nov</option>
-                <option value=11>Dec</option>
-            </select>
-            <label for="year"></label><select class="form-control col-sm-4" name="year" id="year" onchange="jump()">
-            <option value=2019>2019</option>
-            <option value=2020>2020</option>
-        </select></form>
-    </div>
-</div>
 </body>
-
-
-
-<script src="Calender2Test.js"></script>
 </html>
