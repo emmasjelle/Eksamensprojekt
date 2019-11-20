@@ -15,6 +15,7 @@ function navBar() {
     if (sessionStorage.length == 0) {
         /*We are using style.display to hide the Navigation options, that should not be
         accesible for the unregistered guest. */
+        document.getElementById("all").style.display = 'flex';
         document.getElementById("user").style.display = 'none';
         document.getElementById("adm").style.display = 'none';
     }
@@ -26,6 +27,7 @@ function navBar() {
         if (activeUserNow == users[i].un) {
             if (users[i].admin == "true") {
                 //if the above statements are met it will display the admin navigation bar.
+                document.getElementById("adm").style.display = 'flex';
                 document.getElementById("all").style.display = 'none';
                 document.getElementById("user").style.display = 'none';
             }
@@ -35,6 +37,7 @@ function navBar() {
         boolean value of "false", resulting in the "user"(client) Navigation Bar being shown. */
         if (activeUserNow == users[i].un) {
             if (users[i].admin == "false") {
+                document.getElementById("user").style.display = 'flex';
                 document.getElementById("all").style.display = 'none';
                 document.getElementById("adm").style.display = 'none';
             }
@@ -43,10 +46,12 @@ function navBar() {
     /*The if statments below work like the ones above. The only difference is the comparison between the current
     activeUserNow and the localUserNow instead of the user array. */
     if (activeUserNow == localUserNow && localUserAdmin == "true") {
+        document.getElementById("adm").style.display = 'flex';
         document.getElementById("all").style.display = 'none';
         document.getElementById("user").style.display = 'none';
     }
     if (activeUserNow == localUserNow && localUserAdmin == "false") {
+        document.getElementById("user").style.display = 'flex';
         document.getElementById("all").style.display = 'none';
         document.getElementById("adm").style.display = 'none';
     }
