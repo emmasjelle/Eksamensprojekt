@@ -5,10 +5,9 @@
     padding: 0;
 }
 body {
-    Background:
     background-size: cover;
     background-position: center;
-    background-color:white;
+    background-color: white;
     min-height: 100vh;
     /* 100vh sætter "view-heigh" til 100%*/
 }
@@ -20,7 +19,7 @@ body {
     overflow: hidden;
     background-color: #333333;
     opacity: 0.5;
-    width: 85%;
+    width: 100%;
 }
 .NavigationBar ul li {
     font-size: 20px;
