@@ -25,6 +25,7 @@ function Login() {
        // sessionStorage.setItem("activeUser", "");
     }
 }
+
 function logOut(){
     sessionStorage.clear();
 }

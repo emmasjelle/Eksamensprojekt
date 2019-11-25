@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <link href='boxes.css' rel='stylesheet'>
+    <link href='Style.css' rel='stylesheet'>
     <script type="text/javascript" src="testA.js"></script>
     <script type="text/javascript" src="Classes.js"></script>
+    <script type="text/javascript" src="isLoggedIn.js"></script>
     <title>Behandlingstyper</title>
 </head>
 <body onload="navBar()">
@@ -18,7 +20,7 @@
 <img src="https://i.imgur.com/AiPTQKP.png"
      style="width:13%;height:20%;float:right;padding:5px">
 
-<div class="NavigationBar" id="all">
+<div class="NavigationBar" id="all" style="display: none">
 
     <ul>
         <!--Fælles navigationsbar-->
@@ -30,7 +32,7 @@
     </ul>
 </div>
 
-<div class="NavigationBar" id="user">
+<div class="NavigationBar" id="user" style="display: none">
     <ul>
         <!--Bruger navigationbar-->
         <li><a href="Forside.html">Forside</a></li>
@@ -44,7 +46,7 @@
     </ul>
 </div>
 
-<div class="NavigationBar" id="adm">
+<div class="NavigationBar" id="adm" style="display: none">
     <ul>
         <!--Admin navigationbar-->
         <li><a href="Forside.html">Forside</a></li>
@@ -83,7 +85,7 @@
         <br/>
         <br/>
         <!-- Her oprettes en button som sender en videre til bookingsiden ved klik på den  -->
-        <a class="button" href="BookingLB.html" style="vertical-align:middle"><span>Book her</span></a>
+        <a class="button" href="javascript:isLoggedInnn();" style="vertical-align:middle"><span>Book her</span></a>
     </p>
 </div>
 
@@ -101,7 +103,7 @@
         <br/>
         <br/>
         <!-- Her oprettes en button som sender en videre til bookingsiden ved klik på den  -->
-        <a class="button" href="BookingLB.html" style="vertical-align:middle"><span>Book her</span></a>
+        <a class="button" href="javascript:isLoggedInnn();" style="vertical-align:middle"><span>Book her</span></a>
     </p>
 </div>
 
@@ -119,7 +121,7 @@
         <br/>
         <br/>
         <!-- Her oprettes en button som sender en videre til bookingsiden ved klik på den  -->
-        <a class="button" href="BookingLB.html" style="vertical-align:middle"><span>Book her</span></a>
+        <a class="button" href="javascript:isLoggedInnn();" style="vertical-align:middle"><span>Book her</span></a>
     </p>
 
 </div>
@@ -138,9 +140,10 @@
         <br/>
         <br/>
         <!-- Her oprettes en button som sender en videre til bookingsiden ved klik på den  -->
-        <a class="button" href="BookingLB.html" style="vertical-align:middle"><span>Book her</span></a>
+        <a class="button" href="javascript:isLoggedInnn();" style="vertical-align:middle"><span>Book her</span></a>
     </p>
 </div>
+
 
 <!-- Funktionen som gør at man kan åbne og lukke for udvidelsesteksten, funktionen defineres globalt -->
 <script>

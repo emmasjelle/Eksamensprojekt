@@ -5,18 +5,19 @@
     <link href='Style.css' rel='stylesheet'>
     <script type="text/javascript" src="Classes.js"></script>
     <script type="text/javascript" src="testA.js"></script>
+    <script type="text/javascript" src="isLoggedIn.js"></script>
     <title>Booking</title>
 </head>
 
-<body onload="isLoggedIn(); navBar()">
+<body onload="navBar(); isLoggedInn()">
 
 <!--Navigationbars-->
 
-<!-- logo -->
+<!--Logo -->
 <img src="https://i.imgur.com/AiPTQKP.png"
      style="width:13%;height:20%;float:right;padding:5px">
 
-<div class="NavigationBar" id="all">
+<div class="NavigationBar" id="all" style="display: none">
 
     <ul>
         <!--Fælles navigationsbar-->
@@ -28,7 +29,7 @@
     </ul>
 </div>
 
-<div class="NavigationBar" id="user">
+<div class="NavigationBar" id="user" style="display: none">
     <ul>
         <!--Bruger navigationbar-->
         <li><a href="Forside.html">Forside</a></li>
@@ -42,7 +43,7 @@
     </ul>
 </div>
 
-<div class="NavigationBar" id="adm">
+<div class="NavigationBar" id="adm" style="display: none">
     <ul>
         <!--Admin navigationbar-->
         <li><a href="Forside.html">Forside</a></li>
