@@ -74,23 +74,38 @@ function fillCalenderDays() {
     })(iii-1);
 }
 
-//Selected date saved in localStorage
+//Selected date saved in localStorage and date shown in top window
 document.querySelector('div.datesWrapper').addEventListener('click', function(){
     let clickedMonth = sessionStorage.getItem('clickedMonth');
     let cMonth = clickedMonth*1+1;
     let clickedDate = event.target.textContent;
-    let savedDate = clickedDate+"/"+clickedMonth+"/"+currentYear;
-    console.log(savedDate);
-    localStorage.setItem('selectedDate', savedDate);
     //Displays the chosen date in the top of the calender - adds a 0 in front of the month if month < 10.
-    //Also disables clicking of empty fields
+    //Also disables clicking of empty fields and saves the clicked date as selectedDate in localStorage
     if (clickedDate > 0) {
         if(cMonth < 10) {
         document.getElementById('dateField').innerHTML = clickedDate + "/" + 0 + cMonth + "/" + currentYear;
+            let savedDate = clickedDate+"/"+clickedMonth+"/"+currentYear;
+            console.log(savedDate);
+            localStorage.setItem('selectedDate', savedDate);
     } else {
         document.getElementById('dateField').innerHTML = clickedDate + "/" + cMonth + "/" + currentYear;
+            let savedDate = clickedDate+"/"+clickedMonth+"/"+currentYear;
+            console.log(savedDate);
+            localStorage.setItem('selectedDate', savedDate);
         }
     }
+    //Reveals the available times on a chosen date
+    /* var savedDate = localStorage.getItem('selectedDate');
+    for (i = 0; i < availableDays.length; i++) {
+        if(availableDays[i].datee == savedDate) {
+            let x = availableDays[i].practitioner;
+            let y = availableDays[i].day[0];
+            var g = JSON.stringify(y);
+            document.getElementById('pracCal').innerHTML = x;
+            document.getElementById('timeCal').innerHTML =
+        }
+    }
+     */
 });
 
 //Fills in the days after the 'first' day is defined in fillCalenderDays()
