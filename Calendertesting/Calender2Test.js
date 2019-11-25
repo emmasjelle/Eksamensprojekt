@@ -30,7 +30,6 @@ function checkDate() {
             sessionStorage.setItem('clickedMonth', clickedMonth);
             console.log(clickedMonth);
         }
-
         //Gets first day of the chosen month in 1-7 - BESKRIV HVAD DER SKER HER
         var firstDay = new Date(currentYear + "-" + choosenMonth.value + "-01").getDay();
         firstDay = (firstDay===0) ? 7 : firstDay;
@@ -38,6 +37,7 @@ function checkDate() {
         fillCalenderDays();
 }
 
+//Fills in the 'first' weekday of the month and calls nextDate() to fill in the rest of the month
 function fillCalenderDays() {
     //loads number of first weekday from SessionStorage
     var firstD = sessionStorage.getItem('fDayInMonthS');
@@ -47,6 +47,7 @@ function fillCalenderDays() {
     for (var i = 0; i < firstW.length; i++) {
         firstW[i].innerHTML = "";
     }
+    document.getElementById('dateField').innerHTML = "";
     // Places the first workday of a chosen month correctly in the calender
     //Finds all classes "Week" and uses the first day number(subtracted by 1) as index[firstD-1]
     //for the array of elements under the class.
@@ -76,13 +77,23 @@ function fillCalenderDays() {
 //Selected date saved in localStorage
 document.querySelector('div.datesWrapper').addEventListener('click', function(){
     let clickedMonth = sessionStorage.getItem('clickedMonth');
+    let cMonth = clickedMonth*1+1;
     let clickedDate = event.target.textContent;
     let savedDate = clickedDate+"/"+clickedMonth+"/"+currentYear;
     console.log(savedDate);
     localStorage.setItem('selectedDate', savedDate);
-
+    //Displays the chosen date in the top of the calender - adds a 0 in front of the month if month < 10.
+    //Also disables clicking of empty fields
+    if (clickedDate > 0) {
+        if(cMonth < 10) {
+        document.getElementById('dateField').innerHTML = clickedDate + "/" + 0 + cMonth + "/" + currentYear;
+    } else {
+        document.getElementById('dateField').innerHTML = clickedDate + "/" + cMonth + "/" + currentYear;
+        }
+    }
 });
 
+//Fills in the days after the 'first' day is defined in fillCalenderDays()
 function nextDate() {
     //loads number of first weekday from SessionStorage
     var firstD = sessionStorage.getItem('fDayInMonthS');
@@ -110,6 +121,13 @@ function nextDate() {
 }
 
 
+
+
+
+
+
+
+
 //METHOD I TRIEDE BEFORE The nextDate() method - lacked automisation when adding a new date after the 'first'
 /*function test() {
     //Note: Check difference between index and not index here
@@ -133,35 +151,6 @@ function nextDate() {
 }
 
  */
-
-
-
-
-//Creates an array with a length in number == to the chosen month
-function arraytest() {
-    //ii = number of first weekday in chosen month
-    var ii = sessionStorage.getItem('fDayInMonthS');
-    //iii = days in the chosen month
-    var iii = sessionStorage.getItem('daysInMonthS');
-    var monthArr = Array.apply(null,{length: iii}).map(Number.call, Number);
-    console.log(monthArr[30]);
-    var div = document.getElementsByClassName('week');
-    let nextDiv = document.getElementById('first').nextElementSibling.innerHTML;
-    /*for (i = 0; i < div.length; i++) {
-        if (div[ii] == null) {
-            div[i].nextElementSibling.innerHTML = 2;
-        }
-    } */
-   /* if (nextDiv.innerHTML == null) {
-        document.getElementById('first').nextElementSibling.innerHTML = monthArr[document.getElementById('first').innerHTML*1+1];
-    } */
-}
-
-
-//Indsæt funktion der skifter farve på valgte div
-function farve(){
-    document.getElementById('test').style.backgroundColor='green';
-}
 
 //If the last day in the chosen month doesn't equal number of days in chosen month trigger If:
 //if (document.getElementsByClassName('week')[iii].innerHTML != iii) {

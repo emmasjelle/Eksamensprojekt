@@ -8,6 +8,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     text-align: center;
+    font-weight: bold;
 }
 .datesWrapper {
     display: grid;
@@ -24,7 +25,6 @@
 .datesWrapper div:hover {
     background-color: #00CA85;
 }
-
 
 .noselect div {
     -webkit-touch-callout: none;
@@ -44,4 +44,13 @@
 .calList {
     margin-top: 10px;
     width: 7.5%;
+}
+.chosenDate {
+    margin: auto;
+    width: 15%;
+    min-height: 17px;
+    border: 2px solid lightslategrey;
+    padding: 2px;
+    text-align: center;
+    font-weight: bold;
 }
