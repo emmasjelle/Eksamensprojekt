@@ -24,6 +24,8 @@
 .datesWrapper div:hover {
     background-color: #00CA85;
 }
+
+
 .noselect div {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -35,6 +37,9 @@
 .calButtonWrapper {
     text-align: center;
     margin: auto;
+}
+.calButtonWrapper: {
+    background-color: #00CA85;
 }
 .calList {
     margin-top: 10px;
