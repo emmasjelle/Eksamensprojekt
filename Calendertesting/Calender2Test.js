@@ -35,6 +35,13 @@ function checkDate() {
         firstDay = (firstDay===0) ? 7 : firstDay;
         sessionStorage.setItem('fDayInMonthS',firstDay);
         fillCalenderDays();
+        //Clears the colors of previous chosen dates from colorDates()
+        var week = document.getElementsByClassName('week');
+        for (i = 0; i < week.length; i++){
+            if(week[i].innerHTML >= 0){
+                week[i].style.backgroundColor = "";
+            }
+        }
 }
 
 //Fills in the 'first' weekday of the month and calls nextDate() to fill in the rest of the month
@@ -74,6 +81,7 @@ function fillCalenderDays() {
     })(iii-1);
 }
 
+
 //Selected date saved in localStorage and date shown in top window
 document.querySelector('div.datesWrapper').addEventListener('click', function(){
     let clickedMonth = sessionStorage.getItem('clickedMonth');
@@ -94,19 +102,28 @@ document.querySelector('div.datesWrapper').addEventListener('click', function(){
             localStorage.setItem('selectedDate', savedDate);
         }
     }
-    //Reveals the available times on a chosen date
-    /* var savedDate = localStorage.getItem('selectedDate');
-    for (i = 0; i < availableDays.length; i++) {
-        if(availableDays[i].datee == savedDate) {
-            let x = availableDays[i].practitioner;
-            let y = availableDays[i].day[0];
-            var g = JSON.stringify(y);
-            document.getElementById('pracCal').innerHTML = x;
-            document.getElementById('timeCal').innerHTML =
+    //Calls colorDate() function from below - colors the chosen day
+    colorDate();
+    clear();
+    fillWindow();
+
+});
+
+function colorDate() {
+    var x = document.getElementById('dateField').innerHTML;
+    var week = document.getElementsByClassName('week');
+    //Splits the dateField into a string of elements seperated by "/" and gets [0] which is the chosen date
+    let chosenDay = x.split("/")[0];
+    for(i = 0; i < week.length; i++){
+        //!= prevents it from coloring all the empty divs
+        if(week[i].innerHTML==chosenDay && chosenDay != 0) {
+            week[i].style.backgroundColor = "#00CA85";
+        }
+        else {
+            week[i].style.backgroundColor = "";
         }
     }
-     */
-});
+}
 
 //Fills in the days after the 'first' day is defined in fillCalenderDays()
 function nextDate() {
@@ -135,10 +152,81 @@ function nextDate() {
     document.getElementsByClassName('week')[highestId-1].innerHTML = highest*1+1;
 }
 
+//Function that clears the available dates window and buttons
+function clear() {
+    //Clears buttons
+    document.getElementById('time1').style.visibility = "hidden";
+    document.getElementById('time2').style.visibility = "hidden";
+    document.getElementById('time3').style.visibility = "hidden";
+    //Clears available dates window to avoid mixing of dates and times
+    document.getElementById('timeCal1').innerHTML = "";
+    document.getElementById('pracCal1').innerHTML = "Ingen ledige tider på den valgte dato";
+    document.getElementById('avaiCal1').innerHTML = "";
+    document.getElementById('timeCal2').innerHTML = "";
+    document.getElementById('pracCal2').innerHTML = "";
+    document.getElementById('avaiCal2').innerHTML = "";
+    document.getElementById('timeCal3').innerHTML = "";
+    document.getElementById('pracCal3').innerHTML = "";
+    document.getElementById('avaiCal3').innerHTML = "";
+}
 
+//This part fills in the available dates on the chosen day
+function fillWindow() {
+    //Gets the 'real' date dd/mm(1-12)/yyyy from the HTML
+    var x = document.getElementById('dateField').innerHTML;
+    //Fills times into the chosen day window
+    for(i = 0; i < times.length; i++){
+        //Time 1
+        if (x==times[i].dateB && times[i].timeB==1) {
+            document.getElementById('timeCal1').innerHTML = times[i].startB + "-" + times[i].endB;
+            document.getElementById('pracCal1').innerHTML = times[i].practitionerB;
+            if (times[i].avaiB == true) {
+                document.getElementById('avaiCal1').innerHTML = "Ledig";
+                document.getElementById('time1').style.visibility = "visible";
+            } else {
+                document.getElementById('avaiCal1').innerHTML = "Optaget";
+                document.getElementById('time1').style.visibility = "hidden";
+            }
+        }
+        //Time 2
+        if (x==times[i].dateB && times[i].timeB==2) {
+            document.getElementById('timeCal2').innerHTML = times[i].startB + "-" + times[i].endB;
+            document.getElementById('pracCal2').innerHTML = times[i].practitionerB;
+            if (times[i].avaiB == true) {
+                document.getElementById('avaiCal2').innerHTML = "Ledig";
+                document.getElementById('time2').style.visibility = "visible";
+            } else {
+                document.getElementById('avaiCal2').innerHTML = "Optaget";
+                document.getElementById('time2').style.visibility = "hidden";
+            }
+        }
+        //Time 3
+        if (x==times[i].dateB && times[i].timeB==3) {
+            document.getElementById('timeCal3').innerHTML = times[i].startB + "-" + times[i].endB;
+            document.getElementById('pracCal3').innerHTML = times[i].practitionerB;
+            if (times[i].avaiB == true) {
+                document.getElementById('avaiCal3').innerHTML = "Ledig";
+                document.getElementById('time3').style.visibility = "visible";
+            } else {
+                document.getElementById('avaiCal3').innerHTML = "Optaget";
+                document.getElementById('time3').style.visibility = "hidden";
+            }
+        }
+    }
+}
 
-
-
+function book() {
+    alert("Din tid er booked");
+    var x = document.getElementById('dateField').innerHTML;
+   /* let avaiIndex = 0; Experiment - finding the index and using it to change avaiB to false
+    for(i = 0; i < times.length; i++) {
+        if(x==times[i].dateB)
+    } */
+    times[1].avaiB = false;
+    fillWindow();
+var g = document.getElementById(this.id).id;
+var f = g.split('time')[1];
+}
 
 
 

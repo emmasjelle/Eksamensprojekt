@@ -7,7 +7,7 @@
 </head>
 <body>
 <div class="chosenDate">
-    <div id="dateField"></div>
+    <div id="dateField">Vælg en dato nedenfor</div>
 </div>
 
 <div class="calenderWrapper">
@@ -67,9 +67,6 @@
 </div>
 </br>
 <div class="calButtonWrapper">
-    <button class="calButton" id="previous">Forrige</button>
-    <button class="calButton" id="next">Næste</button>
-    </br>
     <select class="calList" id="month1">
         <option value="1">Jan</option>
         <option value="2">Feb</option>
@@ -97,17 +94,23 @@
         <div>Ledighed</div>
     </div>
     <div class="timesShow">
-        <div id="timeCal1"></div>
-        <div id="pracCal1">Vælg en dato i kalenderen</div>
-        <div id="avaiCal1"></div>
-        <div id="timeCal2"></div>
-        <div id="pracCal2"></div>
-        <div id="avaiCal2"></div>
-        <div id="timeCal3"></div>
-        <div id="pracCal3"></div>
-        <div id="avaiCal3"></div>
-    </div>
+            <div id="timeCal1"></div>
+            <div id="pracCal1">Vælg en dato i kalenderen</div>
+            <div id="avaiCal1"></div>
+            <div id="timeCal2"></div>
+            <div id="pracCal2"></div>
+            <div id="avaiCal2"></div>
+            <div id="timeCal3"></div>
+            <div id="pracCal3"></div>
+            <div id="avaiCal3"></div>
+        </div>
+    <div class="timeBook">
+            <button id="time1" onclick="book()">Book</button>
+            <button id="time2" onclick="book()">Book</button>
+            <button id="time3" onclick="book()">Book</button>
+        </div>
 </div>
+
 <script type="text/javascript" src="Calender2Test.js"></script>
 <script type="text/javascript" src="booking.js"></script>
 

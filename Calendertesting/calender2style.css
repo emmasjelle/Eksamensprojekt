@@ -61,6 +61,10 @@
     height: 200px;
 }
 
+.calTimesWrapper {
+    width: 50%;
+}
+
 .timesNav {
     height: 15%;
     display: grid;
@@ -69,6 +73,7 @@
     font-weight: bold;
     background-color: gray;
     padding-top: 5px;
+    width: 90%;
 }
 
 .timesShow {
@@ -79,4 +84,13 @@
     grid-gap: 2px;
     background-color: lightgray;
     padding-top: 5px;
+    float: left;
+    width: 90%;
+    height: 61px;
+}
+.timeBook {
+    float: right;
+    width: 10%;
+    position: inherit;
+    visibility: hidden;
 }
