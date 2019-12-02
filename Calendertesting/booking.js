@@ -50,7 +50,8 @@ Booking2 = new Booking('29/12/2019',Morning,'Sanel','Emma');
 //Tilføj to knapper i højre side book og booked. Vises afhængigt af hvad status er.
 
 class Booking {
-    constructor(dateB, startB, endB, practitionerB, avaiB, timeB, clientB) {
+    constructor(idB, dateB, startB, endB, practitionerB, avaiB, timeB, clientB) {
+        this.idB = idB;
         this.dateB = dateB;
         this.startB = startB;
         this.endB = endB;
@@ -62,15 +63,15 @@ class Booking {
 }
 //Our system is restricted to three times pr. working day at the moment(Categorized in timeB from 1-3)
 //10/12/2019 times
-Test1 = new Booking("10/12/2019","08:00","10:00","Sanel", false, 1,"Emma");
-Test2 = new Booking("10/12/2019","11:00","13:00","Sanel", true,2,"");
-Test3 = new Booking("10/12/2019","14:00","16:00","Sanel", true,3,"");
+Test1 = new Booking("","10/12/2019","08:00","10:00","Sanel", false, 1,"Emma");
+Test2 = new Booking("","10/12/2019","11:00","13:00","Sanel", true,2,"");
+Test3 = new Booking("","10/12/2019","14:00","16:00","Sanel", true,3,"");
 //11/12/2019 times
-Test4 = new Booking("11/12/2019","08:00","10:00","Sanel", true,1,"");
-Test5 = new Booking("11/12/2019","11:00","13:00","Sanel", false,2, "Emma");
-Test6 = new Booking("11/12/2019","14:00","16:00","Sanel", false,3, "Lars");
+Test4 = new Booking("","11/12/2019","08:00","10:00","Sanel", true,1,"");
+Test5 = new Booking("","11/12/2019","11:00","13:00","Sanel", true,2, "Emma");
+Test6 = new Booking("","11/12/2019","14:00","16:00","Sanel", true,3, "Lars");
 //12/12/2019 times - Example: only 1 time added
-Test7 = new Booking("12/12/2019","09:00","11:00","Sanel", true,1,"");
+Test7 = new Booking("","12/12/2019","09:00","11:00","Sanel", true,1,"");
 
 var times = [];
 times.push(Test1,Test2,Test3,Test4,Test5,Test6,Test7);
