@@ -156,8 +156,8 @@ class bookingtid {
 
 // Her defineres den predefineret tid
 Tid1 = new bookingtid("21/11/2019");
-times = [];
-times.push(Tid1);
+    times = [];
+    times.push(Tid1);
 
 
 
@@ -176,7 +176,7 @@ for(i=0; i < datesBtn.length; i++){
 
         // we check if we enter the event listener.
 
-        // document.getElementById("hello").style.display = "block"; -> leila funktion
+       // document.getElementById("hello").style.display = "block"; -> leila funktion
     })
 }
 
