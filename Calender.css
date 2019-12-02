@@ -87,6 +87,5 @@
 .timeBook {
     float: right;
     width: 10%;
-    position: inherit;
     visibility: hidden;
 }
