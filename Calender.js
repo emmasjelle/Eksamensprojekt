@@ -52,6 +52,7 @@ function checkDate() {
 }
 
 //Fills in the 'first' weekday of the month and calls nextDate() to fill in the rest of the month
+//Rename this function to something more specific
 function fillCalenderDays() {
     //loads number of first weekday from SessionStorage
     var firstD = sessionStorage.getItem('fDayInMonthS');
@@ -87,7 +88,6 @@ function fillCalenderDays() {
         if (number > 1) repeat(number -1);
     })(iii-1);
 }
-
 
 //Selected date saved in localStorage and date shown in top window
 document.querySelector('div.datesWrapper').addEventListener('click', function(){
@@ -296,6 +296,7 @@ function book1() {
     document.getElementById('avaiCal1').innerHTML = "Optaget";
     document.getElementById('time1').style.visibility = "hidden";
 }
+//Add book1 functons to book2 and book3
 function book2() {
     alert("Din tid er booked");
     let chosenDay = document.getElementById('dateField').innerHTML;
@@ -325,8 +326,6 @@ function clearLocal(){
     localStorage.clear();
     console.log("Local Storage cleared.")
 }
-
-
 //METHOD I TRIEDE BEFORE The nextDate() method - lacked automisation when adding a new date after the 'first'
 /*function test() {
     //Note: Check difference between index and not index here

@@ -13,6 +13,7 @@
             break;
      }
  }
+ //MIDLERTIDIGT FJERNET FRA ONLOAD PÅ BOOKINGSIDE.HTML
  /*   }
     if (sessionStorage.length == 0) {
         window.location.href = "LogIn.html";

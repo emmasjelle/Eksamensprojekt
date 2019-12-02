@@ -14,9 +14,8 @@ class User {
 }
 //Behandler/practitioner (admin) User klassen fra vores parent User
 class Practitioner extends User {
-    constructor(un, pw, nm, uAddress, phoneNumber, email, admin, infoAboutMe) {
+    constructor(un, pw, nm, uAddress, phoneNumber, email, admin) {
         super(un, pw, nm, uAddress, phoneNumber, email, admin);
-        this.infoAboutMe = infoAboutMe;
     }
 }
 //Klient/Client User klassen fra vores parent User
@@ -80,7 +79,7 @@ class Client extends User {
 }
 
 //Her opretter vi en behandler/practitioner test bruger.
-PractitionerTest = new Practitioner("Sanel","123","Sanel Gluhic","Dalgas Have 1","12345678","sanel@cbs.dk","true","");
+PractitionerTest = new Practitioner("Sanel","123","Sanel Gluhic","Dalgas Have 1","12345678","sanel@cbs.dk","true");
 //Her opretter vi en klient/client test bruger.
 ClientTest = new Client("Emma","123","Emma Sjelle","Dalgas Have 2","12345677","emma@cbs.dk","false","Horse");
 
