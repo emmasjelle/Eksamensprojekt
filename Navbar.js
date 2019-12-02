@@ -1,10 +1,19 @@
-// Loaded(onload in body) on all HTML pages to check which Navigation Bar to display
+//Global scope define
 
+// Defining variables that are used often in the following. They are defined in global scope.
+const allNavBar = document.getElementById("all");
+const userNavBar = document.getElementById("user");
+const admNavBar = document.getElementById("adm");
+
+
+// Loaded(onload in body) on all HTML pages to check which Navigation Bar to display
 function navBar() {
+
     /* When a pre-defined user or user from localStorage logs in, the system stores their unique username
-    as an activeUser in sessionStorage. SessionStorage is instead of localStorage, in order to prevent the system from
-    saving the user as being logged in after the session is terminated. */
+   as an activeUser in sessionStorage. SessionStorage is instead of localStorage, in order to prevent the system from
+   saving the user as being logged in after the session is terminated. */
     var activeUserNow = sessionStorage.getItem("activeUser");
+
     //The variables below are used in order to check the admin boolean value of a localStorage created user.
     var localUserNow = localStorage.getItem("un");
     var localUserAdmin = localStorage.getItem("admin");
@@ -15,9 +24,10 @@ function navBar() {
     if (sessionStorage.length == 0) {
         /*We are using style.display to hide the Navigation options, that should not be
         accesible for the unregistered guest. */
-        document.getElementById("all").style.display = 'flex';
-        document.getElementById("user").style.display = 'none';
-        document.getElementById("adm").style.display = 'none';
+        allNavBar.style.display = 'flex';
+        userNavBar.style.display = 'none';
+        admNavBar.style.display = 'none';
+
     }
     /*If there is an activeUser(admin true/false) the script runs the activeUserNow through a loop checking
     the users array. After a match is found between activeUser(username) and the usernames in the user array
@@ -27,9 +37,9 @@ function navBar() {
         if (activeUserNow == users[i].un) {
             if (users[i].admin == "true") {
                 //if the above statements are met it will display the admin navigation bar.
-                document.getElementById("adm").style.display = 'flex';
-                document.getElementById("all").style.display = 'none';
-                document.getElementById("user").style.display = 'none';
+                admNavBar.style.display = 'flex';
+                allNavBar.style.display = 'none';
+                userNavBar.style.display = 'none';
             }
         }
         /*If the sessionStorage is not empty, and the activeUserNow does not have the boolean value of "true",
@@ -37,22 +47,23 @@ function navBar() {
         boolean value of "false", resulting in the "user"(client) Navigation Bar being shown. */
         if (activeUserNow == users[i].un) {
             if (users[i].admin == "false") {
-                document.getElementById("user").style.display = 'flex';
-                document.getElementById("all").style.display = 'none';
-                document.getElementById("adm").style.display = 'none';
+                admNavBar.style.display = 'none';
+                allNavBar.style.display = 'none';
+                userNavBar.style.display = 'flex';
             }
         }
     }
     /*The if statments below work like the ones above. The only difference is the comparison between the current
     activeUserNow and the localUserNow instead of the user array. */
     if (activeUserNow == localUserNow && localUserAdmin == "true") {
-        document.getElementById("adm").style.display = 'flex';
-        document.getElementById("all").style.display = 'none';
-        document.getElementById("user").style.display = 'none';
+        admNavBar.style.display = 'flex';
+        allNavBar.style.display = 'none';
+        userNavBar.style.display = 'flex';
+
     }
     if (activeUserNow == localUserNow && localUserAdmin == "false") {
-        document.getElementById("user").style.display = 'flex';
-        document.getElementById("all").style.display = 'none';
-        document.getElementById("adm").style.display = 'none';
+        admNavBar.style.display = 'none';
+        allNavBar.style.display = 'none';
+        userNavBar.style.display = 'flex';
     }
 }
