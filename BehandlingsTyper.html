@@ -2,11 +2,11 @@
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
-    <link href='boxes.css' rel='stylesheet'>
+    <link href='Boxes.css' rel='stylesheet'>
     <link href='Style.css' rel='stylesheet'>
     <script type="text/javascript" src="Navbar.js"></script>
     <script type="text/javascript" src="Classes.js"></script>
-    <script type="text/javascript" src="isLoggedIn.js"></script>
+    <script type="text/javascript" src="CheckLogIn.js"></script>
     <title>Behandlingstyper</title>
 </head>
 <body onload="navBar()">
@@ -27,8 +27,6 @@
         <li><a href="Forside.html">Forside</a></li>
         <li><a href="BehandlingsTyper.html">Behandlingstyper</a></li>
         <li><a href="LogIn.html">Booking</a></li>
-        <li><a href="omMig.html">Om mig</a></li>
-        <li><a href="Kontakt.html">Kontakt</a></li>
     </ul>
 </div>
 
@@ -37,9 +35,7 @@
         <!--Bruger navigationbar-->
         <li><a href="Forside.html">Forside</a></li>
         <li><a href="BehandlingsTyper.html">Behandlingstyper</a></li>
-        <li><a href="BookingLB.html">Booking</a></li>
-        <li><a href="omMig.html">Om mig</a></li>
-        <li><a href="Kontakt.html">Kontakt</a></li>
+        <li><a href="Bookingside.html">Booking</a></li>
         <!--Bruger funktioner-->
         <li><a href="seTiderB.html">Se mine tider</a></li>
         <li><a onClick="logOut()" href="Forside.html">Log ud</a></li>
@@ -51,11 +47,8 @@
         <!--Admin navigationbar-->
         <li><a href="Forside.html">Forside</a></li>
         <li><a href="BehandlingsTyper.html">Behandlingstyper</a></li>
-        <li><a href="BookingLB.html">Booking</a></li>
-        <li><a href="omMig.html">Om mig</a></li>
-        <li><a href="Kontakt.html">Kontakt</a></li>
+        <li><a href="Bookingside.html">Booking</a></li>
         <!--Admin funktioner-->
-        <li><a href="tilfoejTiderA.html">Tilføj tider</a></li>
         <li><a href="seBooketTiderA.html">Se booket tider</a></li>
         <li><a onClick="logOut()" href="Forside.html">Log ud</a></li>
     </ul>
@@ -85,7 +78,7 @@
         <br/>
         <br/>
         <!-- Her oprettes en button som sender en videre til bookingsiden ved klik på den  -->
-        <a class="button" href="javascript:isLoggedInnn();" style="vertical-align:middle"><span>Book her</span></a>
+        <a class="button" href="javascript:isLoggedIn();" style="vertical-align:middle"><span>Book her</span></a>
     </p>
 </div>
 

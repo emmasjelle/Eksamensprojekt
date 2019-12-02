@@ -1,6 +1,6 @@
 let activeUser = "";
 
-function Login() {
+function LoginButton() {
     var storedName = localStorage.getItem('un');
     var storedPw = localStorage.getItem('pw');
     var userName = document.getElementById('userName');
@@ -16,7 +16,7 @@ function Login() {
         }
     }
     if (valid) {
-        window.location.href = "BookingLB.html";
+        window.location.href = "Bookingside.html";
         sessionStorage.setItem("activeUser", userName.value);
     }
     else if (invalid) {
