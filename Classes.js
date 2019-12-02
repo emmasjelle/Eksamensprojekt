@@ -12,6 +12,7 @@ class User {
         this.admin = admin;
     }
 }
+
 //Behandler/practitioner (admin) User klassen fra vores parent User
 class Practitioner extends User {
     constructor(un, pw, nm, uAddress, phoneNumber, email, admin) {
@@ -25,6 +26,8 @@ class Client extends User {
         this.Animal = Animal;
     }
 }
+
+
 
 //Her opretter vi funktionen som vil tjekke at alle felter i brugerregisteringen bliver udfyldt korrekt.
 // Vi benytter getElementById til at hente værdierne gennem deres ID. Derudover bruger vi .value
