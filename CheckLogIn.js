@@ -1,3 +1,6 @@
+// This function checks if the user is logged in or not. If not the user will be directed to the LogIn page if he/she
+// tries to enter a html page that is only available for the user or admin. The function works by checking the
+// length of sessionStorage ??????????????????????????????????????
  function isLoggedIn() {
     let check = sessionStorage.length;
     console.log(check);
