@@ -6,7 +6,7 @@
             window.location.href = "LogIn.html";
             break;
         case 1:
-            window.location.href = "Bookingside.html";
+            //window.location.href = "Bookingside.html";
             break;
         default:
             console.log('Default');
