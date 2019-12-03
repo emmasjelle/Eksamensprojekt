@@ -246,25 +246,29 @@ function book1() {
     let timee = time.split('-');
     let start = timee[0];
 
-    alert("Din tid er booked");
-
     var times = JSON.parse(localStorage.getItem('timesArray'));
     var active = sessionStorage.getItem('activeUser');
     for(var i = 0; i < times.length; i++){
-        if(times[i].dateB == x && times[i].startB == start && times[i].clientB != active) {
-            times[times[i].idB].avaiB = false;
-            times[times[i].idB].clientB = active;
-            console.log(times[i].dateB+" "+times[i].avaiB);
-        }
         if(times[i].clientB == active){
             alert("Du har overskredet maks antal bookinger - se dine bookinger under Se mine tider");
+            break;
+        }
+        if(times[i].clientB != active) {
+            if (times[i].dateB == x && times[i].startB == start) {
+                times[times[i].idB].avaiB = false;
+                times[times[i].idB].clientB = active;
+                console.log(times[i].dateB + " " + times[i].avaiB);
+                alert("Din tid er booked");
+                document.getElementById('avaiCal1').innerHTML = "Optaget";
+                document.getElementById('time1').style.visibility = "hidden";
+                break;
+            }
         }
     }
+
+    //Tjek ifht. rækkefølgen og endless loop hvor den finder ting
     localStorage.setItem('timesArray', JSON.stringify(times));
     console.log(localStorage);
-
-    document.getElementById('avaiCal1').innerHTML = "Optaget";
-    document.getElementById('time1').style.visibility = "hidden";
 }
 function book2() {
     var x = document.getElementById('dateField').innerHTML;
@@ -273,22 +277,29 @@ function book2() {
     let timee = time.split('-');
     let start = timee[0];
 
-    alert("Din tid er booked");
-
     var times = JSON.parse(localStorage.getItem('timesArray'));
-    var active = sessionStorage.getItem('activeUser')
+    var active = sessionStorage.getItem('activeUser');
     for(var i = 0; i < times.length; i++){
-        if(times[i].dateB == x && times[i].startB == start) {
-            times[times[i].idB].avaiB = false;
-            times[times[i].idB].clientB = active;
-            console.log(times[i].dateB+" "+times[i].avaiB);
+        if(times[i].clientB == active){
+            alert("Du har overskredet maks antal bookinger - se dine bookinger under Se mine tider");
+            break;
+        }
+        if(times[i].clientB != active) {
+            if (times[i].dateB == x && times[i].startB == start) {
+                times[times[i].idB].avaiB = false;
+                times[times[i].idB].clientB = active;
+                console.log(times[i].dateB + " " + times[i].avaiB);
+                alert("Din tid er booked");
+                document.getElementById('avaiCal2').innerHTML = "Optaget";
+                document.getElementById('time2').style.visibility = "hidden";
+                break;
+            }
         }
     }
+
+    //Tjek ifht. rækkefølgen og endless loop hvor den finder ting
     localStorage.setItem('timesArray', JSON.stringify(times));
     console.log(localStorage);
-
-    document.getElementById('avaiCal2').innerHTML = "Optaget";
-    document.getElementById('time2').style.visibility = "hidden";
 }
 function book3() {
     var x = document.getElementById('dateField').innerHTML;
@@ -297,23 +308,29 @@ function book3() {
     let timee = time.split('-');
     let start = timee[0];
 
-    alert("Din tid er booked");
-
     var times = JSON.parse(localStorage.getItem('timesArray'));
-    var active = sessionStorage.getItem('activeUser')
+    var active = sessionStorage.getItem('activeUser');
     for(var i = 0; i < times.length; i++){
-        if(times[i].dateB == x && times[i].startB == start) {
-            times[times[i].idB].avaiB = false;
-            times[times[i].idB].clientB = active;
-            console.log(times[i].dateB+" "+times[i].avaiB);
+        if(times[i].clientB == active){
+            alert("Du har overskredet maks antal bookinger - se dine bookinger under Se mine tider");
+            break;
+        }
+        if(times[i].clientB != active) {
+            if (times[i].dateB == x && times[i].startB == start) {
+                times[times[i].idB].avaiB = false;
+                times[times[i].idB].clientB = active;
+                console.log(times[i].dateB + " " + times[i].avaiB);
+                alert("Din tid er booked");
+                document.getElementById('avaiCal3').innerHTML = "Optaget";
+                document.getElementById('time3').style.visibility = "hidden";
+                break;
+            }
         }
     }
+
+    //Tjek ifht. rækkefølgen og endless loop hvor den finder ting
     localStorage.setItem('timesArray', JSON.stringify(times));
     console.log(localStorage);
-    //Add store bookedUser as active user so that the user can see the booked time.
-    // times[i].clientB == activeUser eller sådan noget - save i localStorage
-    document.getElementById('avaiCal3').innerHTML = "Optaget";
-    document.getElementById('time3').style.visibility = "hidden";
 }
 
 function clearLocal(){

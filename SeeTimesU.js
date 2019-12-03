@@ -19,12 +19,12 @@ function showBookings() {
                 document.getElementById('myTime1').style.visibility = "visible";
                 console.log("Time found")
             }
-            if(activeUs != times[i].clientB && activeUs == times[i].clientB) {
+/*            if(activeUs != times[i].clientB && activeUs == times[i].clientB) {
                 document.getElementById('myTimeCal1').innerHTML = "Ingen bookinger";
                 document.getElementById('myPracCal1').innerHTML = "";
                 document.getElementById('myTime1').style.visibility = "hidden";
                 console.log("No time found");
-            }
+            }*/
         }
     }
 }
