@@ -1,6 +1,6 @@
 //Shows name of active User Client
 var activeUs = sessionStorage.getItem('activeUser');
-document.getElementById('seTider').innerHTML = "Hej "+activeUs+", nedenfor kan du se dine clienters bookinger";
+document.getElementById('seTider').innerHTML = "Hej "+activeUs+", nedenfor kan du se din booking";
 
 function showBookings() {
     //Gets bookedTimes from the booking buttons from string format into new array
