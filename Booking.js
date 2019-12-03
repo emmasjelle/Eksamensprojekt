@@ -12,7 +12,7 @@ class Booking {
 }
 //Our system is restricted to three times pr. working day at the moment(Categorized in timeB from 1-3)
 //10/12/2019 times
-Test1 = new Booking("0","10/12/2019","08:00","10:00","Sanel", false, 1,"Emma");
+Test1 = new Booking("0","10/12/2019","08:00","10:00","Sanel", false, 1,"");
 Test2 = new Booking("1","10/12/2019","11:00","13:00","Sanel", true,2,"");
 Test3 = new Booking("2","10/12/2019","14:00","16:00","Sanel", true,3,"");
 //11/12/2019 times

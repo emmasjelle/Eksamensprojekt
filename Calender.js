@@ -10,7 +10,7 @@ function getDays(month,year) {
 
 //Gets month from the month picker in HTML
 var choosenMonth = document.getElementById('month1');
-//Gets year fro mthe year picker in HTML - Unused for now
+//Gets year from the year picker in HTML - Unused for now
 var choosenYear = document.getElementById('year1');
 
 //Checks the number of days in the chosen month, and pastes it into the calender in next function
@@ -249,16 +249,20 @@ function book1() {
     alert("Din tid er booked");
 
     var times = JSON.parse(localStorage.getItem('timesArray'));
+    var active = sessionStorage.getItem('activeUser');
     for(var i = 0; i < times.length; i++){
-        if(times[i].dateB == x && times[i].startB == start) {
+        if(times[i].dateB == x && times[i].startB == start && times[i].clientB != active) {
             times[times[i].idB].avaiB = false;
+            times[times[i].idB].clientB = active;
             console.log(times[i].dateB+" "+times[i].avaiB);
+        }
+        if(times[i].clientB == active){
+            alert("Du har overskredet maks antal bookinger - se dine bookinger under Se mine tider");
         }
     }
     localStorage.setItem('timesArray', JSON.stringify(times));
     console.log(localStorage);
-    //Add store bookedUser as active user so that the user can see the booked time.
-    // times[i].clientB == activeUser eller sådan noget - save i localStorage
+
     document.getElementById('avaiCal1').innerHTML = "Optaget";
     document.getElementById('time1').style.visibility = "hidden";
 }
@@ -272,16 +276,17 @@ function book2() {
     alert("Din tid er booked");
 
     var times = JSON.parse(localStorage.getItem('timesArray'));
+    var active = sessionStorage.getItem('activeUser')
     for(var i = 0; i < times.length; i++){
         if(times[i].dateB == x && times[i].startB == start) {
             times[times[i].idB].avaiB = false;
+            times[times[i].idB].clientB = active;
             console.log(times[i].dateB+" "+times[i].avaiB);
         }
     }
     localStorage.setItem('timesArray', JSON.stringify(times));
     console.log(localStorage);
-    //Add store bookedUser as active user so that the user can see the booked time.
-    // times[i].clientB == activeUser eller sådan noget - save i localStorage
+
     document.getElementById('avaiCal2').innerHTML = "Optaget";
     document.getElementById('time2').style.visibility = "hidden";
 }
@@ -295,9 +300,11 @@ function book3() {
     alert("Din tid er booked");
 
     var times = JSON.parse(localStorage.getItem('timesArray'));
+    var active = sessionStorage.getItem('activeUser')
     for(var i = 0; i < times.length; i++){
         if(times[i].dateB == x && times[i].startB == start) {
             times[times[i].idB].avaiB = false;
+            times[times[i].idB].clientB = active;
             console.log(times[i].dateB+" "+times[i].avaiB);
         }
     }
