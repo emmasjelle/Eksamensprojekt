@@ -236,7 +236,10 @@ function fillWindow() {
     }
 }
 
-//Booking functions for each booking button - only possible to book one time in the calender
+
+
+
+/*
 function book1() {
     var x = document.getElementById('dateField').innerHTML;
     //Gets the times for the booked time
@@ -246,8 +249,10 @@ function book1() {
 
     var times = JSON.parse(localStorage.getItem('timesArray'));
     var active = sessionStorage.getItem('activeUser');
-    for(var i = 0; i < times.length; i++){
-        if(times[i].clientB == active){
+
+    //Samme problem som i SeeTimesU - den tager den første og låser tiderne efter den. tider før den valgte kan stadig bookes
+    for (var i = 0; i < times.length; i++) {
+        if(times[i].clientB == active) {
             alert("Du har overskredet maks antal bookinger - se dine bookinger under Se mine tider");
             break;
         }
@@ -263,7 +268,6 @@ function book1() {
             }
         }
     }
-
     localStorage.setItem('timesArray', JSON.stringify(times));
     console.log(localStorage);
 }
@@ -281,7 +285,7 @@ function book2() {
             alert("Du har overskredet maks antal bookinger - se dine bookinger under Se mine tider");
             break;
         }
-        if(times[i].clientB != active) {
+        else if(times[i].clientB != active) {
             if (times[i].dateB == x && times[i].startB == start) {
                 times[times[i].idB].avaiB = false;
                 times[times[i].idB].clientB = active;
@@ -311,7 +315,7 @@ function book3() {
             alert("Du har overskredet maks antal bookinger - se dine bookinger under Se mine tider");
             break;
         }
-        if(times[i].clientB != active) {
+        else if(times[i].clientB != active) {
             if (times[i].dateB == x && times[i].startB == start) {
                 times[times[i].idB].avaiB = false;
                 times[times[i].idB].clientB = active;
@@ -327,7 +331,7 @@ function book3() {
     localStorage.setItem('timesArray', JSON.stringify(times));
     console.log(localStorage);
 }
-
+*/
 function clearLocal(){
     localStorage.clear();
     console.log("Local Storage cleared.")

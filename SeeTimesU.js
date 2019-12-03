@@ -1,8 +1,8 @@
-//Shows name of active User practitioner
+//Shows name of active User Client
 var activeUs = sessionStorage.getItem('activeUser');
 document.getElementById('seTider').innerHTML = "Hej "+activeUs+", nedenfor kan du se dine clienters bookinger";
 
-function showMyBookings() {
+function showBookings() {
     //Gets bookedTimes from the booking buttons from string format into new array
     var times = JSON.parse(localStorage.getItem('timesArray'));
 
@@ -13,9 +13,9 @@ function showMyBookings() {
         //Tjek rækkefølge ifht hvilket tid der bookes - udkommenter andet if statement måske if else
         for (var i = 0; i < times.length; i++) {
             //Users booked time
-            if (activeUs == times[i].clientB) {
+            if (times[i].clientB.length > 0) {
                 document.getElementById('myTimeCal1').innerHTML = times[i].startB + "-" + times[i].endB;
-                document.getElementById('myClientCal1').innerHTML = times[i].practitionerB;
+                document.getElementById('myPracCal1').innerHTML = times[i].practitionerB;
                 document.getElementById('myTime1').style.visibility = "visible";
                 console.log("Time found")
             }
@@ -23,7 +23,7 @@ function showMyBookings() {
     }
 }
 
-showMyBookings();
+showBookings();
 
 function cancelTime() {
     var times = JSON.parse(localStorage.getItem('timesArray'));
