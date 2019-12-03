@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link href='Style.css' rel='stylesheet'>
+    <link rel="stylesheet" href="MyTimes.css">
     <script type="text/javascript" src="Classes.js"></script>
     <title>Title</title>
 </head>
@@ -45,7 +46,23 @@
         <li><a onClick="logOut()" href="Forside.html">Log ud</a></li>
     </ul>
 </div>
+</br>
+<div class="calTimesWrapper">
+    <h3 id="seTider"></h3>
+    <div class="timesNav">
+        <div>Tidspunkt</div>
+        <div>Behandler</div>
+    </div>
+    <div class="timesShow">
+        <div id="myTimeCal1">Ingen bookinger</div>
+        <div id="myClientCal1"></div>
+    </div>
+    <div class="timeBook">
+        <button id="myTime1" onclick="cancelTime()">Aflys</button>
+    </div>
+</div>
 <script type="text/JavaScript" src="Login.js"></script>
 <script type="text/javascript" src="Navbar.js"></script>
+<script type="text/javascript" src="showBookedA.js"></script>
 </body>
 </html>

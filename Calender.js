@@ -190,8 +190,6 @@ function clear() {
 function fillWindow() {
     //Gets the 'real' date dd/mm(1-12)/yyyy from the HTML
     var x = document.getElementById('dateField').innerHTML;
-    var timeBooked = localStorage.getItem('bookedTime');
-    var dayBooked = localStorage.getItem('bookedDay');
     //Gets bookedTimes from the booking buttons from string format into new array
     var times = JSON.parse(localStorage.getItem('timesArray'));
     //Fills times into the chosen day window
@@ -266,7 +264,6 @@ function book1() {
         }
     }
 
-    //Tjek ifht. rækkefølgen og endless loop hvor den finder ting
     localStorage.setItem('timesArray', JSON.stringify(times));
     console.log(localStorage);
 }
@@ -297,7 +294,6 @@ function book2() {
         }
     }
 
-    //Tjek ifht. rækkefølgen og endless loop hvor den finder ting
     localStorage.setItem('timesArray', JSON.stringify(times));
     console.log(localStorage);
 }
@@ -328,7 +324,6 @@ function book3() {
         }
     }
 
-    //Tjek ifht. rækkefølgen og endless loop hvor den finder ting
     localStorage.setItem('timesArray', JSON.stringify(times));
     console.log(localStorage);
 }
