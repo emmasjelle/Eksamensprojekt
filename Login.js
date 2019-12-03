@@ -1,6 +1,6 @@
 let activeUser = "";
 
-function LoginButton() {
+function logInUser() {
     var storedName = localStorage.getItem('un');
     var storedPw = localStorage.getItem('pw');
     var userName = document.getElementById('userName');
