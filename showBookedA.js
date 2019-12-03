@@ -1,8 +1,8 @@
-//Shows name of active User client
+/*//Shows name of active User Practitioner
 var activeUs = sessionStorage.getItem('activeUser');
 document.getElementById('seTider').innerHTML = "Hej "+activeUs+", nedenfor kan du se din bookede tid";
 
-function showBookings() {
+function showClientBookings() {
     //Gets bookedTimes from the booking buttons from string format into new array
     var times = JSON.parse(localStorage.getItem('timesArray'));
 
@@ -23,7 +23,7 @@ function showBookings() {
     }
 }
 
-showBookings();
+showClientBookings();
 
 function cancelTime() {
     var times = JSON.parse(localStorage.getItem('timesArray'));
@@ -39,3 +39,5 @@ function cancelTime() {
     }
     localStorage.setItem('timesArray', JSON.stringify(times));
 }
+
+ */
