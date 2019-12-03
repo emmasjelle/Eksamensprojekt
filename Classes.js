@@ -16,15 +16,16 @@ class User {
 //Practitioner (admin) class which inherit from the parent class. This also applies for the next class "Client". In
 // order to inherit, we use "extends User".
 class Practitioner extends User {
-    constructor(un, pw, nm, uAddress, phoneNumber, email, admin, infoAboutMe) {
+    constructor(un, pw, nm, uAddress, phoneNumber, email, admin, companyName) {
         super(un, pw, nm, uAddress, phoneNumber, email, admin);
+        this.companyName = companyName;
     }
 }
 
 class Client extends User {
-    constructor(un, pw, nm, uAddress, phoneNumber, email, admin, Animal) {
+    constructor(un, pw, nm, uAddress, phoneNumber, email, admin, animal) {
         super(un, pw, nm, uAddress, phoneNumber, email, admin);
-        this.Animal = Animal;
+        this.animal = animal;
     }
 }
 
@@ -76,10 +77,13 @@ var adminKey = "888";
      }*/
 
     //Not working. Why??
+     /*
      if (admin.value != adminKey || admin.value != null) {
          alert("Forkert admin nøgle");
          return false;
      }
+
+      */
 
 //If it runs through all if-statements and they don't return false, it will finally run the StoreUser() and
 // testForAdmin() functions.
@@ -104,7 +108,7 @@ var nm = document.getElementById('nm');
 var uAddress = document.getElementById('address');
 var phoneNumber = document.getElementById('phoneNumber');
 var email = document.getElementById('email');
-var animal = document.getElementById('animal');
+var animal2 = document.getElementById('animal');
 var admin = document.getElementById('admin');
 
 
@@ -117,7 +121,7 @@ function StoreUser() {
     localStorage.setItem('uAddress', uAddress.value);
     localStorage.setItem('phoneNumber', phoneNumber.value);
     localStorage.setItem('email', email.value);
-    localStorage.setItem('animal', animal.value);
+    localStorage.setItem('animal', animal2.value);
     localStorage.setItem('admin', admin.value);
 }
 //This is + else statement test  if the created user is an admin or client user.
