@@ -58,7 +58,7 @@ function checkDate() {
         var times = JSON.parse(localStorage.getItem('timesArray'));
         console.log(times);
     }
-    //Check if the logged user has any booking(maximum of 1)
+
 
 }
 

@@ -1,25 +1,33 @@
 //Shows name of active User Practitioner
 var activeUs = sessionStorage.getItem('activeUser');
-document.getElementById('seTider').innerHTML = "Hej "+activeUs+", nedenfor kan du se din bookede tid";
+document.getElementById('seTider').innerHTML = "Hej "+activeUs+", nedenfor kan du se dine tider og bookinger";
 
 function showClientBookings() {
-    //Gets bookedTimes from the booking buttons from string format into new array
+    //Fills the times array if it has not been created
     var times = JSON.parse(localStorage.getItem('timesArray'));
-
-    //Fills times into the chosen day window
-    if(times == null) {
-        console.log("error");
-    } else {
-        //Tjek rækkefølge ifht hvilket tid der bookes - udkommenter andet if statement måske if else
-        for (var i = 0; i < times.length; i++) {
-            //Users booked time
-            if (activeUs == times[i].clientB) {
-                document.getElementById('myTimeCal1').innerHTML = times[i].startB + "-" + times[i].endB;
-                document.getElementById('myPracCal1').innerHTML = times[i].practitionerB;
-                document.getElementById('myTime1').style.visibility = "visible";
-                console.log("Time found")
+    if (times == null) {
+        var times = [];
+        times.push(Test1, Test2, Test3, Test4, Test5, Test6, Test7);
+        console.log('No times found - predefined times pushed to times array.')
+        localStorage.setItem('timesArray', JSON.stringify(times));
+    }
+    if (times.length > 0) {
+        //Show times
+        //1. Lav array med alle tider activeUs er practitoner i *Tjek*
+        //2. find længde af array
+        //3. dupliker insert time 2[i] antal gange.
+        var timesArr = JSON.parse(localStorage.getItem('timesArray'));
+        var pracArr = [];
+        for(var i = 0; i < timesArr.length; i++){
+            if(timesArr[i].practitionerB == activeUs){
+                pracArr.push(timesArr[i].idB);
+                console.log(pracArr);
             }
         }
+        var pracCount = timesArr.filter((timesArr) => timesArr.practitionerB == activeUs).length;
+        console.log(pracCount); // 5 gange
+
+
     }
 }
 

@@ -13,7 +13,7 @@ function showBookings() {
         //Tjek rækkefølge ifht hvilket tid der bookes - udkommenter andet if statement måske if else
         for (var i = 0; i < times.length; i++) {
             //Users booked time
-            if (times[i].clientB.length > 0) {
+            if (times[i].clientB.length > 0 && times[i].clientB == activeUs) {
                 document.getElementById('myTimeCal1').innerHTML = times[i].startB + "-" + times[i].endB;
                 document.getElementById('myPracCal1').innerHTML = times[i].practitionerB;
                 document.getElementById('myTime1').style.visibility = "visible";

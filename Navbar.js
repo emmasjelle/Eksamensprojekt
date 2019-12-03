@@ -58,8 +58,7 @@ function navBar() {
     if (activeUserNow == localUserNow && localUserAdmin == "true") {
         admNavBar.style.display = 'flex';
         allNavBar.style.display = 'none';
-        userNavBar.style.display = 'flex';
-
+        userNavBar.style.display = 'none';
     }
     if (activeUserNow == localUserNow && localUserAdmin == "false") {
         admNavBar.style.display = 'none';
