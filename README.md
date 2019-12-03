@@ -1,6 +1,6 @@
 # Eksamensprojekt
 
-##Vores ide
+## Vores ide
 Vi har i vores arbejde med projektet de sidste par måneder skabt et bookingsystem til hestemassører. 
 Selve bookingsystemet skal tænkes som en platform, hvor flere forskellige hestemassører skal kunnne tilmelde sig. 
 
@@ -11,9 +11,9 @@ brugere af systemet og dermed vil man kunne ungå en eventuel dobbeltbookning af
 
 Er man ikke bruger af systemet, vil man nemt kunne oprette sig via vores register funktion. 
 
-##Funktioner 
+## Funktioner 
 Login, logud, book en tid, se booket tider, se egne bookede tider. 
 
 
-##UML-diagram
-![Alt text](assets/UML-diagram.png?raw=true "Danseskole UML Class Diagram")
+## UML-diagram
+Sæt endelig UML-diagram ind her!
