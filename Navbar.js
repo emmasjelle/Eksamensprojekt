@@ -4,20 +4,29 @@
 const allNavBar = document.getElementById("all");
 const userNavBar = document.getElementById("user");
 const admNavBar = document.getElementById("adm");
-
+function createUserArr(){
+    //Check if times(array) has been created, otherwise create times
+    var users = JSON.parse(localStorage.getItem('userArray'));
+    if (users == null) {
+        var users = [];
+        users.push(PractitionerTest, ClientTest);
+        console.log('No users found - predefined users pushed to user array.')
+        localStorage.setItem('userArray', JSON.stringify(users));
+    }
+    if (users.length > 0) {
+        var users = JSON.parse(localStorage.getItem('userArray'));
+        console.log(users);
+    }
+}
+createUserArr();
 
 // Loaded(onload in body) on all HTML pages to check which Navigation Bar to display
 function navBar() {
-
     /* When a pre-defined user or user from localStorage logs in, the system stores their unique username
    as an activeUser in sessionStorage. SessionStorage is instead of localStorage, in order to prevent the system from
    saving the user as being logged in after the session is terminated. */
     var activeUserNow = sessionStorage.getItem("activeUser");
-
-    //The variables below are used in order to check the admin boolean value of a localStorage created user.
-    var localUserNow = localStorage.getItem("un");
-    var localUserAdmin = localStorage.getItem("admin");
-
+    var users = JSON.parse(localStorage.getItem('userArray'));
     //There is no current activeUser if the sessionStorage is empty (... == 0).
     /*As the function loads on every page, the system knows that an empty sessionStorage should result in
     the "all"(guest) Navigation Bar to be displayed. */
@@ -55,7 +64,7 @@ function navBar() {
     }
     /*The if statments below work like the ones above. The only difference is the comparison between the current
     activeUserNow and the localUserNow instead of the user array. */
-    if (activeUserNow == localUserNow && localUserAdmin == "true") {
+   /* if (activeUserNow == localUserNow && localUserAdmin == "true") {
         admNavBar.style.display = 'flex';
         allNavBar.style.display = 'none';
         userNavBar.style.display = 'none';
@@ -64,5 +73,5 @@ function navBar() {
         admNavBar.style.display = 'none';
         allNavBar.style.display = 'none';
         userNavBar.style.display = 'flex';
-    }
+    }*/
 }
