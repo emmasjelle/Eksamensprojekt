@@ -241,7 +241,7 @@ function fillWindow() {
 function book1() {
     var x = document.getElementById('dateField').innerHTML;
     //Gets the times for the booked time
-    let time = document.getElementById('timeCal2').innerHTML;
+    let time = document.getElementById('timeCal1').innerHTML;
     let timee = time.split('-');
     let start = timee[0];
 
@@ -259,8 +259,8 @@ function book1() {
             times[times[i].idB].clientB = active;
             console.log(times[i].dateB + " " + times[i].avaiB);
             alert("Din tid er booked");
-            document.getElementById('avaiCal2').innerHTML = "Optaget";
-            document.getElementById('time2').style.visibility = "hidden";
+            document.getElementById('avaiCal1').innerHTML = "Optaget";
+            document.getElementById('time1').style.visibility = "hidden";
             break;
 
         }
