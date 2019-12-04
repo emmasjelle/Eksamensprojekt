@@ -1,5 +1,9 @@
+<!-- This document is shown to all three different kind of users (guest, client and practitioner). This HTML document
+shows the different kind of treatments offered by the practitioner. This HTML makes it possible to get directly redirected
+to the "Bookingside.html" if "Book her" button is clicked -->
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
+
 <head>
     <meta charset="UTF-8">
     <link href='Boxes.css' rel='stylesheet'>
@@ -8,21 +12,18 @@
     <script type="text/javascript" src="CheckLogIn.js"></script>
     <title>Behandlingstyper</title>
 </head>
+
 <body onload="navBar()">
 
-
-
-<!--Navigationbar oprettes med en div-->
-<!--Navigationbars-->
-
-<!-- logo -->
+<!--Navigationbar created with a div element-->
+<!-- Gea's logo -->
 <img src="https://i.imgur.com/AiPTQKP.png"
      style="width:13%;height:20%;float:right;padding:5px">
 
 <div class="NavigationBar" id="all" style="display: none">
 
     <ul>
-        <!--Fælles navigationsbar-->
+        <!--Guest navigationbar-->
         <li><a href="index.html">Forside</a></li>
         <li><a href="BehandlingsTyper.html">Behandlingstyper</a></li>
         <li><a href="LogIn.html">Booking</a></li>
@@ -31,11 +32,11 @@
 
 <div class="NavigationBar" id="user" style="display: none">
     <ul>
-        <!--Bruger navigationbar-->
+        <!--Guest navigationbar. All the gust-feautres are also available for the client-->
         <li><a href="index.html">Forside</a></li>
         <li><a href="BehandlingsTyper.html">Behandlingstyper</a></li>
         <li><a href="Bookingside.html">Booking</a></li>
-        <!--Bruger funktioner-->
+        <!--Client added navigation functions-->
         <li><a href="seTiderB.html">Se mine tider</a></li>
         <li><a onClick="logOut()" href="index.html">Log ud</a></li>
     </ul>
@@ -43,101 +44,117 @@
 
 <div class="NavigationBar" id="adm" style="display: none">
     <ul>
-        <!--Admin navigationbar-->
+        <!--Guest navigationbar. All the gust-feautres are also available for the admin-->
         <li><a href="index.html">Forside</a></li>
         <li><a href="BehandlingsTyper.html">Behandlingstyper</a></li>
         <li><a href="Bookingside.html">Booking</a></li>
-        <!--Admin funktioner-->
+        <!--Admin added navigation functions-->
         <li><a href="seBooketTiderA.html">Se booket tider</a></li>
         <li><a onClick="logOut()" href="index.html">Log ud</a></li>
     </ul>
 </div>
 
-<!-- De tre boxes -->
+<!-- The three boxes that explains the type of massage offered by the practitioner. The boxes are by default hidden
+until "onclick" is triggered-->
 <div class="row">
     <div class="column" onclick="openTab('b1');" style="background:lightblue;">Klassisk massage</div>
     <div class="column" onclick="openTab('b2');" style="background:lightskyblue;">Kranial osteopat</div>
-    <div class="column" onclick="openTab('b3');" style="background:lightsteelblue;">Happy ending</div>
-    <div class="column" onclick="openTab('b4');" style="background:cadetblue;">Yolo</div>
+    <div class="column" onclick="openTab('b3');" style="background:lightsteelblue;">Shiatsu massage </div>
+    <div class="column" onclick="openTab('b4');" style="background:cadetblue;">Akupressur</div>
 </div>
 
-<!-- Udvidelsen af hver enkelt boks (Skjult indtil man klikker) -->
-
-<!-- b1 defineres hvor man laver et event som kaldes "onclick", ved klik på "onclick" vises beskrivelsen af selve behandlingen -->
+<!-- A new treatment type is created by a new div element with the id "b1". When x is clicked it sets the
+.style.display of the explanation boxes to 'none', witch hides the box. -->
 <div id="b1" class="containerTab" style="display:none;background:lightblue">
        <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
     <h2>Beskrivelse</h2>
     <br/>
-    <p>Er påvirkning af hestens muskler, ligamenter og sener, med hænderne. Hesten er et stort dyr med over 700 forskellige muskler, og det er langt fra alle muskler man kan påvirke direkte, med hænderne og forskellige greb, men det har en ubegribelig stor effekt, og når rigtigt dybt ned i muskellagene.
+    <p>Er påvirkning af hestens muskler, ligamenter og sener, med hænderne. Hesten er et stort dyr med over
+        700 forskellige muskler, og det er langt fra alle muskler man kan påvirke direkte, med hænderne og
+        forskellige greb, men det har en ubegribelig stor effekt, og når rigtigt dybt ned i muskellagene.
         <br/>
         <br/>
-        Varighed: 1 time
+        Varighed: 2,5 time
         <br/>
         Pris: 1100kr
         <br/>
         <br/>
-        <!-- Her oprettes en button som sender en videre til bookingsiden ved klik på den  -->
+        <!-- A button is created. When clicked it redirect the user to "Bookingside.html". If not logged in it
+        redirects the user to the login page (LogIn.html) instead -->
         <a class="button" href="javascript:isLoggedIn();" style="vertical-align:middle"><span>Book her</span></a>
     </p>
 </div>
 
-<!-- Ny div = ny behandlingstype, onclick = event der trigges når man klikker på boxen -->
+<!-- A new treatment type is created by a new div element with the id "b2". When x is clicked it sets the
+.style.display of the explanation boxes to 'none', witch hides the box. -->
 <div id="b2" class="containerTab" style="display:none;background:lightskyblue">
     <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
     <h2>Beskrivelse</h2>
     <br/>
-    <p>Er en mild behandlingsform, der tager udgangspunkt i kraniet og dets strukturer, disse forbindes med resten af bevægeapparatet og kroppen. Behandlingsmetoden har stor effekt på det bløde væv. Blodkar, nerver, lymfekar, organer, led og muskler.
+    <p>Er en mild behandlingsform, der tager udgangspunkt i kraniet og dets strukturer,
+        disse forbindes med resten af bevægeapparatet og kroppen. Behandlingsmetoden har stor effekt på det bløde væv.
+        Blodkar, nerver, lymfekar, organer, led og muskler.
         <br/>
         <br/>
-        Varighed: 1,5 time
+        Varighed: 2,5 time
         <br/>
         Pris: 800kr.
         <br/>
         <br/>
-        <!-- Her oprettes en button som sender en videre til bookingsiden ved klik på den  -->
+        <!-- A button is created. When clicked it redirect the user to "Bookingside.html". If not logged in it
+        redirects the user to the login page (LogIn.html) instead -->
         <a class="button" href="javascript:isLoggedInnn();" style="vertical-align:middle"><span>Book her</span></a>
     </p>
 </div>
 
-<!-- Ny div = ny behandlingstype, onclick = event der trigges når man klikker på boxen -->
+<!-- A new treatment type is created by a new div element with the id "b3". When x is clicked it sets the
+.style.display of the explanation boxes to 'none', witch hides the box. -->
 <div id="b3" class="containerTab" style="display:none;background:lightsteelblue">
     <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
     <h2>Beskrivelse</h2>
     <br/>
-    <p> Tredje behandling
+    <p> Shiatsu er en traditionel japansk massageterapi baseret på tryk og strækninger, som vil øge din hests
+        velbefindende. Selve massagens fokus er rettet imod stabilisering af hestens muskulatur, hvor man blandt andet
+        kigger på gangmåden og udfører en ganganalyse for at specificere hvilke kropsdele der skal lægges ekstra
+        fokus på.
         <br/>
         <br/>
-        Varighed: 2 timer
+        Varighed: 2,5 time
         <br/>
         Pris: 1500kr.
         <br/>
         <br/>
-        <!-- Her oprettes en button som sender en videre til bookingsiden ved klik på den  -->
+        <!-- A button is created. When clicked it redirect the user to "Bookingside.html". If not logged in it
+        redirects the user to the login page (LogIn.html) instead -->
         <a class="button" href="javascript:isLoggedInnn();" style="vertical-align:middle"><span>Book her</span></a>
     </p>
 
 </div>
 
-<!-- Ny div = ny behandlingstype, onclick = event der trigges når man klikker på boxen -->
+<!-- A new treatment type is created by a new div element with the id "b4". When x is clicked it sets the
+.style.display of the explanation boxes to 'none', witch hides the box. -->
 <div id="b4" class="containerTab" style="display:none;background:cadetblue">
       <span onclick="this.parentElement.style.display='none'" class="closebtn">x</span>
     <h2>Beskrivelse</h2>
     <br/>
-    <p> yolo
+    <p> Akupressur og akupunktur er begge dele af en ældgammel kinesisk helende kunst, der både kan lindre smerter
+        og forebygge imod forskellige lidelser. Massagens fokus rettes især på ophævning af muskelspændinger, er
+        hesten en konkurrencehest er det en oplagt massageform, for at opnå en maksimal præstation fra hestens side.
         <br/>
         <br/>
-        Varighed: 1 time
+        Varighed: 2,5 time
         <br/>
         Pris: 1100kr
         <br/>
         <br/>
-        <!-- Her oprettes en button som sender en videre til bookingsiden ved klik på den  -->
+        <!-- A button is created. When clicked it redirect the user to "Bookingside.html". If not logged in it
+        redirects the user to the login page (LogIn.html) instead -->
         <a class="button" href="javascript:isLoggedInnn();" style="vertical-align:middle"><span>Book her</span></a>
     </p>
 </div>
 
 
-<!-- Funktionen som gør at man kan åbne og lukke for udvidelsesteksten, funktionen defineres globalt -->
+<!-- Function that shows and hides the explanation text of the different kind of massages -->
 <script>
     function openTab(tabName) {
         var i, x;

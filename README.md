@@ -11,8 +11,8 @@ brugere af systemet og dermed vil man kunne ungå en eventuel dobbeltbookning af
 
 Er man ikke bruger af systemet, vil man nemt kunne oprette sig via vores register funktion. 
 
-## Funktioner 
-Login, logud, book en tid, se booket tider, se egne bookede tider. 
+## Use Case 
+Se use cases (sæt billede ind af use casene).
 
 
 ## UML-diagram

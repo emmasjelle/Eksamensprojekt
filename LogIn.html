@@ -1,3 +1,4 @@
+<!-- The purpose of this HTMl is that the guest has the possibility to either login or register an new user -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,15 +8,15 @@
 </head>
 <body onload="navBar()">
 
-<!--Navigationbars-->
-<!--Logo -->
+<!--Navigationbar created with a div element-->
+<!-- Gea's logo -->
 <img src="https://i.imgur.com/AiPTQKP.png"
      style="width:13%;height:20%;float:right;padding:5px">
 
 <div class="NavigationBar" id="all" style="display: none">
 
     <ul>
-        <!--Fælles navigationsbar-->
+        <!--Guest navigationbar-->
         <li><a href="index.html">Forside</a></li>
         <li><a href="BehandlingsTyper.html">Behandlingstyper</a></li>
         <li><a href="LogIn.html">Booking</a></li>
@@ -24,11 +25,11 @@
 
 <div class="NavigationBar" id="user" style="display: none">
     <ul>
-        <!--Bruger navigationbar-->
+        <!--Guest navigationbar. All the gust-feautres are also available for the client-->
         <li><a href="index.html">Forside</a></li>
         <li><a href="BehandlingsTyper.html">Behandlingstyper</a></li>
         <li><a href="LogIn.html">Booking</a></li>
-        <!--Bruger funktioner-->
+        <!--Client added navigation functions-->
         <li><a href="seTiderB.html">Se mine tider</a></li>
         <li><a onClick="logOut()" href="index.html">Log ud</a></li>
     </ul>
@@ -36,36 +37,35 @@
 
 <div class="NavigationBar" id="adm" style="display: none">
     <ul>
-        <!--Admin navigationbar-->
+        <!--Guest navigationbar. All the gust-feautres are also available for the admin-->
         <li><a href="index.html">Forside</a></li>
         <li><a href="BehandlingsTyper.html">Behandlingstyper</a></li>
         <li><a href="LogIn.html">Booking</a></li>
-        <!--Admin funktioner-->
+        <!--Admin added navigation functions-->
         <li><a href="seBooketTiderA.html">Se booket tider</a></li>
         <li><a onClick="logOut()" href="index.html">Log ud</a></li>
     </ul>
 </div>
 
-<!--Log ind/Register menu-->
+<!--Login form-->
 <div class="Login/Register">
     <h1>Log ind</h1>
-
-    <!--Log in form-->
     <form id="login" onsubmit="return validateForm()">
         <input type="text" id="userName" placeholder="Brugernavn" value=""/><br />
         <input type="password" id="userPw" placeholder="Password" value=""/><br />
         <br/>
-
-        <!--Her referer vi til Login() funktionen-->
+        <!--Login button, when onClick it checks if username matches password -->
         <input type="reset" value="Log ind" onClick="logInUser()">
         <br/>
         <br/>
     </form>
 
+    <!--Register form -->
     <h1>Registrer</h1>
-    <!--Register form  her under name og id  -->
     <form id="form" onsubmit="return validate();">
         <h3>Vælg et brugernavn og et password</h3>
+
+        <!-- The <input> tag is created. User has ability to enter data -->
         <input type="text" id="un" placeholder="Vælg brugernavn" value=""/><br />
         <input type="password" id="pw" placeholder="Vælg password" value=""/><br />
         <h3>Personlige oplysninger</h3>
@@ -79,14 +79,15 @@
             <option value="dog">Hund</option>
             <option value="Cat">Kat</option>
         </select><br />
+
+        <!-- Input element that checks if registered user gets admin accessibility or not -->
         <h5>Behandlerkode(Ikke nødvendig)</h5>
         <input type="text" id="admin" placeholder="Behandler kode" value=""/><br />
 
-        <!--Knappen referer til StoreUser() funktionen-->
+        <!--When "Opret Bruger"-button is clicked it triggers the StoreUser() function-->
         <input type="button" value="Opret bruger" onClick="validate()">
     </form>
 
-    <!-- Her referer vi til Slettes1.js i js -->
     <script type="text/JavaScript" src="Classes.js"></script>
     <script type="text/JavaScript" src="Login.js"></script>
     <script type="text/javascript" src="Navbar.js"></script>

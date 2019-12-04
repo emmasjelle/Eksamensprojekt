@@ -1,5 +1,8 @@
+<!-- This document only contains admin functions that are only shown when a admin is logged in on our page. This HTML
+document makes it possible for admins to see all booked times and also cancel times -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link href='navBar.css' rel='stylesheet'>
@@ -9,14 +12,14 @@
 </head>
 <body onload="navBar()">
 
-<!--Navigationbars-->
-<!--Logo -->
+<!--Navigationbar created with a div element-->
+<!-- Gea's logo -->
 <img src="https://i.imgur.com/AiPTQKP.png"
      style="width:13%;height:20%;float:right;padding:5px">
 
 <div class="NavigationBar" id="all" style="display: none">
     <ul>
-        <!--Fælles navigationsbar-->
+        <!--Guest navigationbar-->
         <li><a href="index.html">Forside</a></li>
         <li><a href="BehandlingsTyper.html">Behandlingstyper</a></li>
         <li><a href="LogIn.html">Booking</a></li>
@@ -25,11 +28,11 @@
 
 <div class="NavigationBar" id="user" style="display: none">
     <ul>
-        <!--Bruger navigationbar-->
+        <!--Guest navigationbar. All the gust-feautres are also available for the client-->
         <li><a href="index.html">Forside</a></li>
         <li><a href="BehandlingsTyper.html">Behandlingstyper</a></li>
         <li><a href="Bookingside.html">Booking</a></li>
-        <!--Bruger funktioner-->
+        <!--Client added navigation functions-->
         <li><a href="seTiderB.html">Se mine tider</a></li>
         <li><a onClick="logOut()" href="index.html">Log ud</a></li>
     </ul>
@@ -37,16 +40,18 @@
 
 <div class="NavigationBar" id="adm" style="display: none">
     <ul>
-        <!--Admin navigationbar-->
+        <!--Guest navigationbar. All the gust-feautres are also available for the admin-->
         <li><a href="index.html">Forside</a></li>
         <li><a href="BehandlingsTyper.html">Behandlingstyper</a></li>
         <li><a href="Bookingside.html">Booking</a></li>
-        <!--Admin funktioner-->
+        <!--Admin added navigation functions-->
         <li><a href="seBooketTiderA.html">Se booket tider</a></li>
         <li><a onClick="logOut()" href="index.html">Log ud</a></li>
     </ul>
 </div>
 </br>
+
+<!-- A div tag i created that makes it possible for the practitioner to see all the booked times -->
 <div class="calTimesWrapper">
     <h3 id="seTider"></h3>
     <div class="timesNav">
@@ -64,11 +69,13 @@
         <div id="myClientCal4"></div>
         <div id="myClientTimeCal5">Tid5</div>
         <div id="myClientCal5"></div>
-
     </div>
+
+    <!-- A button is created, when clicked it cancels the booked time -->
     <div class="timeBook">
         <button id="myTime2" onclick="cancelClientTime()">Aflys</button>
     </div>
+
 </div>
 <script type="text/JavaScript" src="Login.js"></script>
 <script type="text/javascript" src="Navbar.js"></script>

@@ -1,5 +1,8 @@
+<!-- This HTML document contains the booking calender that makes it possible to book a practitioner form a client
+perspective -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="Calender.css">
@@ -8,17 +11,18 @@
     <script type="text/javascript" src="Classes.js"></script>
     <title>Booking</title>
 </head>
-<body onload="navBar(); isLoggedIn();">
-<!--Navigationbars-->
 
-<!--Logo -->
+<body onload="navBar(); isLoggedIn();">
+
+<!--Navigationbar created with a div element-->
+<!-- Gea's logo -->
 <img src="https://i.imgur.com/AiPTQKP.png"
      style="width:13%;height:20%;float:right;padding:5px">
 
 <div class="NavigationBar" id="all" style="display: none">
 
     <ul>
-        <!--Fælles navigationsbar-->
+        <!--Guest navigationbar-->
         <li><a href="index.html">Forside</a></li>
         <li><a href="BehandlingsTyper.html">Behandlingstyper</a></li>
         <li><a href="LogIn.html">Booking</a></li>
@@ -27,11 +31,11 @@
 
 <div class="NavigationBar" id="user" style="display: none">
     <ul>
-        <!--Bruger navigationbar-->
+        <!--Guest navigationbar. All the gust-feautres are also available for the client-->
         <li><a href="index.html">Forside</a></li>
         <li><a href="BehandlingsTyper.html">Behandlingstyper</a></li>
         <li><a href="Bookingside.html">Booking</a></li>
-        <!--Bruger funktioner-->
+        <!--Client added navigation functions-->
         <li><a href="seTiderB.html">Se mine tider</a></li>
         <li><a onClick="logOut()" href="index.html">Log ud</a></li>
     </ul>
@@ -39,16 +43,18 @@
 
 <div class="NavigationBar" id="adm" style="display: none">
     <ul>
-        <!--Admin navigationbar-->
+        <!--Guest navigationbar. All the gust-feautres are also available for the admin-->
         <li><a href="index.html">Forside</a></li>
         <li><a href="BehandlingsTyper.html">Behandlingstyper</a></li>
         <li><a href="Bookingside.html">Booking</a></li>
-        <!--Admin funktioner-->
+        <!--Admin added navigation functions-->
         <li><a href="seBooketTiderA.html">Se booket tider</a></li>
         <li><a onClick="logOut()" href="index.html">Log ud</a></li>
     </ul>
 </div>
 </br>
+
+
 <div class="chosenDate">
     <div id="dateField">Vælg en dato nedenfor</div>
 </div>
@@ -109,6 +115,8 @@
     </div>
 </div>
 </br>
+
+
 <div class="calButtonWrapper">
     <select class="calList" id="month1">
         <option value="1">Jan</option>
@@ -154,6 +162,7 @@
         </div>
 </div>
 
+<!-- Reference to js files -->
 <script type="text/javascript" src="Booking.js"></script>
 <script type="text/javascript" src="Calender.js"></script>
 <script type="text/JavaScript" src="Login.js"></script>
