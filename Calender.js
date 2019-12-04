@@ -45,21 +45,6 @@ function checkDate() {
     //Function that clears the available dates window and buttons
     clear();
     document.getElementById('dateField').innerHTML = "Vælg en dato nedenfor";
-
-    //Check if times(array) has been created, otherwise create times
-    var times = JSON.parse(localStorage.getItem('timesArray'));
-    if (times == null) {
-        var times = [];
-        times.push(Test1, Test2, Test3, Test4, Test5, Test6, Test7);
-        console.log('No times found - predefined times pushed to times array.')
-        localStorage.setItem('timesArray', JSON.stringify(times));
-    }
-    if (times.length > 0) {
-        var times = JSON.parse(localStorage.getItem('timesArray'));
-        console.log(times);
-    }
-
-
 }
 
 //Fills in the 'first' weekday of the month and calls nextDate() to fill in the rest of the month

@@ -2,37 +2,23 @@
 var activeUs = sessionStorage.getItem('activeUser');
 document.getElementById('seTider').innerHTML = "Hej "+activeUs+", nedenfor kan du se dine tider og bookinger";
 
+
+
 function showClientBookings() {
-    //Fills the times array if it has not been created
-    var times = JSON.parse(localStorage.getItem('timesArray'));
-    if (times == null) {
-        var times = [];
-        times.push(Test1, Test2, Test3, Test4, Test5, Test6, Test7);
-        console.log('No times found - predefined times pushed to times array.')
-        localStorage.setItem('timesArray', JSON.stringify(times));
-    }
-    if (times.length > 0) {
-        //Show times
-        //1. Lav array med alle tider activeUs er practitoner i *Tjek*
-        //2. find længde af array
-        //3. dupliker insert time 2[i] antal gange.
-        var timesArr = JSON.parse(localStorage.getItem('timesArray'));
-        var pracArr = [];
-        for(var i = 0; i < timesArr.length; i++){
-            if(timesArr[i].practitionerB == activeUs){
-                pracArr.push(timesArr[i].idB);
-                console.log(pracArr);
-            }
-        }
-        var pracCount = timesArr.filter((timesArr) => timesArr.practitionerB == activeUs).length;
-        console.log(pracCount); // 5 gange
+    //This first part of the function filters the times array for the practitioner who is currently logged in
+    var timesArr = JSON.parse(localStorage.getItem('timesArray'));
+    //Creates a new array with the logged in practitioners times
+    var pracArr = timesArr.filter(function (practitioner) {
+        return practitioner.practitionerB == activeUs;
+    });
+    //Counts the amount of times the practitioner appears as practitioner in the Times array
+    var pracCount = timesArr.filter((timesArr) => timesArr.practitionerB == activeUs).length;
+    console.log(activeUs+" appears as practitioner in the following "+pracCount+" bookings: "); // 7 gange
+    console.log(pracArr);
 
+    //This second part of the function displays the practitioners times on the
 
-    }
 }
-
-showClientBookings();
-
 function cancelClientTime() {
     var times = JSON.parse(localStorage.getItem('timesArray'));
     for(var i = 0; i < times.length; i++){

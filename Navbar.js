@@ -1,10 +1,14 @@
 //Global scope define
+//The purpose of this file is to show the appropriate navbar in regards to the users acces level in our system.
+//The user is either a guest, practitioner or a client.
+//The runs our createUserArray and createTimesArray to check if times(bookings) and users are already stored in
+//local storage. If not, it creates the two arrays and pushes the pre defined users and times into them.
 
 // Defining variables that are used often in the following. They are defined in global scope.
-const allNavBar = document.getElementById("all");
-const userNavBar = document.getElementById("user");
-const admNavBar = document.getElementById("adm");
-function createUserArr(){
+var allNavBar = document.getElementById("all");
+var userNavBar = document.getElementById("user");
+var admNavBar = document.getElementById("adm");
+function createUserArray(){
     //Check if times(array) has been created, otherwise create times
     var users = JSON.parse(localStorage.getItem('userArray'));
     if (users == null) {
@@ -18,7 +22,22 @@ function createUserArr(){
         console.log(users);
     }
 }
-createUserArr();
+createUserArray();
+function createTimesArray() {
+    //Fills the times array if it has not been created
+    var times = JSON.parse(localStorage.getItem('timesArray'));
+    if (times == null) {
+        var times = [];
+        times.push(Test1,Test2,Test3,Test4,Test5,Test6,Test7);
+        console.log('No times found - predefined times pushed to times array.')
+        localStorage.setItem('timesArray', JSON.stringify(times));
+    }
+    if (times.length > 0) {
+        var times = JSON.parse(localStorage.getItem('timesArray'));
+        console.log(times);
+    }
+}
+createTimesArray();
 
 // Loaded(onload in body) on all HTML pages to check which Navigation Bar to display
 function navBar() {
