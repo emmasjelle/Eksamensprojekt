@@ -162,7 +162,7 @@ function clear() {
     document.getElementById('time3').style.visibility = "hidden";
     //Clears available dates window to avoid mixing of dates and times
     document.getElementById('timeCal1').innerHTML = "";
-    document.getElementById('pracCal1').innerHTML = "Ingen ledige tider på den valgte dato";
+    document.getElementById('pracCal1').innerHTML = "";
     document.getElementById('avaiCal1').innerHTML = "";
     document.getElementById('timeCal2').innerHTML = "";
     document.getElementById('pracCal2').innerHTML = "";
@@ -219,6 +219,13 @@ function fillWindow() {
                 document.getElementById('time3').style.visibility = "hidden";
             }
         }
+    }
+    //If there are no times on the chosen date, display the "No times on chosen date" message.
+    var check1 = document.getElementById('pracCal1').innerHTML;
+    var check2 = document.getElementById('pracCal2').innerHTML;
+    var check3 = document.getElementById('pracCal3').innerHTML;
+    if(check1.trim().length == 0 && check2.trim().length == 0 && check3.trim().length == 0) {
+        document.getElementById('pracCal1').innerHTML = "Ingen fundne tider på den valgte dato";
     }
 }
 

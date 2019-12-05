@@ -84,6 +84,7 @@ function removeTime() {
     let parent = document.getElementById('timesShowClient');
     //Sets the idB of the selected booking as -1 which makes it unusable.
     times[selectedPart[3]].idB = -1;
+    times[selectedPart[3]].clientB = "";
     alert("Din tid den "+times[selectedPart[3]].dateB+" er blevet slettet.");
     localStorage.setItem('timesArray', JSON.stringify(times));
     window.location.reload(true);

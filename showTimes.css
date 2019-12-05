@@ -64,3 +64,7 @@
     padding-top: 5px;
     width: 90%;
 }
+#showBookingsList {
+    display: flex;
+    justify-content: center;
+}
