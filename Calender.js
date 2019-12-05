@@ -181,7 +181,7 @@ function fillWindow() {
     //Fills times into the chosen day window
     for (i = 0; i < times.length; i++) {
         //Time 1
-        if (x == times[i].dateB && times[i].timeB == 1) {
+        if (x == times[i].dateB && times[i].timeB == 1 && times[i].idB != "-1") {
             document.getElementById('timeCal1').innerHTML = times[i].startB + "-" + times[i].endB;
             document.getElementById('pracCal1').innerHTML = times[i].practitionerB;
             if (times[i].avaiB == true) {
@@ -194,7 +194,7 @@ function fillWindow() {
             }
         }
         //Time 2
-        if (x == times[i].dateB && times[i].timeB == 2) {
+        if (x == times[i].dateB && times[i].timeB == 2 && times[i].idB != "-1") {
             document.getElementById('timeCal2').innerHTML = times[i].startB + "-" + times[i].endB;
             document.getElementById('pracCal2').innerHTML = times[i].practitionerB;
             if (times[i].avaiB == true) {
@@ -207,7 +207,7 @@ function fillWindow() {
             }
         }
         //Time 3
-        if (x == times[i].dateB && times[i].timeB == 3) {
+        if (x == times[i].dateB && times[i].timeB == 3 && times[i].idB != "-1") {
             document.getElementById('timeCal3').innerHTML = times[i].startB + "-" + times[i].endB;
             document.getElementById('pracCal3').innerHTML = times[i].practitionerB;
             if (times[i].avaiB == true) {

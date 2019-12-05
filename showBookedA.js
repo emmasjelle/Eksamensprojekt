@@ -6,10 +6,10 @@ document.getElementById('seTider').innerHTML = "Hej " + activeUs + ", nedenfor k
 var times = JSON.parse(localStorage.getItem('timesArray'));
 //Creates a new array with the logged in practitioners times
 var pracArr = times.filter(function (practitioner) {
-    return practitioner.practitionerB == activeUs;
+    return practitioner.practitionerB == activeUs && practitioner.idB != -1;
 });
 //Counts the amount of times the practitioner appears as practitioner in the Times array
-var pracCount = times.filter((times) => times.practitionerB == activeUs).length;
+var pracCount = times.filter((times) => times.practitionerB == activeUs && times.idB != -1).length;
 console.log(activeUs + " appears as practitioner in the following " + pracCount + " bookings: "); // 5 gange
 console.log(pracArr);
 
@@ -65,20 +65,30 @@ function nextClientBooking() {
         parent.appendChild(client1);
         }
     }
-nextClientBooking();
 
 function chooseBooking() {
     var bookings = document.getElementById('bookings');
     for (var key in pracArr) {
         var booking = pracArr[key];
-        bookings.options[bookings.options.length] = new Option(booking.dateB+" "+booking.startB+"-"+booking.endB+"      id="+booking.idB);
+        bookings.options[bookings.options.length] = new Option(booking.dateB+" "+booking.startB+"-"+booking.endB+" id= "+booking.idB);
     }
     document.body.appendChild(bookings);
 }
-function test() {
+
+chooseBooking();
+
+function removeTime() {
     let selected = bookings.options[bookings.selectedIndex].text;
-    console.log(selected);
+    let selectedPart =selected.split(' '); //selectedPart[3] targets the times array index of the chosen booking
+    var times = JSON.parse(localStorage.getItem('timesArray'));
+    let parent = document.getElementById('timesShowClient');
+    //Sets the idB of the selected booking as -1 which makes it unusable.
+    times[selectedPart[3]].idB = -1;
+    alert("Din tid den "+times[selectedPart[3]].dateB+" er blevet slettet.");
+    localStorage.setItem('timesArray', JSON.stringify(times));
+    window.location.reload(true);
 }
+
 
 
 //Lav eventlistener til aflysning af tider clicked time og cancelCLientTime funciton together
