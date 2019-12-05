@@ -54,29 +54,27 @@ document makes it possible for admins to see all booked times and also cancel ti
 <!-- A div tag i created that makes it possible for the practitioner to see all the booked times -->
 <div class="calTimesWrapper">
     <h3 id="seTider"></h3>
-    <div class="timesNav">
+    <div class="timesNavPrac">
+        <div>Dato</div>
         <div>Tidspunkt</div>
-        <div>Behandler</div>
+        <div>Klient</div>
     </div>
-    <div class="timesShowClient">
-        <div id="myClientTimeCal1">Tid1</div>
-        <div id="myClientCal1"></div>
-        <div id="myClientTimeCal2">Tid2</div>
-        <div id="myClientCal2"></div>
-        <div id="myClientTimeCal3">Tid3</div>
-        <div id="myClientCal3"></div>
-        <div id="myClientTimeCal4">Tid4</div>
-        <div id="myClientCal4"></div>
-        <div id="myClientTimeCal5">Tid5</div>
-        <div id="myClientCal5"></div>
+    <div id="timesShowClient">
+        <!--All the practitioners times will be displayed in this div-->
     </div>
-
-    <!-- A button is created, when clicked it cancels the booked time -->
-    <div class="timeBook">
-        <button id="myTime2" onclick="cancelClientTime()">Aflys</button>
-    </div>
-
 </div>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+<div id="showBookingsList">
+    <select id="bookings">
+        <option>Vælg hvilken af dine tider du ønsker at redigere</option>
+    </select>
+</div>
+
 <script type="text/JavaScript" src="Login.js"></script>
 <script type="text/javascript" src="Booking.js"></script>
 <script type="text/javascript" src="Navbar.js"></script>
