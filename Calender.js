@@ -13,7 +13,7 @@ var choosenMonth = document.getElementById('month1');
 //Gets year from the year picker in HTML - Unused for now
 var choosenYear = document.getElementById('year1');
 
-//Checks the number of days in the chosen month, and pastes it into the calender in next function
+//Checks the number of days in the chosen month and finds the first weekday in the chosen month for future use
 function checkDate() {
     //daysInMonth = days in the chosen month (ex 30, 28)
     let daysInMonth = getDays(choosenMonth.value, currentYear);
@@ -30,21 +30,22 @@ function checkDate() {
         sessionStorage.setItem('clickedMonth', clickedMonth);
         console.log(clickedMonth);
     }
-    //Gets first day of the chosen month in 1-7 - BESKRIV HVAD DER SKER HER
+    //Gets first day of the chosen month in 1-7[monday-to-sunday]
     var firstDay = new Date(currentYear + "-" + choosenMonth.value + "-01").getDay();
     firstDay = (firstDay === 0) ? 7 : firstDay;
     sessionStorage.setItem('fDayInMonthS', firstDay);
+    //Calls fillCalenderDays() function
     fillCalenderDays();
-    //Clears the colors of previous chosen dates from colorDates()
+
+    //Function that clears the available dates window and buttons
+    clear();
+    document.getElementById('dateField').innerHTML = "Vælg en dato nedenfor";
     var week = document.getElementsByClassName('week');
     for (i = 0; i < week.length; i++) {
         if (week[i].innerHTML >= 0) {
             week[i].style.backgroundColor = "";
         }
     }
-    //Function that clears the available dates window and buttons
-    clear();
-    document.getElementById('dateField').innerHTML = "Vælg en dato nedenfor";
 }
 
 //Fills in the 'first' weekday of the month and calls nextDate() to fill in the rest of the month
@@ -65,17 +66,16 @@ function fillCalenderDays() {
     document.getElementsByClassName('week')[firstD - 1].innerHTML = "1";
     //Sets the id as first (first day in month, so the code knows where to start)
     document.getElementsByClassName('week')[firstD - 1].id = "first";
-    var first = document.getElementsByClassName('week')[firstD - 1];
+    //First weekday in the month now has the id 'first';
+
     //clears the id of all week divs except the actual first day of chosen month
     for (i = 0; i < firstW.length; i++) {
         if (firstW[firstD - 1] != firstW[i]) {
             firstW[i].id = "";
         }
     }
-    //First weekday in the month now has the id 'first';
 
     //iii = days in the chosen month
-    var week = document.getElementsByClassName('week');
     var iii = sessionStorage.getItem('daysInMonthS');
     //This part fills the rest of the month with dates
     //Using recursion, this function repeats the nextDate() function x times depending on the days in the chosen month
@@ -170,6 +170,14 @@ function clear() {
     document.getElementById('timeCal3').innerHTML = "";
     document.getElementById('pracCal3').innerHTML = "";
     document.getElementById('avaiCal3').innerHTML = "";
+
+    //Clears colors of divs
+    var week = document.getElementsByClassName('week');
+    for (i = 0; i < week.length; i++) {
+        if (week[i].innerHTML >= 0) {
+            week[i].style.backgroundColor = "";
+        }
+    }
 }
 
 //This part fills in the available dates on the chosen day
