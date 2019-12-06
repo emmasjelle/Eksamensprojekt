@@ -13,7 +13,10 @@
             console.log("You are logged in");
             break;
         default:
-            console.log('Default');
+            console.log('Error checking log in status');
+            window.location.href = "LogIn.html";
             break;
      }
  }
+
+

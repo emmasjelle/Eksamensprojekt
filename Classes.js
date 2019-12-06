@@ -60,9 +60,7 @@ var admin = document.getElementById('admin');
 
  function validate() {
     var users = JSON.parse(localStorage.getItem('userArray'));
-
 //In order to specify what every single field should contain to return true, we create if-statements.
-
    //We use .length in order to check the lenght of the username and password.
     if (un.value.length < 4) {
         alert("Dit brugernavn skal indeholde minimum 4 karakterer");
