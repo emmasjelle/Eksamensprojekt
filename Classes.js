@@ -47,35 +47,39 @@ var adminKey = "888";
 //Also we haven chosen to commented out from "uAddress" to "email" due to the lack of use when creating a user. This is
 //also why we commented out the related if-statements.
 
+//Information recived from the register form.
+var un = document.getElementById('un');
+var pw = document.getElementById('pw');
+var nm = document.getElementById('nm');
+var uAddress = document.getElementById('address');
+var phoneNumber = document.getElementById('phoneNumber');
+var email = document.getElementById('email');
+var animal2 = document.getElementById('animal');
+var admin = document.getElementById('admin');
+
+
  function validate() {
-    var un = document.getElementById("un").value;
-    var pw = document.getElementById("pw").value;
-    var nm = document.getElementById("nm").value;
-    //var uAddress = document.getElementById("uAddress").value;
-    //var phoneNumber = document.getElementById("phoneNumber").value;
-    //var email = document.getElementById("email").value;
-    var admin = document.getElementById("admin").value;
     var users = JSON.parse(localStorage.getItem('userArray'));
 
 //In order to specify what every single field should contain to return true, we create if-statements.
 
    //We use .length in order to check the lenght of the username and password.
-    if (un.length < 4) {
+    if (un.value.length < 4) {
         alert("Dit brugernavn skal indeholde minimum 4 karakterer");
         return false;
     }
         for (i = 0; i < users.length; i++) {
-            if (un == users[i].un) {
+            if (un.value == users[i].un) {
                 alert("Brugernavnet er allerede i brug");
                 return false;
             }
         }
-    if (pw.length < 8) {
+    if (pw.value.length < 8) {
         alert("Dit password skal indeholde minimum 8 karakterer");
         return false;
     }
 //We use the equals operator to make sure, what that the username field is being filled out.
-    if (nm == "") {
+    if (nm.value == "") {
         alert("Udfyld dit navn");
         return false;
     }
@@ -94,7 +98,7 @@ var adminKey = "888";
 
     //Not working. Why??
 
-     if (admin != adminKey && admin != "") {
+     if (admin.value != adminKey && admin.value != "") {
          alert("Forkert admin nøgle");
          return false;
      }
@@ -107,16 +111,6 @@ var adminKey = "888";
     return true;
 }
 
-
-//Information recived from the register form.
-var un = document.getElementById('un');
-var pw = document.getElementById('pw');
-var nm = document.getElementById('nm');
-var uAddress = document.getElementById('address');
-var phoneNumber = document.getElementById('phoneNumber');
-var email = document.getElementById('email');
-var animal2 = document.getElementById('animal');
-var admin = document.getElementById('admin');
 
 //This is + else statement test  if the created user is an admin or client user.
 /*function testForAdmin(){
