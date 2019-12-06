@@ -3,7 +3,12 @@
 // length of sessionStorage if length is 0 you will be redirected to LogIn if length is 1 it console.logs "You are
 // logged in".
  function isLoggedIn() {
-    let check = sessionStorage.length;
+    if(sessionStorage.length > 0) {
+        console.log("You are logged in");
+    } else {
+        window.location.href = "LogIn.html";
+    }
+/*    let check = sessionStorage.length;
     console.log(check);
     switch (check) {
         case 0:
@@ -16,7 +21,7 @@
             console.log('Error checking log in status');
             window.location.href = "LogIn.html";
             break;
-     }
+     }*/
  }
 
 
