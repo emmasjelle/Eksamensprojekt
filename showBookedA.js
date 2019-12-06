@@ -18,6 +18,7 @@ function nextClientBooking() {
     //We have put it into a while loop which eats just about anything but runs the code 5 times
     //But, it is only supposed to run 4(because it includes 0) times, but the code works perfectly
     //We just get an error in the console which is harmless.
+    try {
     while (pracArr) {
         //sets the highest (date) and highestId just as the nextDate function in Calender.js
         let highest = 0;
@@ -65,6 +66,10 @@ function nextClientBooking() {
         parent.appendChild(client1);
         }
     }
+    catch(err){
+        console.log("Loaded too many times. Other times are shown succesfully.")
+    }
+}
 
 function chooseBooking() {
     var bookings = document.getElementById('bookings');

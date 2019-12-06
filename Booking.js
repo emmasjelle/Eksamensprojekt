@@ -22,6 +22,10 @@ Test5 = new Booking("4","11/12/2019","11:00","13:00","Sanel", true,2, "");
 Test6 = new Booking("5","11/12/2019","14:00","16:00","Sanel", true,3, "");
 //12/12/2019 times - Example: only 1 time added
 Test7 = new Booking("6","12/12/2019","09:00","11:00","Sanel", true,1,"");
+//The times keep their idB(second index number) in case we at some future point in time need to go back and check old times.
+//Our plan to add a journal future would need the idB to stay the same at all times, even if a time is deleted.
+//Times can move around, but they keep their number.
+
 
 //var times = [];
 /* times.push(Test1,Test2,Test3,Test4,Test5,Test6,Test7);
