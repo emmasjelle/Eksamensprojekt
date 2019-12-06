@@ -127,7 +127,8 @@ function StoreUser() {
     //See Navbar.js with createUserArr
     var users = JSON.parse(localStorage.getItem('userArray'));
     if(admin.value == adminKey) {
-        newPractitioner = new Practitioner(un.value,pw.value,nm.value,uAddress.value,phoneNumber.value,email.value,"true","");
+        newPractitioner = new Practitioner(un.value,pw.value,nm.value,uAddress.value,phoneNumber.value,email.value,
+            "true","");
         alert("Din bruger er oprettet som behandler - du kan nu logge ind.");
         users.push(newPractitioner);
         localStorage.setItem('userArray', JSON.stringify(users));
