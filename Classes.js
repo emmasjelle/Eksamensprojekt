@@ -33,12 +33,6 @@ PractitionerTest = new Practitioner("Sanel","123","Sanel Gluhic","Dalgas Have 1"
 //client test user.
 ClientTest = new Client("Emma","123","Emma Sjelle","Dalgas Have 2","12345677","emma@cbs.dk","false","Horse");
 
-//We create an empty array for the test users.
-
-//Replaced with createUserArr in Navbar.js
-//let users = [];
-//users.push(PractitionerTest,ClientTest);
-
 //When you create a practitioner in local storage this admin-key must be used during creation.
 var adminKey = "888";
 

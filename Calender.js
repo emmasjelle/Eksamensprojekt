@@ -92,13 +92,13 @@ document.querySelector('div.datesWrapper').addEventListener('click', function ()
     //Also disables clicking of empty fields and saves the clicked date as selectedDate in localStorage
     if (clickedDate > 0) {
         if (cMonth < 10) {
-            document.getElementById('dateField').innerHTML = clickedDate + "/" + 0 + cMonth + "/" + currentYear;
-            let savedDate = clickedDate + "/" + clickedMonth + "/" + currentYear;
+            document.getElementById('dateField').innerHTML = clickedDate+"/"+0+cMonth+"/"+currentYear;
+            let savedDate = clickedDate+"/"+clickedMonth+"/"+currentYear;
             console.log(savedDate);
             localStorage.setItem('selectedDate', savedDate);
         } else {
-            document.getElementById('dateField').innerHTML = clickedDate + "/" + cMonth + "/" + currentYear;
-            let savedDate = clickedDate + "/" + clickedMonth + "/" + currentYear;
+            document.getElementById('dateField').innerHTML = clickedDate+"/"+cMonth+"/"+currentYear;
+            let savedDate = clickedDate+"/"+clickedMonth+"/"+currentYear;
             console.log(savedDate);
             localStorage.setItem('selectedDate', savedDate);
         }
@@ -240,7 +240,6 @@ function book1() {
     var times = JSON.parse(localStorage.getItem('timesArray'));
     var active = sessionStorage.getItem('activeUser');
 
-    //Samme problem som i SeeTimesU - den tager den første og låser tiderne efter den. tider før den valgte kan stadig bookes
     for (var i = 0; i < times.length; i++) {
         if (times[i].clientB == active) {
             alert("Du har overskredet maks antal bookinger - se dine bookinger under Se mine tider");

@@ -9,8 +9,8 @@ var pracArr = times.filter(function (practitioner) {
     return practitioner.practitionerB == activeUs && practitioner.idB != -1;
 });
 //Counts the amount of times the practitioner appears as practitioner in the Times array
-var pracCount = times.filter((times) => times.practitionerB == activeUs && times.idB != -1).length;
-console.log(activeUs + " appears as practitioner in the following " + pracCount + " bookings: "); // 5 gange
+var pracCount = pracArr.length;
+console.log(activeUs + " appears as practitioner in the following " + pracCount + " bookings: ");
 console.log(pracArr);
 
 //Fills the practitioners bookings into the timesShowClient html element
@@ -48,6 +48,7 @@ function nextClientBooking() {
         //Uses the rounded pracNumber as inded in the pracArr array to get the id and use it as index to get info from times
         let newPrac = Math.round(pracNumber);
         console.log("pracNumber = " + newPrac);
+        //Paste date
         highest = document.createElement('div');
         highest.innerHTML = times[pracArr[newPrac].idB].dateB;
         highest.id = highestId;
