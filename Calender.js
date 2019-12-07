@@ -13,28 +13,29 @@ var choosenMonth = document.getElementById('month1');
 //Gets year from the year picker in HTML - Unused for now
 var choosenYear = document.getElementById('year1');
 
-//Checks the number of days in the chosen month, and pastes it into the calender in the next function
+//Checks the number of days in the chosen month and finds the first weekday in the chosen month for future use
 function checkDate() {
     //daysInMonth = days in the chosen month (ex 30, 28)
     let daysInMonth = getDays(choosenMonth.value, currentYear);
-    //Turn days in choosen month into string for sessionStorage
-    let monthString = JSON.stringify(daysInMonth);
     //Saves daysInMonthS in sessionStorage for our calender function
-    sessionStorage.setItem('daysInMonthS', monthString);
+    sessionStorage.setItem('daysInMonthS', daysInMonth);
 
     for (i = 0; i < months.length; i++) {
         //month = month string from months array (ex Jan, Feb)
-        let month = months[choosenMonth.value - 1];
-        //clickedMonth = saves month in index form (0-11)
-        let clickedMonth = months.indexOf(month);
-        sessionStorage.setItem('clickedMonth', clickedMonth);
-        console.log(clickedMonth);
+        let month = choosenMonth.value - 1;
+        sessionStorage.setItem('clickedMonth', month);
+        console.log(month);
     }
-    //Gets first day of the chosen month in 1-7 - BESKRIV HVAD DER SKER HER
+    //Gets first day of the chosen month in 1-7[monday-to-sunday]
     var firstDay = new Date(currentYear + "-" + choosenMonth.value + "-01").getDay();
+    console.log(firstDay); // firstDay = 0
     firstDay = (firstDay === 0) ? 7 : firstDay;
+    console.log(firstDay); // firstDay = 7
     sessionStorage.setItem('fDayInMonthS', firstDay);
+
+    //Calls fillCalenderDays() function
     fillCalenderDays();
+
     //Clears the colors of previous chosen dates from colorDates()
     var week = document.getElementsByClassName('week');
     for (i = 0; i < week.length; i++) {
@@ -48,7 +49,6 @@ function checkDate() {
 }
 
 //Fills in the 'first' weekday of the month and calls nextDate() to fill in the rest of the month
-//Rename this function to something more specific
 function fillCalenderDays() {
     //loads number of first weekday from SessionStorage
     var firstD = sessionStorage.getItem('fDayInMonthS');
@@ -62,20 +62,18 @@ function fillCalenderDays() {
     // Places the first workday of a chosen month correctly in the calender
     //Finds all classes "Week" and uses the first day number(subtracted by 1) as index[firstD-1]
     //for the array of elements under the class.
-    document.getElementsByClassName('week')[firstD - 1].innerHTML = "1";
+    firstW[firstD-1].innerHTML = "1";
     //Sets the id as first (first day in month, so the code knows where to start)
-    document.getElementsByClassName('week')[firstD - 1].id = "first";
-    var first = document.getElementsByClassName('week')[firstD - 1];
+    //First weekday in the month now has the id 'first';
+    firstW[firstD - 1].id = "first";
     //clears the id of all week divs except the actual first day of chosen month
     for (i = 0; i < firstW.length; i++) {
         if (firstW[firstD - 1] != firstW[i]) {
             firstW[i].id = "";
         }
     }
-    //First weekday in the month now has the id 'first';
 
     //iii = days in the chosen month
-    var week = document.getElementsByClassName('week');
     var iii = sessionStorage.getItem('daysInMonthS');
     //This part fills the rest of the month with dates
     //Using recursion, this function repeats the nextDate() function x times depending on the days in the chosen month
@@ -170,6 +168,7 @@ function clear() {
     document.getElementById('timeCal3').innerHTML = "";
     document.getElementById('pracCal3').innerHTML = "";
     document.getElementById('avaiCal3').innerHTML = "";
+
 }
 
 //This part fills in the available dates on the chosen day
@@ -229,6 +228,7 @@ function fillWindow() {
     }
 }
 
+
 // This works - but you can only book one time, and somehow times before the currently booked date. But, you can't book times after the times you booked, which is nice.
 function book1() {
     var x = document.getElementById('dateField').innerHTML;
@@ -260,7 +260,6 @@ function book1() {
     localStorage.setItem('timesArray', JSON.stringify(times));
     console.log(localStorage);
 }
-
 function book2() {
     var x = document.getElementById('dateField').innerHTML;
     //Gets the times for the booked time
@@ -292,7 +291,6 @@ function book2() {
     localStorage.setItem('timesArray', JSON.stringify(times));
     console.log(localStorage);
 }
-
 function book3() {
     var x = document.getElementById('dateField').innerHTML;
     //Gets the times for the booked time
@@ -353,28 +351,3 @@ function clearLocal() {
 }
 
  */
-
-//If the last day in the chosen month doesn't equal number of days in chosen month trigger If:
-//if (document.getElementsByClassName('week')[iii].innerHTML != iii) {
-//}
-
-/* for (var i = 0; i < week.length; i++) {
-    //If a div doesn't contain the number of days in the given month trigger add day
-    if (week[i].innerHTML != iii) {
-       // document.getElementsByClassName('week')[first[i]].innerHTML = 2;
-        console.log(first);
-    }
-} */
-
-//From booking function
-/*let avaiIndex = 0;
-for(i = 0; i < times.length; i++) {
-    //Checks if the chosen date is anywhere in the times array and if it's available
-    if(x==times[i].dateB && times[i].avaiB == true) {
-        alert("test");
-    }
-}*/
-/* times[1].avaiB = false;
- fillWindow();
-var g = document.getElementById(this.id).id;
-var f = g.split('time')[1]; */
