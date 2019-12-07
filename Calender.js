@@ -136,7 +136,7 @@ function nextDate() {
     //Forloop checks the week class from html
     for (i = 0; i < week.length; i++) {
         //finds the newHigh value within all the week.innerHTMl elements
-        newHigh = week[i].innerHTML;
+        newHigh = parseInt(week[i].innerHTML, 10);
         if (week[i].innerHTML > highest) {
             highest = newHigh;
         }
