@@ -240,7 +240,6 @@ function book1() {
     var times = JSON.parse(localStorage.getItem('timesArray'));
     var active = sessionStorage.getItem('activeUser');
 
-    //Samme problem som i SeeTimesU - den tager den første og låser tiderne efter den. tider før den valgte kan stadig bookes
     for (var i = 0; i < times.length; i++) {
         if (times[i].clientB == active) {
             alert("Du har overskredet maks antal bookinger - se dine bookinger under Se mine tider");

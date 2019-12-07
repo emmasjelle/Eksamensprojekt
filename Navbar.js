@@ -4,10 +4,6 @@
 //The runs our createUserArray and createTimesArray to check if times(bookings) and users are already stored in
 //local storage. If not, it creates the two arrays and pushes the pre defined users and times into them.
 
-// Defining variables that are used often in the following. They are defined in global scope.
-var allNavBar = document.getElementById("all");
-var userNavBar = document.getElementById("user");
-var admNavBar = document.getElementById("adm");
 function createUserArray(){
     //Check if times(array) has been created, otherwise create times
     var users = JSON.parse(localStorage.getItem('userArray'));
@@ -38,6 +34,11 @@ function createTimesArray() {
     }
 }
 createTimesArray();
+
+// Defining variables that are used often in the following. They are defined in global scope.
+var allNavBar = document.getElementById("all");
+var userNavBar = document.getElementById("user");
+var admNavBar = document.getElementById("adm");
 
 // Loaded(onload in body) on all HTML pages to check which Navigation Bar to display
 function navBar() {
