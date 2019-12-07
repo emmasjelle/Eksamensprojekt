@@ -37,10 +37,10 @@ function checkDate() {
     fillCalenderDays();
 
     //Clears the colors of previous chosen dates from colorDates()
-    var week = document.getElementsByClassName('week');
-    for (i = 0; i < week.length; i++) {
-        if (week[i].innerHTML >= 0) {
-            week[i].style.backgroundColor = "";
+    var day = document.getElementsByClassName('day');
+    for (i = 0; i < day.length; i++) {
+        if (day[i].innerHTML >= 0) {
+            day[i].style.backgroundColor = "";
         }
     }
     //Function that clears the available dates window and buttons
@@ -52,21 +52,21 @@ function checkDate() {
 function fillCalenderDays() {
     //loads number of first weekday from SessionStorage
     var firstD = sessionStorage.getItem('fDayInMonthS');
-    //Gets all days and weekday numbers from first week in html
-    var firstW = document.getElementsByClassName('week');
+    //Gets all days and weekday numbers
+    var firstW = document.getElementsByClassName('day');
     //Clears the calender to avoid merging of dates
     for (var i = 0; i < firstW.length; i++) {
         firstW[i].innerHTML = "";
     }
     document.getElementById('dateField').innerHTML = "";
     // Places the first workday of a chosen month correctly in the calender
-    //Finds all classes "Week" and uses the first day number(subtracted by 1) as index[firstD-1]
+    //Finds all classes "day" and uses the first day number(subtracted by 1) as index[firstD-1]
     //for the array of elements under the class.
     firstW[firstD-1].innerHTML = "1";
     //Sets the id as first (first day in month, so the code knows where to start)
     //First weekday in the month now has the id 'first';
     firstW[firstD - 1].id = "first";
-    //clears the id of all week divs except the actual first day of chosen month
+    //clears the id of all day divs except the actual first day of chosen month
     for (i = 0; i < firstW.length; i++) {
         if (firstW[firstD - 1] != firstW[i]) {
             firstW[i].id = "";
@@ -112,15 +112,15 @@ document.querySelector('div.datesWrapper').addEventListener('click', function ()
 
 function colorDate() {
     var x = document.getElementById('dateField').innerHTML;
-    var week = document.getElementsByClassName('week');
+    var day = document.getElementsByClassName('day');
     //Splits the dateField into a string of elements seperated by "/" and gets [0] which is the chosen date
     let chosenDay = x.split("/")[0];
-    for (i = 0; i < week.length; i++) {
+    for (i = 0; i < day.length; i++) {
         //!= prevents it from coloring all the empty divs
-        if (week[i].innerHTML == chosenDay && chosenDay != 0) {
-            week[i].style.backgroundColor = "#00CA85";
+        if (day[i].innerHTML == chosenDay && chosenDay != 0) {
+            day[i].style.backgroundColor = "#00CA85";
         } else {
-            week[i].style.backgroundColor = "";
+            day[i].style.backgroundColor = "";
         }
     }
 }
@@ -132,24 +132,24 @@ function nextDate() {
     //sets the highest (date) and highestId
     let highest = 0;
     let highestId = null;
-    var week = document.getElementsByClassName('week');
-    //Forloop checks the week class from html
-    for (i = 0; i < week.length; i++) {
-        //finds the newHigh value within all the week.innerHTMl elements
-        newHigh = parseInt(week[i].innerHTML, 10);
-        if (week[i].innerHTML > highest) {
+    var day = document.getElementsByClassName('day');
+    //Forloop checks the day class from html
+    for (i = 0; i < day.length; i++) {
+        //finds the newHigh value within all the day.innerHTMl elements
+        newHigh = parseInt(day[i].innerHTML, 10);
+        if (day[i].innerHTML > highest) {
             highest = newHigh;
         }
-        //finds the week.innerHTML which is equal to the highest value in the elements
+        //finds the day.innerHTML which is equal to the highest value in the elements
         //this new value is added to the number of the first weekday (all multiplied by 1 to convert into numbers)
-        //If firstD was now used in this, it would start from the beginning of the week elements
-        if (week[i].innerHTML == highest) {
-            highestId = week[i].innerHTML * 1 + firstD * 1;
+        //If firstD was now used in this, it would start from the beginning of the day elements
+        if (day[i].innerHTML == highest) {
+            highestId = day[i].innerHTML * 1 + firstD * 1;
         }
     }
-    //The function now finds the 'week'.innerHTML element with the highestId-1 and sets it equal to
+    //The function now finds the 'day'.innerHTML element with the highestId-1 and sets it equal to
     //the highest value +1. The function automatically knows where to add the next date
-    document.getElementsByClassName('week')[highestId - 1].innerHTML = highest * 1 + 1;
+    document.getElementsByClassName('day')[highestId - 1].innerHTML = highest * 1 + 1;
 }
 
 //Function that clears the available dates window and buttons
