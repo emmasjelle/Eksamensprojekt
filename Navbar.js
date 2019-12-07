@@ -1,5 +1,5 @@
 //Global scope define
-//The purpose of this file is to show the appropriate navbar in regards to the users acces level in our system.
+//The purpose of this code is to show the appropriate navbar in regards to the users acces level in our system.
 //The user is either a guest, practitioner or a client.
 //The runs our createUserArray and createTimesArray to check if times(bookings) and users are already stored in
 //local storage. If not, it creates the two arrays and pushes the pre defined users and times into them.

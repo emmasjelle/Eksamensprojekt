@@ -1,3 +1,7 @@
+//The purpose of this code is to create our calender. This is primarily done through the creation of the following
+//functions: checkDate, fillCalenderDay, nextDate, colourDate, clear and fillWindow.
+//Also we create three booking functions.
+
 var today = new Date();
 var currentMonth = today.getMonth();
 var currentYear = today.getFullYear();
@@ -110,6 +114,7 @@ document.querySelector('div.datesWrapper').addEventListener('click', function ()
 
 });
 
+//Colors the chosen date
 function colorDate() {
     var x = document.getElementById('dateField').innerHTML;
     var day = document.getElementsByClassName('day');
@@ -230,7 +235,8 @@ function fillWindow() {
 }
 
 
-// This works - but you can only book one time, and somehow times before the currently booked date. But, you can't book times after the times you booked, which is nice.
+//Books the date chosen by the client. Takes the date and time, and splits the time into two. The first part of the time
+//is going to be used in order to make each booking unique.
 function book1() {
     var x = document.getElementById('dateField').innerHTML;
     //Gets the times for the booked time
@@ -240,6 +246,10 @@ function book1() {
 
     var times = JSON.parse(localStorage.getItem('timesArray'));
     var active = sessionStorage.getItem('activeUser');
+
+//Checks if there is a match between chosen date and chosen time when creating the booking. Also it checks if the
+//client already has a booking (Only one booking pr client). If there is a match in date and time, it sets the
+//availability as booked and the visibility of the booking button as hidden.
 
     for (var i = 0; i < times.length; i++) {
         if (times[i].clientB == active) {
@@ -260,6 +270,8 @@ function book1() {
     localStorage.setItem('timesArray', JSON.stringify(times));
     console.log(localStorage);
 }
+
+//Made similar to  book1
 function book2() {
     var x = document.getElementById('dateField').innerHTML;
     //Gets the times for the booked time
@@ -291,6 +303,8 @@ function book2() {
     localStorage.setItem('timesArray', JSON.stringify(times));
     console.log(localStorage);
 }
+
+////Made similar to  book1
 function book3() {
     var x = document.getElementById('dateField').innerHTML;
     //Gets the times for the booked time
