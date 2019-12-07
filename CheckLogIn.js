@@ -9,6 +9,3 @@
         window.location.href = "LogIn.html";
     }
  }
-
-
-

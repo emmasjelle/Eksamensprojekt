@@ -135,9 +135,3 @@ function StoreUser() {
         localStorage.setItem('userArray', JSON.stringify(users));
         console.log(users);
     }
-}
-
-//In order to clear our local storage from the browser console. Very efficient during test.
-function clearLocal(){
-    localStorage.clear();
-}
