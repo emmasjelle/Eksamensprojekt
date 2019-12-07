@@ -10,11 +10,12 @@ function createUserArray(){
     if (users == null) {
         var users = [];
         users.push(PractitionerTest, ClientTest);
-        console.log('No users found - predefined users pushed to user array.')
+        console.log('No users found - predefined users pushed to user array.');
         localStorage.setItem('userArray', JSON.stringify(users));
     }
     if (users.length > 0) {
         var users = JSON.parse(localStorage.getItem('userArray'));
+        console.log('userArray already exists - current users:');
         console.log(users);
     }
 }
@@ -30,6 +31,7 @@ function createTimesArray() {
     }
     if (times.length > 0) {
         var times = JSON.parse(localStorage.getItem('timesArray'));
+        console.log('timesArray already exists - current times:');
         console.log(times);
     }
 }

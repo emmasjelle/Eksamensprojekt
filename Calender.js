@@ -117,6 +117,7 @@ function colorDate() {
     let chosenDay = x.split("/")[0];
     for (i = 0; i < day.length; i++) {
         //!= prevents it from coloring all the empty divs
+        day[i].style.backgroundColor ="#00CA85";
         if (day[i].innerHTML == chosenDay && chosenDay != 0) {
             day[i].style.backgroundColor = "#00CA85";
         } else {
