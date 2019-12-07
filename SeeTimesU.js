@@ -14,6 +14,7 @@ function showBookings() {
         for (var i = 0; i < times.length; i++) {
             //Users booked time
             if (times[i].clientB == activeUs) {
+                document.getElementById('myDateCal1').innerHTML = times[i].dateB;
                 document.getElementById('myTimeCal1').innerHTML = times[i].startB + "-" + times[i].endB;
                 document.getElementById('myPracCal1').innerHTML = times[i].practitionerB;
                 document.getElementById('myTime1').style.visibility = "visible";
@@ -31,6 +32,7 @@ function cancelTime() {
         if(times[i].clientB == activeUs) {
             times[times[i].idB].avaiB = true;
             times[times[i].idB].clientB = "";
+            document.getElementById('myDateCal1').innerHTML = "";
             document.getElementById('myTimeCal1').innerHTML = "Ingen bookinger";
             document.getElementById('myPracCal1').innerHTML = "";
             document.getElementById('myTime1').style.visibility = "hidden";
