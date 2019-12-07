@@ -234,7 +234,7 @@ function book1() {
     var x = document.getElementById('dateField').innerHTML;
     //Gets the times for the booked time
     let time = document.getElementById('timeCal1').innerHTML; //Ex 08:00-10:00
-    let timee = time.split('-'); // Ex timeSpli = ["08:00","10:00"];
+    let timee = time.split('-'); // Ex timeSplit = ["08:00","10:00"];
     let start = timee[0]; // = 08:00
 
     var times = JSON.parse(localStorage.getItem('timesArray'));
