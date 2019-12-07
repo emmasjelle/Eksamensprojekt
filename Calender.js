@@ -13,7 +13,7 @@ var choosenMonth = document.getElementById('month1');
 //Gets year from the year picker in HTML - Unused for now
 var choosenYear = document.getElementById('year1');
 
-//Checks the number of days in the chosen month, and pastes it into the calender in next function
+//Checks the number of days in the chosen month, and pastes it into the calender in the next function
 function checkDate() {
     //daysInMonth = days in the chosen month (ex 30, 28)
     let daysInMonth = getDays(choosenMonth.value, currentYear);
