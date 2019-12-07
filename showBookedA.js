@@ -15,11 +15,14 @@ console.log(pracArr);
 
 //Fills the practitioners bookings into the timesShowClient html element
 function nextClientBooking() {
-    //We have put it into a while loop which eats just about anything but runs the code 5 times
-    //But, it is only supposed to run 4(because it includes 0) times, but the code works perfectly
-    //We just get an error in the console which is harmless.
-    try {
-    while (pracArr) {
+
+    //Same function used in fillCalenderDays()
+    (function repeat(number) {
+        fillBookings(number);
+        if (number > 1) repeat(number - 1);
+    })(pracCount - 1);
+}
+    function fillBookings() {
         //sets the highest (date) and highestId just as the nextDate function in Calender.js
         let highest = 0;
         let highestId = 1;
@@ -64,11 +67,6 @@ function nextClientBooking() {
         }
         client1.id = highestId * 1 + 2;
         parent.appendChild(client1);
-        }
-    }
-    catch(err){
-        console.log("Loaded too many times. Other times are shown succesfully.")
-    }
 }
 
 function chooseBooking() {

@@ -136,7 +136,7 @@ function nextDate() {
     //Forloop checks the week class from html
     for (i = 0; i < week.length; i++) {
         //finds the newHigh value within all the week.innerHTMl elements
-        newHigh = parseInt(week[i].innerHTML, 10);
+        newHigh = week[i].innerHTML;
         if (week[i].innerHTML > highest) {
             highest = newHigh;
         }
@@ -233,9 +233,9 @@ function fillWindow() {
 function book1() {
     var x = document.getElementById('dateField').innerHTML;
     //Gets the times for the booked time
-    let time = document.getElementById('timeCal1').innerHTML;
-    let timee = time.split('-');
-    let start = timee[0];
+    let time = document.getElementById('timeCal1').innerHTML; //Ex 08:00-10:00
+    let timee = time.split('-'); // Ex timeSpli = ["08:00","10:00"];
+    let start = timee[0]; // = 08:00
 
     var times = JSON.parse(localStorage.getItem('timesArray'));
     var active = sessionStorage.getItem('activeUser');
@@ -247,8 +247,8 @@ function book1() {
             break;
         }
         if (times[i].clientB != active && times[i].dateB == x && times[i].startB == start) {
-            times[times[i].idB].avaiB = false;
-            times[times[i].idB].clientB = active;
+            times[i].avaiB = false;
+            times[i].clientB = active;
             console.log(times[i].dateB + " " + times[i].avaiB);
             alert("Din tid er booked");
             document.getElementById('avaiCal1').innerHTML = "Optaget";
