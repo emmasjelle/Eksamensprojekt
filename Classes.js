@@ -120,18 +120,18 @@ var admin = document.getElementById('admin');
 function StoreUser() {
     //See Navbar.js with createUserArr
     var users = JSON.parse(localStorage.getItem('userArray'));
-    if(admin.value == adminKey) {
-        newPractitioner = new Practitioner(un.value,pw.value,nm.value,uAddress.value,phoneNumber.value,email.value,
-            "true","");
+    if (admin.value == adminKey) {
+        newPractitioner = new Practitioner(un.value, pw.value, nm.value, uAddress.value, phoneNumber.value, email.value,
+            "true", "");
         alert("Din bruger er oprettet som behandler - du kan nu logge ind.");
         users.push(newPractitioner);
         localStorage.setItem('userArray', JSON.stringify(users));
         console.log(users);
-    }
-    else {
-        newClient = new Client(un.value,pw.value,nm.value,uAddress.value,phoneNumber.value,email.value,"false",animal2);
+    } else {
+        newClient = new Client(un.value, pw.value, nm.value, uAddress.value, phoneNumber.value, email.value, "false", animal2);
         alert("Din bruger er oprettet - du kan nu logge ind.");
         users.push(newClient);
         localStorage.setItem('userArray', JSON.stringify(users));
         console.log(users);
     }
+}

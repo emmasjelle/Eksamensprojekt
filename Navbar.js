@@ -1,5 +1,5 @@
 //Global scope define
-//The purpose of this file is to show the appropriate navbar in regards to the users acces level in our system.
+//The purpose of this code is to show the appropriate navbar in regards to the users acces level in our system.
 //The user is either a guest, practitioner or a client.
 //The runs our createUserArray and createTimesArray to check if times(bookings) and users are already stored in
 //local storage. If not, it creates the two arrays and pushes the pre defined users and times into them.
@@ -10,11 +10,12 @@ function createUserArray(){
     if (users == null) {
         var users = [];
         users.push(PractitionerTest, ClientTest);
-        console.log('No users found - predefined users pushed to user array.')
+        console.log('No users found - predefined users pushed to user array.');
         localStorage.setItem('userArray', JSON.stringify(users));
     }
     if (users.length > 0) {
         var users = JSON.parse(localStorage.getItem('userArray'));
+        console.log('userArray already exists - current users:');
         console.log(users);
     }
 }
@@ -30,6 +31,7 @@ function createTimesArray() {
     }
     if (times.length > 0) {
         var times = JSON.parse(localStorage.getItem('timesArray'));
+        console.log('timesArray already exists - current times:');
         console.log(times);
     }
 }
