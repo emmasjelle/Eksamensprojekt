@@ -13,7 +13,7 @@ var pracCount = pracArr.length;
 console.log(activeUs + " appears as practitioner in the following " + pracCount + " bookings: ");
 console.log(pracArr);
 
-//Fills the practitioners bookings into the timesShowClient html element
+//Fills the practitioners bookings into the timesShowClient HTML element
 function nextClientBooking() {
 
     //Same function used in fillCalenderDays()

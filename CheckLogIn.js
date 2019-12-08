@@ -9,3 +9,12 @@
         window.location.href = "LogIn.html";
     }
  }
+
+ // Function that is responsible for sending the user from "BehandlingsTyper" to "Bookingside" if "book" is clicked.
+function book() {
+    if(sessionStorage.length != 0) {
+        window.location.href = "Bookingside.html";
+    } else {
+        window.location.href = "LogIn.html";
+    }
+}
