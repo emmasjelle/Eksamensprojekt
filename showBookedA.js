@@ -93,7 +93,3 @@ function removeTime() {
     localStorage.setItem('timesArray', JSON.stringify(times));
     window.location.reload(true);
 }
-
-
-
-//Lav eventlistener til aflysning af tider clicked time og cancelCLientTime funciton together

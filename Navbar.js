@@ -84,16 +84,4 @@ function navBar() {
             }
         }
     }
-    /*The if statments below work like the ones above. The only difference is the comparison between the current
-    activeUserNow and the localUserNow instead of the user array. */
-   /* if (activeUserNow == localUserNow && localUserAdmin == "true") {
-        admNavBar.style.display = 'flex';
-        allNavBar.style.display = 'none';
-        userNavBar.style.display = 'none';
-    }
-    if (activeUserNow == localUserNow && localUserAdmin == "false") {
-        admNavBar.style.display = 'none';
-        allNavBar.style.display = 'none';
-        userNavBar.style.display = 'flex';
-    }*/
 }

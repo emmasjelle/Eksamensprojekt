@@ -10,11 +10,14 @@
     }
  }
 
- // Function that is responsible for sending the user from "BehandlingsTyper" to "Bookingside" if "book" if clicked.
-function book() {
+ // Function that is responsible for sending the user from "BehandlingsTyper" to "Bookingside" if
+// "redirectToBooking" is clicked.
+function redirectToBooking() {
     if(sessionStorage.length != 0) {
         window.location.href = "Bookingside.html";
     } else {
         window.location.href = "LogIn.html";
     }
 }
+//R: PHO: Navnet til funktionen på linje 14 ligger sig meget tæt op af dem fra calender.js. Kan vi evt. ændre det?
+//D: SG: Har ændret den nu.

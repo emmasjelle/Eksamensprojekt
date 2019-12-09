@@ -66,6 +66,12 @@ var admin = document.getElementById('admin');
                 return false;
             }
         }
+        //R: SG: Får vi ikke et problem i bookingen, hvis flere brugere har det samme brugernavn?
+     //Kunne det ikke være en ide at loope igennem de eksisterende usernames for at tjekke at det ikke
+     // allerede eksisterer?
+        //R: EVNS: Jo, det får jeg lige tilføjet!
+        //R: EVNS: Jeg har rettet det nu.
+
     if (pw.value.length < 8) {
         alert("Dit password skal indeholde minimum 8 karakterer");
         return false;
@@ -88,18 +94,13 @@ var admin = document.getElementById('admin');
          return false;
      }*/
 
-    //Not working. Why??
-
      if (admin.value != adminKey && admin.value != "") {
          alert("Forkert admin nøgle");
          return false;
      }
-
-
-
 //If it runs through all if-statements and they don't return false, it will finally run the StoreUser() and
 // testForAdmin() functions.
-    StoreUser();
+    storeUser();
     return true;
 }
 
@@ -117,7 +118,7 @@ var admin = document.getElementById('admin');
 }*/
 
 //This function stores the information received in the register user form.
-function StoreUser() {
+function storeUser() {
     //See Navbar.js with createUserArr
     var users = JSON.parse(localStorage.getItem('userArray'));
     if (admin.value == adminKey) {
@@ -135,3 +136,7 @@ function StoreUser() {
         console.log(users);
     }
 }
+
+//R: PHO: Super at du har fået samlet admintjekket og lagt testForAdmin() ind i StoreUser.
+//StoreUser() er dog skrevet med stort S, vil du rette det til småt?
+//D: EVNS: hov, det retter jeg lige.

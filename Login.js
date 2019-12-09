@@ -14,6 +14,7 @@ function logInUser() {
             valid = true;
         }
     }
+
     //If there is a match in username and password the user will be directed to the booking page. If there isn't a match
     //the system will create an alert and stay on the same page.
     if (valid) {
@@ -25,6 +26,9 @@ function logInUser() {
         return true;
     }
 }
+
+
+
 
 //Log out
 function logOut(){

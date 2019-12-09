@@ -14,6 +14,7 @@ function getDays(month, year) {
 
 //Gets month from the month picker in HTML
 var choosenMonth = document.getElementById('month1');
+
 //Gets year from the year picker in HTML - Unused for now
 var choosenYear = document.getElementById('year1');
 
@@ -234,6 +235,10 @@ function fillWindow() {
     }
 }
 
+//R: EVNS: Readability er fint. Opsætningen virker overskueligt og du følger den samme struktur gennem filen.
+//Det giver mening at hver funktion kun udfører en opgave, og at de i stedet kalder de andre funktioner.
+//Det vil være nemmere at vedligeholde på sigt.
+//D: PHO: Ok tak.
 
 //Books the date chosen by the client. Takes the date and time, and splits the time into two. The first part of the time
 //is going to be used in order to make each booking unique.
@@ -250,12 +255,19 @@ function book1() {
 //Checks if there is a match between chosen date and chosen time when creating the booking. Also it checks if the
 //client already has a booking (Only one booking pr client). If there is a match in date and time, it sets the
 //availability as booked and the visibility of the booking button as hidden.
-
     for (var i = 0; i < times.length; i++) {
         if (times[i].clientB == active) {
             alert("Du har overskredet maks antal bookinger - se dine bookinger under Se mine tider");
             break;
         }
+        //R: EVNS: Du skriver at man kun skal kunne booke en tid per person, men det gælder kun hvis du booker en
+        //tid som er længere fremme i times arrayet. Hvis man booker en tid 'før' den i forvejen bookede tid,
+        //så kan man godt booke tiden. Jeg tænker, at fejlen ligger i loopet, da den ikke tjekker indexnumrene før
+        //den bookede tid.
+
+        //D: PHO: Ja, det kan jeg da godt se. Jeg har prøvet at kigge på loopet, men jeg kan pt. ikke lige finde en
+        //løsning på problemet.
+
         if (times[i].clientB != active && times[i].dateB == x && times[i].startB == start) {
             times[i].avaiB = false;
             times[i].clientB = active;
@@ -337,31 +349,3 @@ function book3() {
     console.log(localStorage);
 }
 
-function clearLocal() {
-    localStorage.clear();
-    console.log("Local Storage cleared.")
-}
-
-//METHOD I TRIEDE BEFORE The nextDate() method - lacked automisation when adding a new date after the 'first'
-/*function test() {
-    //Note: Check difference between index and not index here
-    //iii = days in the chosen month
-    var iii = sessionStorage.getItem('daysInMonthS');
-    //ii = number of first weekday in chosen month
-    var ii = sessionStorage.getItem('fDayInMonthS');
-
-    // fremgang: check index and fill of div - if div != iii fill another innerHTML+1
-    //Måske find højeste nummer i en div, hvis det ikke er == iii, så kør funktionen en gang mere
-    var week = document.getElementsByClassName('week');
-    for (i = 0; i < week.length; i++) {
-        //If a div doesn't contain the number of days in the given month trigger add day
-        if (week[i].innerHTML != iii) {
-            var x = document.getElementById('first').innerHTML;
-            document.getElementById('first')
-                .nextElementSibling.innerHTML = x*1+1;
-            document.getElementById('first').nextElementSibling.id = '2';
-        }
-    }
-}
-
- */

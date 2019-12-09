@@ -23,8 +23,9 @@ function showBookings() {
         }
     }
 }
-
 showBookings();
+
+
 
 function cancelTime() {
     var times = JSON.parse(localStorage.getItem('timesArray'));
