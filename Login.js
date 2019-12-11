@@ -27,9 +27,6 @@ function logInUser() {
     }
 }
 
-
-
-
 //Log out
 function logOut(){
     sessionStorage.clear();

@@ -1,6 +1,7 @@
 //The purpose of this code is to create our calender. This is primarily done through the creation of the following
 //functions: checkDate, fillCalenderDay, nextDate, colourDate, clear and fillWindow.
-//Also we create three booking functions.
+//It fills a grid of empty HTML divs with the dates of the chosen month.
+//Also we create the booking functions.
 
 var today = new Date();
 var currentMonth = today.getMonth();
@@ -256,10 +257,10 @@ function book1() {
 //client already has a booking (Only one booking pr client). If there is a match in date and time, it sets the
 //availability as booked and the visibility of the booking button as hidden.
     for (var i = 0; i < times.length; i++) {
-        if (times[i].clientB == active) {
-            alert("Du har overskredet maks antal bookinger - se dine bookinger under Se mine tider");
-            break;
-        }
+            if (times[i].clientB == active) {
+                alert("Du har overskredet maks antal bookinger - se dine bookinger under Se mine tider");
+                break;
+            }
         //R: EVNS: Du skriver at man kun skal kunne booke en tid per person, men det gælder kun hvis du booker en
         //tid som er længere fremme i times arrayet. Hvis man booker en tid 'før' den i forvejen bookede tid,
         //så kan man godt booke tiden. Jeg tænker, at fejlen ligger i loopet, da den ikke tjekker indexnumrene før

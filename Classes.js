@@ -104,19 +104,6 @@ var admin = document.getElementById('admin');
     return true;
 }
 
-
-//This is + else statement test  if the created user is an admin or client user.
-/*function testForAdmin(){
-    if(admin.value == adminKey) {
-        localStorage.setItem('admin', 'true');
-        alert("Din bruger er oprettet som behandler - du kan nu logge ind.");
-    }
-    else {
-        localStorage.setItem('admin', 'false');
-        alert("Din bruger er oprettet - du kan nu logge ind.");
-    }
-}*/
-
 //This function stores the information received in the register user form.
 function storeUser() {
     //See Navbar.js with createUserArr
