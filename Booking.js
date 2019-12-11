@@ -4,8 +4,6 @@ class Booking {
 
     constructor(idB, dateB, startB, endB, practitionerB, avaiB, timeB, clientB) {
         this.idB = idB;
-        this.dateB = dateB;
-        this.startB = startB;
         this.endB = endB;
         this.practitionerB = practitionerB;
         this.avaiB = avaiB;
@@ -13,7 +11,9 @@ class Booking {
         this.clientB = clientB;
     }
 }
-//We create three booking times pr. working day at the moment(Categorized in timeB from 1-3)
+//We create three booking times pr. working
+//         this.dateB = dateB;
+//         this.startB = startB;day at the moment(Categorized in timeB from 1-3)
 //10/12/2019 times
 Test1 = new Booking("0","10/12/2019","08:00","10:00","Sanel", true, 1,"");
 Test2 = new Booking("1","10/12/2019","11:00","13:00","Sanel", true,2,"");
