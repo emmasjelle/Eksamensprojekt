@@ -1,19 +1,15 @@
 # Eksamensprojekt
 
-## Vores ide
-Vi har i vores arbejde med projektet de sidste par måneder skabt et bookingsystem til hestemassører. 
-Selve bookingsystemet skal tænkes som en platform, hvor flere forskellige hestemassører skal kunnne tilmelde sig. 
+## Vores system
+Vi har de seneste måneder arbejdet på at oprette et bookingsystem til en hestemassør. For en behandler er det en vigtig administrativ opgave at kunne håndtere bookinger hensigtsmæssigt. Systemet indeholder derfor en loginfunktion, som gør det muligt at tilgå systemets kalender og tilhørende bookingfunktion enten som en klient eller en behandler. I systemet er der mulighed for at se ledige tider, booke tider, aflyse tider eller at få en oversigt over bookinger som både klient og behandler. Man kan også tilgå begrænsede dele af systemet som en gæstebruger. Systemet tager forbehold for bookingmæssige udfordringer, og tillader blandt andet ikke at flere brugere kan booke den samme tid.
+Systemet skelner mellem de to brugertyper, hvor behandlere er tildelt admin status, som giver adgang til andre funktionaliteter end dem, som klienten har adgang til. 
+Vi har igennem hele arbejdet med systemet lagt vægt på, at man kan implementere tilføjelser til systemet og dermed skalere systemet op. Dette muliggør, at systemet på et senere tidspunkt kan agere som bookingplatform til andre brancher end blot hestemassage. 
 
-De væsentlige funktioner systemet indeholder er en Login, register og booking side. Login-funktionen har fået tilknyttet
-funktionalitet, at den kan skelne mellem en klient (bruger) og en behandler (administrator). Dette muliggøre, at 
-klienten kan booke en tid hos en specifik behandler mht. hestemassage. Denne tid vil dog blive fjernet for alle andre
-brugere af systemet og dermed vil man kunne ungå en eventuel dobbeltbookning af samme tidspunkt.  
-
-Er man ikke bruger af systemet, vil man nemt kunne oprette sig via vores register funktion. 
-
-## Use Case 
-Se use cases (sæt billede ind af use casene).
-
+## Udviklerne
+Gruppe 29: Emma V. Nellemann Sjelle, Patrick Hartvig-Olsen og Sanel Gluhic
 
 ## UML-diagram
-Sæt endelig UML-diagram ind her!
+![alt text](https://github.com/emmasjelle/Eksamensprojekt/blob/master/UML.png)
+
+## Sidste opdatering
+Foretaget d. 11-12-2019
