@@ -5,9 +5,10 @@ document makes it possible for admins to see all booked times and also cancel ti
 
 <head>
     <meta charset="UTF-8">
-    <link href='navBar.css' rel='stylesheet'>
-    <link rel="stylesheet" href="showTimes.css">
-    <script type="text/javascript" src="Classes.js"></script>
+    <link href='../CSS/navBar.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../CSS/showTimes.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="../Scripts/Classes.js"></script>
     <title>Se bookede tider</title>
 </head>
 <body onload="navBar(); nextClientBooking();">
@@ -76,10 +77,10 @@ document makes it possible for admins to see all booked times and also cancel ti
     <button id="cancelTime" onclick="removeTime()">Aflys den valgte tid</button>
 </div>
 
-<script type="text/JavaScript" src="Login.js"></script>
-<script type="text/javascript" src="Booking.js"></script>
-<script type="text/javascript" src="Navbar.js"></script>
-<script type="text/javascript" src="ShowBookedA.js"></script>
+<script type="text/JavaScript" src="../Scripts/Login.js"></script>
+<script type="text/javascript" src="../Scripts/Booking.js"></script>
+<script type="text/javascript" src="../Scripts/Navbar.js"></script>
+<script type="text/javascript" src="../Scripts/ShowBookedA.js"></script>
 </body>
 
 </html>

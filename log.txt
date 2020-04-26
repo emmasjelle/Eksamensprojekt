@@ -1,0 +1,1319 @@
+commit eb0579eeedbbd02c3130f2150b3b01d91bea01f7
+Merge: 9870178 be52c3e
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Wed Dec 11 11:40:14 2019 +0100
+
+    Merge branch 'master' of https://github.com/emmasjelle/Eksamensprojekt
+    
+     Conflicts:
+    	Booking.js
+
+commit 98701783f7506a0754da8b34dbb34790e7cbc348
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Wed Dec 11 11:39:39 2019 +0100
+
+    Small fixes
+
+commit be52c3e922b37491ecd73e5e395fc2ae844d2643
+Merge: 41adc87 f8111da
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Wed Dec 11 10:04:18 2019 +0100
+
+    Merge branch 'master' of https://github.com/emmasjelle/Eksamensprojekt
+
+commit 41adc87720c1381dec43363adc6d6f61c18e21d1
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Wed Dec 11 10:04:04 2019 +0100
+
+    Hej
+
+commit f8111dae9d73d5e605c0ea3d73c3f12839e65a1c
+Author: Emma Sjelle <emsj19ab@student.cbs.dk>
+Date:   Wed Dec 11 10:03:30 2019 +0100
+
+    De sidste ændringer. 1. semester
+
+commit c52e72b618618fd321dbda336dde1245953eaf13
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Mon Dec 9 10:20:16 2019 +0100
+
+    Small fixes
+
+commit e67ea42efaa1f346b40cea54e29f3ab81d5122d5
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Mon Dec 9 08:01:02 2019 +0100
+
+    Rettelse i behandlingstyper
+
+commit 8193727f4a378512ebf2cd16d523d4eb956eb0fc
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Sun Dec 8 14:34:36 2019 +0100
+
+    nu virker viderestilling fra behandlingstyper til kalender ved klik på "book her"
+
+commit 2f1d304d8e06f66e41819a1da236fb597f9d0e80
+Merge: 3c9fe87 0827915
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Sun Dec 8 14:33:20 2019 +0100
+
+    Merge branch 'master' of https://github.com/emmasjelle/Eksamensprojekt
+    
+     Conflicts:
+    	BehandlingsTyper.html
+
+commit 3c9fe87ec8d525fae391a8385714026e0fae71a8
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Sun Dec 8 14:33:08 2019 +0100
+
+    Week og days skiftet ud
+
+commit 08279158d007ba449184b4f6f0d9b92a23fd7e66
+Merge: 09d5603 8f43655
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Sat Dec 7 16:36:23 2019 +0100
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 09d5603cd9df66cce9c411e92d9bd8944b4819d7
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Sat Dec 7 16:36:10 2019 +0100
+
+    Small fixes
+
+commit 8f436555d60b671de36486cb65b24adc96aa7d50
+Author: Emma Sjelle <emsj19ab@student.cbs.dk>
+Date:   Sat Dec 7 15:18:12 2019 +0100
+
+    comments boooking, calender, checkLogin, classes, Login and Navbar
+
+commit f729122d1616dff4b8fd16eb452adc7d923cb765
+Merge: 33a464b e0e879e
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Sat Dec 7 13:36:18 2019 +0100
+
+    Merge branch 'master' of https://github.com/emmasjelle/Eksamensprojekt
+
+commit 33a464b3ec576dd4a94792d66a4b39b7c5a161f2
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Sat Dec 7 13:36:01 2019 +0100
+
+    Small fixes
+
+commit e0e879e42b7162f51e2d0254e6e4550b160c56cc
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Sat Dec 7 13:35:21 2019 +0100
+
+    rettelser
+
+commit 5cd0d135e8ba36e7b0e16cd12af14cf4d7c7d4d2
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Sat Dec 7 10:34:08 2019 +0100
+
+    Week og days skiftet ud
+
+commit d62f74181ee225a5647a3266146381d4e8534f6b
+Merge: b823349 f61bdf7
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Sat Dec 7 09:54:33 2019 +0100
+
+    Merge branch 'master' of https://github.com/emmasjelle/Eksamensprojekt
+
+commit b823349431aa6dbd930f978471558b74e1c396a1
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Sat Dec 7 09:54:25 2019 +0100
+
+    Merge branch 'master' of https://github.com/emmasjelle/Eksamensprojekt
+    
+    # Conflicts:
+    #       BookingLB.html
+
+commit f61bdf709f307df1fe61119b0f606b3559c4ded8
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Sat Dec 7 09:53:42 2019 +0100
+
+    updated Calender.js
+    Removed unused lines of code
+
+commit 09b395e2129391e3da75d4140f2646c98cbc403d
+Merge: 9a40973 ce19144
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Sat Dec 7 09:50:03 2019 +0100
+
+    Merge branch 'master' of https://github.com/emmasjelle/Eksamensprojekt
+    
+     Conflicts:
+    	Calender.js
+
+commit 9a4097333ec7c24c7a70f19121b7b3cadd50c7d2
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Sat Dec 7 09:49:51 2019 +0100
+
+    Merge branch 'master' of https://github.com/emmasjelle/Eksamensprojekt
+    
+    # Conflicts:
+    #       BookingLB.html
+
+commit ce19144fb7abf8c1ebc807f4d255852f1d336e57
+Merge: 257099b 2576252
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Sat Dec 7 09:48:47 2019 +0100
+
+    Merge branch 'master' of https://github.com/emmasjelle/Eksamensprojekt
+
+commit 257099bbfd1985eb11e056adaf537de6ede29158
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Sat Dec 7 09:48:19 2019 +0100
+
+    updated Calender.js
+    Removed unused lines of code
+
+commit 25762520dbf58c0e73b3692ec7bfc6aabd236d43
+Merge: e323836 d8efcba
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Sat Dec 7 08:04:46 2019 +0100
+
+    Merge branch 'master' of https://github.com/emmasjelle/Eksamensprojekt
+    
+     Conflicts:
+    	Calender.js
+
+commit e323836da0ca58d228f7d4c750bc01dcbd172cac
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Sat Dec 7 08:04:00 2019 +0100
+
+    Merge branch 'master' of https://github.com/emmasjelle/Eksamensprojekt
+    
+    # Conflicts:
+    #       BookingLB.html
+
+commit d8efcba2696b9ecf853c055255340d4f923eef15
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Fri Dec 6 19:01:03 2019 +0100
+
+    updated Calender.js
+    Removed unused lines of code
+
+commit 4dee36826cec5a71e2ead6b37ebcca3da6745e30
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Fri Dec 6 15:01:57 2019 +0100
+
+    updated Calender.js
+
+commit 9a7289073489c3bf5f49d6743dc652aff2b2d40f
+Merge: 45c27ff f0174c2
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Fri Dec 6 13:28:55 2019 +0100
+
+    Merge branch 'master' of https://github.com/emmasjelle/Eksamensprojekt
+
+commit 45c27ff60a3b0edaf755b6d1a43aff5dc4c8fb51
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Fri Dec 6 13:28:49 2019 +0100
+
+    Rettelser
+
+commit f0174c2cef201b6e85014f5f8df1cb045d7dd3b6
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Fri Dec 6 13:28:10 2019 +0100
+
+    New isLoggedIn function
+
+commit 4a0bfb569608514288525006b557b8aa75f2db3d
+Merge: 6de9195 066ac3e
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Fri Dec 6 13:20:53 2019 +0100
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 6de919506457c62c3a8c39e66bdc78cc03ea3339
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Fri Dec 6 13:20:34 2019 +0100
+
+    Reduced amount of 'getElementById' in classes
+
+commit 066ac3e555e1f06c4a2af3c8b75e0150cd065841
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Fri Dec 6 12:55:42 2019 +0100
+
+    Nav bar optimering
+
+commit a8abc7333ee6d1fe8b8b5a993a9867cf22b422ec
+Merge: d73fd24 83fb5ae
+Author: Emma Sjelle <emsj19ab@student.cbs.dk>
+Date:   Fri Dec 6 10:10:54 2019 +0100
+
+    Merge remote-tracking branch 'origin/master'
+
+commit d73fd240d3444ec6d3458600c1157599e1dc4dbf
+Author: Emma Sjelle <emsj19ab@student.cbs.dk>
+Date:   Fri Dec 6 10:10:36 2019 +0100
+
+    typo :)
+
+commit 83fb5ae2b26f98bd872627743f6ca476832f3f16
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Fri Dec 6 10:02:38 2019 +0100
+
+    Reduced amount of 'getElementById' in classes
+
+commit 6dcbb38632e04d81452da3b5db32ceb0d2c41f07
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Fri Dec 6 09:14:15 2019 +0100
+
+    All coding finnished! (for now ;) )
+
+commit 1dff1f069059325f662020abdb6f781b2a152df3
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Thu Dec 5 20:42:55 2019 +0100
+
+    Booking page now displays appropraite message on days without any available times.
+
+commit b8d3c38255097055ef7a2b1e33952e0b9e75b0fb
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Thu Dec 5 17:27:59 2019 +0100
+
+    Practitioner can now cancel times.
+
+commit a4a747cc47ed727a8e16c0e0574e1539974d6698
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Thu Dec 5 16:00:30 2019 +0100
+
+    Bookings are now displayed properly on the practitioner times page.
+
+commit 2448fc486bb40052a7d386761c01d2f5894570c4
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Wed Dec 4 18:03:02 2019 +0100
+
+    createUserArray and createTimesArray are now moved into navbar.js and loaded on every page.
+    Script order on HTML files updated to avoid 'uncaught error'.
+
+commit 4eeb88fe374297457cc0596d322823ae499d575e
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Wed Dec 4 16:13:48 2019 +0100
+
+    Booking button1 now works.
+
+commit d1e9d0bfa53589fd146ad7c7f2d44f71f3dfab5d
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Wed Dec 4 08:44:46 2019 +0100
+
+    kommentarer og purpose i toppen af hvert dokument
+
+commit 199fe896a7aef3cd9871a75ec66a4dadc91fd2b3
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Tue Dec 3 21:54:24 2019 +0100
+
+    createUserArr function created in Navbar.js - creating a user is now pushing new clients and practitioners to same user array as the predefined users. Less code and more effective for loops in login and Navbar.
+
+commit 2f6c76732e9a2ac66a800b6a6bf66613f8839714
+Merge: a679ba6 51469eb
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Tue Dec 3 18:46:00 2019 +0100
+
+    Merge branch 'master' of https://github.com/emmasjelle/Eksamensprojekt
+
+commit a679ba604ddd6cf42e80d8581ec85f2a0103ad16
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Tue Dec 3 18:45:44 2019 +0100
+
+    Fixed navBar error
+
+commit 51469eba46691bc106a60a8d3433484de251c4a4
+Author: Sanel Gluhic <54856941+sanelgluhic@users.noreply.github.com>
+Date:   Tue Dec 3 17:47:32 2019 +0100
+
+    Update README.md
+
+commit 5d9d097b228fead8dccfdde2905dc5d0f0524c52
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Tue Dec 3 17:44:48 2019 +0100
+
+    ReadMe
+
+commit 9418c3816b69fbdede807958f06f9f41d675ae53
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Tue Dec 3 16:47:28 2019 +0100
+
+    css fix
+
+commit 601fa2e2a6cd346271e70bb214a00ec60b5a5dcb
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Tue Dec 3 16:46:34 2019 +0100
+
+    css fix
+
+commit cd5e1be82a18a4a57a0926eea725a967e92e7d1e
+Merge: 758465e 9ff4489
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Tue Dec 3 16:43:14 2019 +0100
+
+    Merge branch 'master' of https://github.com/emmasjelle/Eksamensprojekt
+    
+     Conflicts:
+    	seBooketTiderA.html
+    	seTiderB.html
+
+commit 758465e70a8f352d0a4adcde935d3f246bf816d0
+Merge: 55c1290 02dbec3
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Tue Dec 3 16:42:23 2019 +0100
+
+    Merge branch 'master' of https://github.com/emmasjelle/Eksamensprojekt
+
+commit 9ff44896f730d3ddb11fdf0d9af20d984d494239
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Tue Dec 3 16:42:17 2019 +0100
+
+    navbar.css istedet for andet
+
+commit 55c129060a74b17e34c530ef913b505cd070cecc
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Tue Dec 3 16:42:15 2019 +0100
+
+    Progress on practitioners view on bookings
+
+commit 02dbec3f5c2978f5730e57ae445bf0d6d9ec0296
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Tue Dec 3 16:40:13 2019 +0100
+
+    index.html skriftet navn til
+
+commit da6b9dd625765c0763394328637c8dce85c76ea5
+Merge: 6753597 54abc4d
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Tue Dec 3 16:33:32 2019 +0100
+
+    Merge branch 'master' of https://github.com/emmasjelle/Eksamensprojekt
+
+commit 6753597ce2fb379c3fe9e2a8dc2ec22e59c4b748
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Tue Dec 3 16:33:16 2019 +0100
+
+    rettelser
+
+commit 54abc4d82be87121518d137f4239ed7842a36788
+Merge: 83b0307 2d680b5
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Tue Dec 3 15:00:39 2019 +0100
+
+    Merge branch 'master' of https://github.com/emmasjelle/Eksamensprojekt
+
+commit 83b03073215ddb6df5c6dd07e13c5a047028c938
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Tue Dec 3 15:00:32 2019 +0100
+
+    Client is limited by one booking.
+
+commit 2d680b54ec07c705da58a44ff7ecdbd47ed895cf
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Tue Dec 3 13:28:36 2019 +0100
+
+    rettelse af variable tilpasning til uml, udkommentering af classes.js linje 80 til 86 mht adminkey false
+
+commit 720be7aea8aa6d1ad12842b60cb314f46496df09
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Tue Dec 3 11:47:22 2019 +0100
+
+    Client is limited by one booking.
+
+commit ad00555109d33c459d8d2c6d5036a5ed9aa67aaa
+Merge: cb5143c 4502a41
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Tue Dec 3 11:06:29 2019 +0100
+
+    Merge branch 'master' of https://github.com/emmasjelle/Eksamensprojekt
+    
+     Conflicts:
+    	CheckLogIn.js
+
+commit cb5143c05081d39bccfff114f44ad4a341facf5c
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Tue Dec 3 11:05:40 2019 +0100
+
+    Client is limited by one booking.
+
+commit 4502a411e0aeae34b843bffe54566d09a3c87ee0
+Author: Emma Sjelle <emsj19ab@student.cbs.dk>
+Date:   Tue Dec 3 10:59:56 2019 +0100
+
+    CheckLogIn now works
+
+commit 3e8bc5863dd909d21902efd0b4988e1bddfb2d96
+Merge: e4c7a60 66de72f
+Author: Emma Sjelle <emsj19ab@student.cbs.dk>
+Date:   Tue Dec 3 10:56:01 2019 +0100
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       Classes.js
+
+commit e4c7a60e1740804ca0d75aa1384fe0c8e23f759d
+Author: Emma Sjelle <emsj19ab@student.cbs.dk>
+Date:   Tue Dec 3 10:53:56 2019 +0100
+
+    Commenting done. Admin-validate not working.
+
+commit 66de72f29ba30c53eae14aad897c189e92f71129
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Tue Dec 3 09:49:10 2019 +0100
+
+    Client can now see their bookings and cancel them
+
+commit 30db112d5ff72a45dc36a089a851a0a66dcfaab5
+Merge: e254069 6a9f98d
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Mon Dec 2 18:57:31 2019 +0100
+
+    Merge branch 'master' of https://github.com/emmasjelle/Eksamensprojekt
+
+commit e25406927ad5ab898102694ea1b69768e66c56b5
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Mon Dec 2 18:57:05 2019 +0100
+
+    Calender and booking now takes in more than one booking at a time
+
+commit 6a9f98d320f0f529185c68556c09a8d7444ff11d
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Mon Dec 2 13:47:51 2019 +0100
+
+    Mindre fejlrettelser
+
+commit 3261d4a58777d3325836dbcb529de617689d7e85
+Merge: 528e27c 4ced917
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Mon Dec 2 13:32:20 2019 +0100
+
+    Merge branch 'master' of https://github.com/emmasjelle/Eksamensprojekt
+
+commit 528e27cd5a6eed1874d0d6fbb9b38645b57dfed4
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Mon Dec 2 13:31:53 2019 +0100
+
+    Udkommenteret isLoggedIn indtil videre.
+
+commit 4ced917744ce9971c3c95a2a64f5651ea66ce6c4
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Mon Dec 2 13:31:03 2019 +0100
+
+    Optimering af navbar-koden
+
+commit f4cac1f9f8ef00c48c22f8355af40ef45430a4b2
+Merge: 0108938 6221c12
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Mon Dec 2 09:59:23 2019 +0100
+
+    Merge branch 'master' of https://github.com/emmasjelle/Eksamensprojekt
+    
+    # Conflicts:
+    #       BookingLB.html
+
+commit 0108938a1d4b9df7ce2dea85d811861827632466
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Mon Dec 2 09:56:42 2019 +0100
+
+    ooooo
+
+commit 6221c1291e4cdc3e79b8d19d253f17e88eca037a
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Mon Dec 2 09:54:04 2019 +0100
+
+    Upload AFTER merge
+
+commit e0b0d9a1072759c6c966452c591cab67656c27b2
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Mon Dec 2 08:35:22 2019 +0100
+
+    ooooo
+
+commit b708161365998a8844280084cd96ee60a2f8da37
+Merge: 0be6a7a c7171f7
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Mon Dec 2 08:34:08 2019 +0100
+
+    Merge branch 'master' of https://github.com/emmasjelle/Eksamensprojekt
+
+commit 0be6a7a9c21d29eee183e5e9e4830a5b8e85c499
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Mon Dec 2 08:34:01 2019 +0100
+
+    ooooo
+
+commit c7171f7891c1379e35f3c997101e694c41c0044b
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Mon Dec 2 08:32:34 2019 +0100
+
+    Calender function works with one booking. Safe upload before merge with other scripts.
+
+commit 5e3abadf0abad90c0ffef1c1b330d97a88c0d212
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Fri Nov 29 16:33:04 2019 +0100
+
+    Booking function continued - now takes in multiple dates on one day and highlights chosen date.
+
+commit ad1b34f9932dadf90798c256616a529ddef3bafc
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Mon Nov 25 21:22:11 2019 +0100
+
+    Calender - needs to show available times on chosen date
+
+commit 349a8cc8d1004cb6d7b5875ebc727686da0ab0dc
+Merge: e26df50 549ebbf
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Mon Nov 25 15:15:37 2019 +0100
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       Calender.js
+    #       logIn.js
+
+commit e26df50b8b35eba567850a6f5ead9c94dfda2ae2
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Mon Nov 25 15:13:55 2019 +0100
+
+    Calender now finds the number of days in the chosen month and pastes
+    them into the calender. See nextDate() and fillCalender()
+
+commit a3ec2f04ed3c3f3819b27a7af3c5023499d696e6
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Mon Nov 25 12:52:55 2019 +0100
+
+    Calender now finds the number of days in the chosen month and pastes
+    them into the calender. See nextDate() and fillCalender()
+
+commit 549ebbfa2107ca1105388658eaafad98ee8710b1
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Thu Nov 21 10:57:30 2019 +0100
+
+    Rettelse af logo, rettelse af behandlingstyper mht. videresendelse til login eller booking, rettelse af navigationsbardesign
+
+commit 2b576ce958ef32391c9ca8ce5be350b41a0a7235
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Wed Nov 20 23:54:43 2019 +0100
+
+    Calender test function
+
+commit 9781eb0c36ef9ace2c1ba4f279f1e7a38aaf79cb
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Wed Nov 20 21:34:02 2019 +0100
+
+    Calender test function
+
+commit 196b3dedff53f91d07e9683d78056b8e5616e5c8
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Wed Nov 20 12:46:36 2019 +0100
+
+    Nav bar fixet viser kun en nav bar,  nav bar display=none
+
+commit 243d9e25edf52796132abc506ea65d0183dce408
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Mon Nov 18 21:58:14 2019 +0100
+
+    new calender function
+
+commit b26ca28c439781ea0fdc0bfbff5bad712a639685
+Merge: ef0c5ac 79a47b2
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Sun Nov 17 15:40:44 2019 +0100
+
+    Merge branch 'master' of https://github.com/emmasjelle/Eksamensprojekt
+
+commit 79a47b2ef42a1c4f5c657e58dca49346b3d10b4f
+Author: Emma Sjelle <emsj19ab@student.cbs.dk>
+Date:   Fri Nov 15 12:28:07 2019 +0100
+
+    Kommentarer færdiggjort til classes.js og flere if statements. Udkommentering er også på plads.
+
+commit ef0c5acea24fe7fa5e9dd8cf9d103ca53e4a86a3
+Merge: a27c2b4 2d58075
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Thu Nov 14 18:52:54 2019 +0100
+
+    Merge branch 'master' of https://github.com/emmasjelle/Eksamensprojekt
+
+commit a27c2b4a07c8f97f4ee1faa8831e5a006196b9cb
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Thu Nov 14 18:52:48 2019 +0100
+
+    font-type rettet i css
+
+commit 2d58075121dc4c4832917d3f425badc31497a4e6
+Merge: fa78dd6 76dcb2c
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Thu Nov 14 18:00:44 2019 +0100
+
+    Merge branch 'master' of https://github.com/emmasjelle/Eksamensprojekt
+
+commit fa78dd655d0a9e5fa1e7d127780ba530339b771d
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Thu Nov 14 17:59:50 2019 +0100
+
+    Kommentarer i calender.js
+
+commit 76dcb2cdbc737348fca449dc0c41813bc3b08214
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Thu Nov 14 16:02:37 2019 +0100
+
+    font-type rettet i css
+
+commit 937dc4edbc146d784e47a3ec8e42be9dd2dd7077
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Thu Nov 14 15:54:45 2019 +0100
+
+    function navBar() virker nu både i pre og localStorage
+
+commit 4badeb1cea4f738c85b13f0a160b81269fab5ad2
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Thu Nov 14 15:48:16 2019 +0100
+
+    rettelse i html siderne
+
+commit de42b674134e4e377206faa164667737b5cc655e
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Thu Nov 14 15:44:33 2019 +0100
+
+    rettelse i html siderne
+
+commit 12ba367cfc24151ec56c8ab7623ad074961d75a9
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Thu Nov 14 12:34:32 2019 +0100
+
+    ALT virker nu ;) ;) ;)
+
+commit d1a4599c68e9f634e48dede78eac95a890d894b9
+Merge: 55c0a30 b07e207
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Thu Nov 14 11:00:13 2019 +0100
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 55c0a3021cc08eda582b248b8618ee318dc790f8
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Thu Nov 14 10:59:58 2019 +0100
+
+    function navBar() checking the user array for admin privileges now works.
+
+commit b07e207e0e2d0593a936f022b49a1e8faf7feb76
+Author: Emma Sjelle <emsj19ab@student.cbs.dk>
+Date:   Thu Nov 14 10:58:26 2019 +0100
+
+    Validation funktion fungerer til registrer bruger
+
+commit 294ff8c09094ef35e44123305398c29b38223818
+Merge: 3587d44 6c08e8b
+Author: Emma Sjelle <emsj19ab@student.cbs.dk>
+Date:   Thu Nov 14 10:00:46 2019 +0100
+
+    Merge branch 'master' of https://github.com/emmasjelle/Eksamensprojekt
+
+commit 3587d444087883ed384ca84e87971513a74f166d
+Author: Emma Sjelle <emsj19ab@student.cbs.dk>
+Date:   Thu Nov 14 10:00:37 2019 +0100
+
+    småændringer part 2
+
+commit 6c08e8b0834d62a40415a04da1e301b74f568e07
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Wed Nov 13 22:18:29 2019 +0100
+
+    function navBar() checking the user array for admin privileges now works.
+
+commit 59155e268c5c33729a558800f2eb8efd21a88823
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Wed Nov 13 21:58:16 2019 +0100
+
+    function navBar() checking the user array for admin privileges now works.
+
+commit 150b255a607984abda2db7c8f754f3d3235f6818
+Merge: 1f461ff d9de42b
+Author: Emma Sjelle <emsj19ab@student.cbs.dk>
+Date:   Wed Nov 13 16:45:41 2019 +0100
+
+    Merge branch 'master' of https://github.com/emmasjelle/Eksamensprojekt
+    
+     Conflicts:
+    	LogIn.html
+
+commit 1f461ff5158ee77edd3a112f60f6e791a54dce05
+Author: Emma Sjelle <emsj19ab@student.cbs.dk>
+Date:   Wed Nov 13 16:45:10 2019 +0100
+
+    småændringer
+
+commit d9de42ba88e00c20f48e1573ea1790fba38abe0b
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Wed Nov 13 16:02:10 2019 +0100
+
+    H
+
+commit 83034e6ad5f7fcccfda2d5d05127eaab861fd1df
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Wed Nov 13 16:01:48 2019 +0100
+
+    LocalStorage users og predefinerede brugere loades fra samme array i log.
+
+commit a175cc63aa65e456aea71b9722847097858e7bf7
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Wed Nov 13 14:09:48 2019 +0100
+
+    Nav bar ekstra rettelse
+
+commit 40e7dbaa8ed155d7e6a6ce6b30cc07b783e4285d
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Wed Nov 13 13:09:17 2019 +0100
+
+    Log out function
+
+commit 1627f19ace5643456bc07e04157b5d5a7093ccd8
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Wed Nov 13 13:03:17 2019 +0100
+
+    ooooo
+
+commit 486383be2771014538631cde14bc35e437524160
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Wed Nov 13 12:38:15 2019 +0100
+
+    NavBar forsvinder
+
+commit d135540cd47756a945969d858ae2f7361a77f898
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Wed Nov 13 12:14:31 2019 +0100
+
+    Navigation baR forsvinder ved login
+
+commit 546c9a41e5f9baf8f7ea6f2bd32540a6bfba0025
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Wed Nov 13 12:13:32 2019 +0100
+
+    Log out function
+
+commit 2f19a87a477fa7e59686dfc913ba7994d0c7e1a7
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Wed Nov 13 11:33:15 2019 +0100
+
+    New login function
+
+commit 40c1d3ead714f96fb5ee9c025aa00aeb4bc5d070
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Wed Nov 13 11:25:48 2019 +0100
+
+    New login function
+
+commit 991abfd66dbcac441490bd902d870a64287ee513
+Merge: d3df6e9 cf564b1
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Wed Nov 13 11:21:08 2019 +0100
+
+    Merge branch 'master' of https://github.com/emmasjelle/Eksamensprojekt
+
+commit d3df6e9106d669c5f69e560a17c715e5ecc7266d
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Wed Nov 13 11:20:42 2019 +0100
+
+    Hej
+
+commit cf564b1f7ed6dea1fe951db57e244793440ae39c
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Wed Nov 13 11:20:31 2019 +0100
+
+    Login function changes:
+    Username and Password arrays are now combined in one user array.
+
+commit 470fa892a05e0399c4f948f384fc2910861bc85a
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Mon Nov 11 14:59:20 2019 +0100
+
+    Login function changes:
+    Username and Password arrays are now combined in one user array.
+
+commit 028a875f79b0c0574629ec73b88c662fc571c9cc
+Merge: 954091d 70a5775
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Mon Nov 11 14:34:59 2019 +0100
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 954091da5706ed043fa79b05661f12eccc44c249
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Mon Nov 11 14:34:45 2019 +0100
+
+    Login function changes:
+    Username and Password arrays are now combined in one user array.
+
+commit 70a5775db49ec859fcb01c7a23ad11e609056fb2
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Mon Nov 11 14:34:20 2019 +0100
+
+    Bokking nyeste
+
+commit 48bc34603a2f14e3c5cdad68231e63bcb06fc14a
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Mon Nov 11 13:52:25 2019 +0100
+
+    Sindzyg bookingfunktion
+
+commit 0950838e7ea6263d01adf2942466f99ddde79792
+Author: Emma Sjelle <emsj19ab@student.cbs.dk>
+Date:   Mon Nov 11 12:23:06 2019 +0100
+
+    Tiderne til bookingfunktion
+
+commit 7534a37b6da7f337c56cc6e1186d273358e7fb3d
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Sun Nov 10 16:54:52 2019 +0100
+
+    Ledige tider ses under kalender
+
+commit 38bb705fbbd5e00bee21065679cf9dbb8534be65
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Sun Nov 10 16:16:22 2019 +0100
+
+    bookingfunktion
+
+commit 8d874aac40ad664d88f9b51dc99299968eeb4495
+Merge: a6d47a1 39aff9c
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Sun Nov 10 16:13:02 2019 +0100
+
+    Merge branch 'master' of https://github.com/emmasjelle/Eksamensprojekt
+
+commit a6d47a17a4a8cbc1226b3a8df343f9f17b8db036
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Sun Nov 10 16:09:07 2019 +0100
+
+    Booking funktion
+
+commit 39aff9cb301b5b7a9a8bc79c391412c9efe140c6
+Merge: 42742df b0b6bfb
+Author: Emma Sjelle <emsj19ab@student.cbs.dk>
+Date:   Sun Nov 10 10:49:03 2019 +0100
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       BehandlingsTyper.html
+    #       BookingLB.html
+    #       bruger.js
+    #       omMig.html
+
+commit 42742dfbf908465b2bcbd709a2c7a55cda3e4b93
+Author: Emma Sjelle <emsj19ab@student.cbs.dk>
+Date:   Sun Nov 10 10:47:12 2019 +0100
+
+    Forsøg på bookingfunktion
+
+commit b0b6bfb41453fb4e1f29a0dd24ac29507ccdaf6c
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Sat Nov 9 10:41:09 2019 +0100
+
+    fix navigationsbar alle steder, %baggrundb., ydeligere tilpasninger
+
+commit f2b660e646813c7dbd98ce0538966530524f04d6
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Fri Nov 8 15:31:48 2019 +0100
+
+    logo + mere
+
+commit ada8ecc56e777d5c2ca2db5f3ef20c7419cf4e7f
+Merge: 9cb30b0 ad6b0dd
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Fri Nov 8 14:13:08 2019 +0100
+
+    Merge branch 'master' of https://github.com/emmasjelle/Eksamensprojekt
+
+commit 9cb30b09c9760cb615f3aea4f12f14a7c18a2658
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Fri Nov 8 14:11:39 2019 +0100
+
+    ooooo
+
+commit ad6b0dd132fb7ed3418423f798b52d46e48fb434
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Fri Nov 8 14:04:56 2019 +0100
+
+    Login function changes:
+    Username and Password arrays are now combined in one user array.
+
+commit c6325158591a4dca75fc920571d8e666006e298c
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Fri Nov 8 14:04:36 2019 +0100
+
+    Login function changes:
+    Username and Password arrays are now combined in one user array.
+
+commit ed897118eed8ce5c5fc01aa8de119c2861615744
+Merge: 9838655 761e33e
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Fri Nov 8 13:28:32 2019 +0100
+
+    Merge branch 'master' of https://github.com/emmasjelle/Eksamensprojekt
+
+commit 9838655262f5564e8a1ef186253a8154c2d83734
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Fri Nov 8 13:28:23 2019 +0100
+
+    Login function changes:
+    Username and Password arrays are now combined in one user array.
+
+commit 761e33ea17adc2b5273193ba772f0704e0694706
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Fri Nov 8 13:27:18 2019 +0100
+
+    Navigationbar i alle faner udover om mig
+
+commit ae24349dd364ff5842931090e0f3e6caabb5fca2
+Merge: d4f3360 0d4cee2
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Fri Nov 8 12:55:54 2019 +0100
+
+    Merge remote-tracking branch 'origin/master'
+
+commit d4f3360dcac855a160da594375de4186d76139ff
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Fri Nov 8 12:55:33 2019 +0100
+
+    Login function changes:
+    Username and Password arrays are now combined in one user array.
+
+commit 0d4cee21cb5e50f4537d34244123b013977108e0
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Fri Nov 8 12:49:57 2019 +0100
+
+    Rettet i forside og elementhider mht navigationsbar om hvornår den skjules og vises
+
+commit 1defff203d54429fa085b12ed1b544a7a47cdce5
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Fri Nov 8 11:03:59 2019 +0100
+
+    Login function changes:
+    Username and Password arrays are now combined in one user array.
+
+commit 6e51affc3758f6f0c03842bfad5eab37293f4e54
+Merge: 8988bae 9fdef29
+Author: Emma Sjelle <emsj19ab@student.cbs.dk>
+Date:   Fri Nov 8 09:12:16 2019 +0100
+
+    Merge branch 'master' of https://github.com/emmasjelle/Eksamensprojekt
+    
+    # Conflicts:
+    #       bruger.js
+
+commit 8988bae7a87fe958a4f56dbd48c1d1bf2d5792a8
+Author: Emma Sjelle <emsj19ab@student.cbs.dk>
+Date:   Fri Nov 8 09:10:13 2019 +0100
+
+    Testændring i bookingfunktion
+
+commit 9fdef291223304384672df6e497d004b8bf42757
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Fri Nov 8 08:00:57 2019 +0100
+
+    Hej
+
+commit 13a2b1ac710d2339680f0084bef4ea19c3048653
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Fri Nov 8 07:52:30 2019 +0100
+
+    Login function changes:
+    Username and Password arrays are now combined in one user array.
+
+commit 673a023c1c47f98be43bc794b074fec26d15e554
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Thu Nov 7 13:31:25 2019 +0100
+
+    Login function changes:
+    Username and Password arrays are now combined in one user array.
+
+commit 5989c515886747f2af0d9751ad487b1b10e509b7
+Merge: e246b36 a28cff5
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Thu Nov 7 13:13:56 2019 +0100
+
+    Merge remote-tracking branch 'origin/master'
+
+commit e246b367e1524e61fb54d3056bb01a8cdb92c41d
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Thu Nov 7 13:10:45 2019 +0100
+
+    Login function changes:
+    Username and Password arrays are now combined in one user array.
+
+commit 298a23dd219ce71fb8f44ca84ec04b6b17bedcd0
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Thu Nov 7 12:01:52 2019 +0100
+
+    Login function changes:
+    Username and Password arrays are now combined in one user array.
+
+commit a28cff5f680ea623e08ee98b08c6cccc41640bd5
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Tue Nov 5 10:57:31 2019 +0100
+
+    Behnadlingstypper udvidelse af comments
+
+commit 4a2cd713541d2ff7d24abeb6e07eb4f3981123b2
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Tue Oct 29 15:05:35 2019 +0100
+
+    Login function changes:
+    Username and Password arrays are now combined in one user array.
+
+commit 4c1aa8a7b05734d871d968998180bee6b59521d7
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Wed Oct 23 17:49:29 2019 +0200
+
+    Login function changes:
+    Username and Password arrays are now combined in one user array.
+
+commit 7c02fa12dc2320e35eb27c391316f9103406de18
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Wed Oct 23 15:25:03 2019 +0200
+
+    Book her-knap added til alle behandlingstyper
+
+commit 4ea717c5c3c120206432f2415431d7cc42a0116c
+Merge: 9c861b0 a8c5953
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Wed Oct 23 15:21:49 2019 +0200
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 9c861b0cfedf8023b6a0c58243aa2e7d1d6fc5fc
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Wed Oct 23 15:21:37 2019 +0200
+
+    booking changes
+
+commit a8c5953ae020d31f7799153dff06ec2ef5e3b3d5
+Author: Emma Sjelle <emsj19ab@student.cbs.dk>
+Date:   Wed Oct 23 15:20:57 2019 +0200
+
+    Ændring i behandlingstyper
+
+commit 2d1f4b20d606980aa826ba07b433694f4f1aa456
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Wed Oct 23 10:50:59 2019 +0200
+
+    booking changes
+
+commit 3431e004f4ff767daa88fb85425678d1917d62eb
+Merge: 947cada a0cb920
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Wed Oct 23 10:41:52 2019 +0200
+
+    Merge branch 'master' of https://github.com/emmasjelle/Eksamensprojekt
+
+commit 947cada012378bac89d0f2067709054bc716605b
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Wed Oct 23 10:41:47 2019 +0200
+
+    Log in function via arrays
+
+commit a0cb92013830fd634a3f8f40084e62721126164f
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Wed Oct 23 10:41:22 2019 +0200
+
+    Retning i booking.js
+
+commit bffdd99435b534454878f2f373f4ace8e66886a0
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Wed Oct 23 10:10:54 2019 +0200
+
+    Log in function via arrays
+
+commit 54661659c62e305528a076e94d0abe1334a07abc
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Fri Oct 18 12:46:19 2019 +0200
+
+    Prædefineret tider
+
+commit b1b5436397a651e76426b91727af601f208942a7
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Fri Oct 18 12:41:41 2019 +0200
+
+    Ændringer i prædefineret tider, den rigtige version
+
+commit a4887bc456d349172ebafe521e2940add15004ec
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Fri Oct 18 12:11:25 2019 +0200
+
+    prædefineret tider
+
+commit 87264330ff59a499075d483f9b680ab0fe43f65b
+Merge: 350f2c9 427e54d
+Author: Emma Sjelle <emsj19ab@student.cbs.dk>
+Date:   Fri Oct 18 10:52:33 2019 +0200
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 350f2c96b9905fb22e4957a534d58a5efd6c135f
+Author: Emma Sjelle <emsj19ab@student.cbs.dk>
+Date:   Fri Oct 18 10:46:27 2019 +0200
+
+    Forsøg på array
+
+commit 427e54d1dd34446b0a1bdfe5945554ecf5db6dc1
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Fri Oct 18 10:44:40 2019 +0200
+
+    Log in function via arrays
+
+commit 342deb9fdc5f9949b3cc6ecaed57e11b1ed7ff6b
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Fri Oct 18 08:44:06 2019 +0200
+
+    Log in function
+
+commit cd96034137343cc534ab5401da69a6d7daf6dbd5
+Merge: f217bda b09fec4
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Fri Oct 18 08:21:04 2019 +0200
+
+    Merge remote-tracking branch 'origin/master'
+
+commit f217bda60ef64c86ef68df9803c9897b6cdceb95
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Fri Oct 18 08:20:45 2019 +0200
+
+    Log in function
+
+commit b09fec47b70ce24100ff627edbb8328aa35c4e16
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Fri Oct 18 08:07:51 2019 +0200
+
+    ooooo
+
+commit cb8fad9cfe1dacce59254127a693d724cd9e3993
+Author: Emma Sjelle <emsj19ab@student.cbs.dk>
+Date:   Tue Oct 15 13:38:58 2019 +0200
+
+    Opdatering af behandlingstyper
+
+commit ba77f7bc5a222683847427f063cc1dcc711ff1a6
+Author: Emma Sjelle <emsj19ab@student.cbs.dk>
+Date:   Tue Oct 15 12:56:33 2019 +0200
+
+    Link til ny webpage
+
+commit e5abcf973066c945bdf16905578b98da59c8ed30
+Author: Emma Sjelle <emsj19ab@student.cbs.dk>
+Date:   Tue Oct 15 12:46:49 2019 +0200
+
+    Ændring i bookingside
+
+commit 53f886348935544a5ed57dcedb1048ea666cc8fc
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Tue Oct 15 11:59:57 2019 +0200
+
+    Log in function
+
+commit 3f48daba30e181698577a413218364d4fcc3cfad
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Tue Oct 15 09:36:25 2019 +0200
+
+    Log in function
+
+commit 060db723ae08ff0a1aee5e0ab9ec5c03b4ea2098
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Mon Oct 14 12:51:11 2019 +0200
+
+    Mucho ændringo
+
+commit 82d9b8aef44b3f591a857879f2b7d1665c8a51b9
+Merge: 35d9110 1b34f1d
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Mon Oct 14 11:46:18 2019 +0200
+
+    Merge remote-tracking branch 'origin/master'
+
+commit 35d91107393c38ef65ab8bf7bc6ae09a2d8bc0db
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Mon Oct 14 11:45:40 2019 +0200
+
+    Nye HTML filer + CSS
+
+commit 1b34f1da0e4ce81379bd55e0d57e90a24c0fa416
+Author: Emma Sjelle <emsj19ab@student.cbs.dk>
+Date:   Mon Oct 14 11:43:49 2019 +0200
+
+    test
+
+commit 81a7a7a732c906e47939327ea9f84d1a63440b88
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Mon Oct 14 09:44:37 2019 +0200
+
+    Nye HTML filer + CSS
+
+commit fd6ebb11b0d397305cb979c73002910b22b69c6e
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Mon Oct 14 08:55:07 2019 +0200
+
+    Oversættelse fra dansk til English
+
+commit 43d36b00ce85dcf320fb222ad574e270d9facb00
+Author: Emma Sjelle <emsj19ab@student.cbs.dk>
+Date:   Mon Oct 14 08:30:32 2019 +0200
+
+    Hej Patrcik
+
+commit 5cddb2b0c9655cb89e163fda61522a003832ab2c
+Author: Hartvig1337 <paha19ab@student.cbs.dk>
+Date:   Mon Oct 14 08:27:17 2019 +0200
+
+    test
+
+commit 2acaa3f3b38dd85ce98ac027406e4bf5c4c27032
+Author: Emma Sjelle <emsj19ab@student.cbs.dk>
+Date:   Wed Oct 9 16:37:18 2019 +0200
+
+    Tak til Emma og Sanel
+
+commit debb8cd88d5297a1c44f3ea1ce7f49dc6663b85b
+Author: Emma Sjelle <emsj19ab@student.cbs.dk>
+Date:   Wed Oct 9 15:31:38 2019 +0200
+
+    Ændring i bruger
+
+commit aa0247d63e40d436567a36734eee381aef5f1454
+Author: Emma Sjelle <emsj19ab@student.cbs.dk>
+Date:   Wed Oct 9 14:11:23 2019 +0200
+
+    At lave en klasse
+
+commit a5c7130cd8ecc6c222e274261a0d3ca794665ba2
+Author: Emma Sjelle <emsj19ab@student.cbs.dk>
+Date:   Wed Oct 9 13:55:39 2019 +0200
+
+    fire nye filer
+
+commit da5eb08fb5b37cd448ab6eb50a1c848eb6da8289
+Author: Sanel Gluhic <sagl19ab@student.cbs.dk>
+Date:   Wed Oct 9 13:44:19 2019 +0200
+
+    Hej Emma
+
+commit 47ede072a15d973bcb5a53d15e641ea48fb6d7b2
+Author: emmasjelle <55089943+emmasjelle@users.noreply.github.com>
+Date:   Wed Oct 9 13:31:10 2019 +0200
+
+    Add files via upload
+
+commit 437b73a8ff3b6e66d7f2c5b882ec00ef9d26488b
+Author: emmasjelle <55089943+emmasjelle@users.noreply.github.com>
+Date:   Wed Oct 9 13:19:28 2019 +0200
+
+    Add files via upload
+
+commit 54c4cd624afcbcbf779cf39c0627af715acc966c
+Author: emmasjelle <55089943+emmasjelle@users.noreply.github.com>
+Date:   Wed Oct 9 13:18:02 2019 +0200
+
+    Add files via upload
+
+commit 80695150d51fa2aa7aaf81ca6a9037971829388e
+Author: emmasjelle <55089943+emmasjelle@users.noreply.github.com>
+Date:   Wed Oct 9 13:01:02 2019 +0200
+
+    Initial commit

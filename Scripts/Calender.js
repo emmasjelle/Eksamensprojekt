@@ -115,7 +115,6 @@ document.querySelector('div.datesWrapper').addEventListener('click', function ()
     fillWindow();
 
 });
-
 //Colors the chosen date
 function colorDate() {
     var x = document.getElementById('dateField').innerHTML;
