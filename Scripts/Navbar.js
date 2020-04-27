@@ -52,7 +52,7 @@ function navBar() {
     //There is no current activeUser if the sessionStorage is empty (... == 0).
     /*As the function loads on every page, the system knows that an empty sessionStorage should result in
     the "all"(guest) Navigation Bar to be displayed. */
-    if (sessionStorage.length == 0) {
+    if (sessionStorage.length == 0 ) {
         /*We are using style.display to hide the Navigation options, that should not be
         accesible for the unregistered guest. */
         allNavBar.style.display = 'flex';
@@ -65,7 +65,8 @@ function navBar() {
     through an if statement, another if statement is triggered. The next if statement checks if the indexed
     users[i] has an admin boolean value of "true". */
     for (var i = 0; i < users.length; i++ ) {
-        if (activeUserNow == users[i].un) {
+        if (activeUserNow == users[i].email) {
+            console.log("not admin"+users[i].email);
             if (users[i].admin == "true") {
                 //if the above statements are met it will display the admin navigation bar.
                 admNavBar.style.display = 'flex';
@@ -76,7 +77,8 @@ function navBar() {
         /*If the sessionStorage is not empty, and the activeUserNow does not have the boolean value of "true",
         a series of if statements is trigged like above. This time the statement checks if the activeUserNow has a
         boolean value of "false", resulting in the "user"(client) Navigation Bar being shown. */
-        if (activeUserNow == users[i].un) {
+        if (activeUserNow == users[i].email) {
+            console.log("not admin"+users[i].email);
             if (users[i].admin == "false") {
                 admNavBar.style.display = 'none';
                 allNavBar.style.display = 'none';
@@ -85,3 +87,4 @@ function navBar() {
         }
     }
 }
+

@@ -29,9 +29,9 @@ class Client extends User {
 }
 
 //We create a practitioner test user.
-PractitionerTest = new Practitioner("Sanel","123","Sanel Gluhic","Dalgas Have 1","12345678","sanel@cbs.dk","true"," ");
+PractitionerTest = new Practitioner("Sanel","123","Sanel Gluhic","Dalgas Have 1","12345678","sanel@cbs.student.dk","true"," ");
 //client test user.
-ClientTest = new Client("Emma","123","Emma Sjelle","Dalgas Have 2","12345677","emma@cbs.dk","false","Horse");
+ClientTest = new Client("Emma","123","Emma Sjelle","Dalgas Have 2","12345677","emma@cbs.student.dk","false","Horse");
 
 //When you create a practitioner in local storage this admin-key must be used during creation.
 var adminKey = "888";
@@ -112,7 +112,7 @@ function storeUser() {
         newPractitioner = new Practitioner(un.value, pw.value, nm.value, uAddress.value, phoneNumber.value, email.value,
             "true", "");
         alert("Din bruger er oprettet som behandler - du kan nu logge ind.");
-        users.push(newPractitioner);
+        users.push(newPractitioner); //POST klassen (practitioner eller user)
         localStorage.setItem('userArray', JSON.stringify(users));
         console.log(users);
     } else {
