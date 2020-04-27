@@ -3,8 +3,7 @@
 
 //Parent User class in our system. The constructor contains variables which applies for both types of user
 class User {
-    constructor(un, pw, nm, uAddress, phoneNumber, email, admin) {
-        this.un = un;
+    constructor(pw, nm, uAddress, phoneNumber, email, admin) {
         this.pw = pw;
         this.nm = nm;
         this.uAddress = uAddress;
@@ -16,22 +15,17 @@ class User {
 //Practitioner (admin) class which inherit from the parent class. This also applies for the next class "Client". In
 // order to inherit, we use "extends User".
 class Practitioner extends User {
-    constructor(un, pw, nm, uAddress, phoneNumber, email, admin, companyName) {
-        super(un, pw, nm, uAddress, phoneNumber, email, admin);
+    constructor(pw, nm, uAddress, phoneNumber, email, admin, companyName) {
+        super(pw, nm, uAddress, phoneNumber, email, admin);
         this.companyName = companyName;
     }
 }
 class Client extends User {
-    constructor(un, pw, nm, uAddress, phoneNumber, email, admin, animal) {
-        super(un, pw, nm, uAddress, phoneNumber, email, admin);
+    constructor(pw, nm, uAddress, phoneNumber, email, admin, animal) {
+        super(pw, nm, uAddress, phoneNumber, email, admin);
         this.animal = animal;
     }
 }
-
-//We create a practitioner test user.
-PractitionerTest = new Practitioner("Sanel","123","Sanel Gluhic","Dalgas Have 1","12345678","sanel@cbs.student.dk","true"," ");
-//client test user.
-ClientTest = new Client("Emma","123","Emma Sjelle","Dalgas Have 2","12345677","emma@cbs.student.dk","false","Horse");
 
 //When you create a practitioner in local storage this admin-key must be used during creation.
 var adminKey = "888";
