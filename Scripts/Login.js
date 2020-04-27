@@ -1,19 +1,15 @@
 //The purpose of this code is to create our login function and logout.
-
 //There is three possibilities when loggin in:
 // 1. A pre-made user successfully logs in
 // 2. A new created user logs in
 // 3. The username or password from pre-made or new user is incorrect, so access is denied
-
 function logInApi() {
     let userEmail = document.getElementById('userE').value;
     let userPass = document.getElementById('userPw').value;
-
     const body = {
         email: userEmail,
         password: userPass
     };
-
     axios.post('http://localhost:3000/users/login', body)
         .then((response) => {
             if (response.status === 200) {
@@ -35,14 +31,11 @@ function logInApi() {
 function logOut(){
     sessionStorage.clear();
 }
-
 function testAdmin() {
     let userEmail = sessionStorage.activeUser;
-
     const body = {
         email: userEmail
     };
-
     axios.post('http://localhost:3000/users/check', body)
         .then((response) => {
             if (response.status === 200) {
@@ -58,7 +51,6 @@ function testAdmin() {
 }
 
 //tidligere funktioner
-
 //!!PRE API FUNKTION!!
 function logInUser() {
     var users = JSON.parse(localStorage.getItem('userArray'));
@@ -70,7 +62,6 @@ function logInUser() {
             valid = true;
         }
     }
-
     //If there is a match in username and password the user will be directed to the booking page. If there isn't a match
     //the system will create an alert and stay on the same page.
     if (valid) {
@@ -89,7 +80,6 @@ function logInUserTest() {
     var invalid = true;
     var userName = document.getElementById('userName').value;
     var pass = document.getElementById('userPw').value;
-
     const emma = '5ea3dcb90b82760858a9c772';
     //Skal have den til at søge det indtastede username og slå det op i databasen
     //Nedenståend er blot en test
