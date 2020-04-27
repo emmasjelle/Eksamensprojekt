@@ -29,9 +29,9 @@ class Client extends User {
 }
 
 //We create a practitioner test user.
-PractitionerTest = new Practitioner("Sanel","123","Sanel Gluhic","Dalgas Have 1","12345678","sanel@cbs.dk","true"," ");
+PractitionerTest = new Practitioner("Sanel","123","Sanel Gluhic","Dalgas Have 1","12345678","sanel@cbs.student.dk","true"," ");
 //client test user.
-ClientTest = new Client("Emma","123","Emma Sjelle","Dalgas Have 2","12345677","emma@cbs.dk","false","Horse");
+ClientTest = new Client("Emma","123","Emma Sjelle","Dalgas Have 2","12345677","emma@cbs.student.dk","false","Horse");
 
 //When you create a practitioner in local storage this admin-key must be used during creation.
 var adminKey = "888";
