@@ -18,7 +18,7 @@ function navBar() {
         axios.post('http://localhost:3000/users/check', body)
             .then((response) => {
                 //True = client is a practitioner. False = Client is a Client
-                if (response.data.admin === true) {
+                if (response.data.admin === false) {
                     admNavBar.style.display = 'none';
                     allNavBar.style.display = 'none';
                     userNavBar.style.display = 'flex';

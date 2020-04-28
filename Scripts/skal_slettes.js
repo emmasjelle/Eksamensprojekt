@@ -99,3 +99,113 @@ FRA Classes.js
 PractitionerTest = new Practitioner("Sanel","123","Sanel Gluhic","Dalgas Have 1","12345678","sanel@cbs.student.dk","true"," ");
 //client test user.
 ClientTest = new Client("Emma","123","Emma Sjelle","Dalgas Have 2","12345677","emma@cbs.student.dk","false","Horse");
+
+function validate() {
+    var users = JSON.parse(localStorage.getItem('userArray'));
+//In order to specify what every single field should contain to return true, we create if-statements.
+    //We use .length in order to check the lenght of the username and password.
+    if (un.value.length < 4) {
+        alert("Dit brugernavn skal indeholde minimum 4 karakterer");
+        return false;
+    }
+    for (i = 0; i < users.length; i++) {
+        if (un.value == users[i].un) {
+            alert("Brugernavnet er allerede i brug");
+            return false;
+        }
+    }
+    //R: SG: Får vi ikke et problem i bookingen, hvis flere brugere har det samme brugernavn?
+    //Kunne det ikke være en ide at loope igennem de eksisterende usernames for at tjekke at det ikke
+    // allerede eksisterer?
+    //R: EVNS: Jo, det får jeg lige tilføjet!
+    //R: EVNS: Jeg har rettet det nu.
+
+    if (pw.value.length < 8) {
+        alert("Dit password skal indeholde minimum 8 karakterer");
+        return false;
+    }
+//We use the equals operator to make sure, what that the username field is being filled out.
+    if (nm.value == "") {
+        alert("Udfyld dit navn");
+        return false;
+    }
+//Firstly we use the NaN function, which demands the field to be entered with numbers. Afterwards we use and-operator
+// and notequals operator in order to define how a phonenumber should be written.
+    /*if(isNaN(phoneNumber) && phoneNumber.length != 8){
+        alert("Indtast venligst et gyldigt dansk telefonnummer");
+           return false;
+     }
+
+//We use the indexOf("@") and equals operator to define, that this field should contain one @.
+     if(email.indexOf("@") == -1 || email.length < 5){
+         alert("Indtast en gyldig email");
+         return false;
+     }*/
+
+    if (admin.value != adminKey && admin.value != "") {
+        alert("Forkert admin nøgle");
+        return false;
+    }
+//If it runs through all if-statements and they don't return false, it will finally run the StoreUser() and
+// testForAdmin() functions.
+    storeUser();
+    return true;
+}
+
+/*
+FRA Login.js
+*/
+//tidligere funktioner
+//!!PRE API FUNKTION!!
+function logInUser() {
+    var users = JSON.parse(localStorage.getItem('userArray'));
+    var valid = false;
+    var invalid = true;
+    // Forloop that looks through the users array for matching usernames and then passwords for the matching index
+    for (var i = 0; i < users.length; i++) {
+        if (userName.value == users[i].un && userPw.value == users[i].pw) {
+            valid = true;
+        }
+    }
+    //If there is a match in username and password the user will be directed to the booking page. If there isn't a match
+    //the system will create an alert and stay on the same page.
+    if (valid) {
+        window.location.href = "Bookingside.html";
+        sessionStorage.setItem("activeUser", userName.value);
+    }
+    else if (invalid) {
+        alert("Brugernavnet \""+userName.value+"\" eller password er forkert.");
+        return true;
+    }
+}
+
+//API første test kald
+function logInUserTest() {
+    var valid = false;
+    var invalid = true;
+    var userName = document.getElementById('userName').value;
+    var pass = document.getElementById('userPw').value;
+    const emma = '5ea3dcb90b82760858a9c772';
+    //Skal have den til at søge det indtastede username og slå det op i databasen
+    //Nedenståend er blot en test
+    axios.get('http://localhost:3000/users/'+emma)
+        .then(response => {
+            userNm = response.data.username;
+            userPw = response.data.password;
+            console.log(userNm);
+            console.log(userPw);
+            // Forloop that looks through the users array for matching usernames and then passwords for the matching index
+            if (userName == userNm) {
+                valid = true;
+                window.location.href = "Bookingside.html";
+            }
+            if (valid) {
+                window.location.href = "Bookingside.html";
+                sessionStorage.setItem("activeUser", un);
+            }
+            else if (invalid) {
+                alert("Brugernavnet \""+userName+"\" eller password er forkert.");
+                return true;
+            }
+        });
+}

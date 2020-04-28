@@ -36,81 +36,27 @@ var adminKey = "888";
 //also why we commented out the related if-statements.
 
 //Information recived from the register form.
-var un = document.getElementById('un');
 var pw = document.getElementById('pw');
 var nm = document.getElementById('nm');
 var uAddress = document.getElementById('address');
-var phoneNumber = document.getElementById('phoneNumber');
+var uNumber = document.getElementById('phoneNumber');
 var email = document.getElementById('email');
 var animal2 = document.getElementById('animal');
 var admin = document.getElementById('admin');
 
-
- function validate() {
-    var users = JSON.parse(localStorage.getItem('userArray'));
-//In order to specify what every single field should contain to return true, we create if-statements.
-   //We use .length in order to check the lenght of the username and password.
-    if (un.value.length < 4) {
-        alert("Dit brugernavn skal indeholde minimum 4 karakterer");
-        return false;
-    }
-        for (i = 0; i < users.length; i++) {
-            if (un.value == users[i].un) {
-                alert("Brugernavnet er allerede i brug");
-                return false;
-            }
-        }
-        //R: SG: Får vi ikke et problem i bookingen, hvis flere brugere har det samme brugernavn?
-     //Kunne det ikke være en ide at loope igennem de eksisterende usernames for at tjekke at det ikke
-     // allerede eksisterer?
-        //R: EVNS: Jo, det får jeg lige tilføjet!
-        //R: EVNS: Jeg har rettet det nu.
-
-    if (pw.value.length < 8) {
-        alert("Dit password skal indeholde minimum 8 karakterer");
-        return false;
-    }
-//We use the equals operator to make sure, what that the username field is being filled out.
-    if (nm.value == "") {
-        alert("Udfyld dit navn");
-        return false;
-    }
-//Firstly we use the NaN function, which demands the field to be entered with numbers. Afterwards we use and-operator
-// and notequals operator in order to define how a phonenumber should be written.
-    /*if(isNaN(phoneNumber) && phoneNumber.length != 8){
-        alert("Indtast venligst et gyldigt dansk telefonnummer");
-           return false;
-     }
-
-//We use the indexOf("@") and equals operator to define, that this field should contain one @.
-     if(email.indexOf("@") == -1 || email.length < 5){
-         alert("Indtast en gyldig email");
-         return false;
-     }*/
-
-     if (admin.value != adminKey && admin.value != "") {
-         alert("Forkert admin nøgle");
-         return false;
-     }
-//If it runs through all if-statements and they don't return false, it will finally run the StoreUser() and
-// testForAdmin() functions.
-    storeUser();
-    return true;
-}
-
 //This function stores the information received in the register user form.
-function storeUser() {
+function storeUserOld() {
     //See Navbar.js with createUserArr
     var users = JSON.parse(localStorage.getItem('userArray'));
     if (admin.value == adminKey) {
-        newPractitioner = new Practitioner(un.value, pw.value, nm.value, uAddress.value, phoneNumber.value, email.value,
-            "true", "");
+        newPractitioner = new Practitioner(pw.value, nm.value, uAddress.value, uNumber.value, email.value,
+            "true");
         alert("Din bruger er oprettet som behandler - du kan nu logge ind.");
         users.push(newPractitioner); //POST klassen (practitioner eller user)
         localStorage.setItem('userArray', JSON.stringify(users));
         console.log(users);
     } else {
-        newClient = new Client(un.value, pw.value, nm.value, uAddress.value, phoneNumber.value, email.value, "false", animal2);
+        newClient = new Client(pw.value, nm.value, uAddress.value, uNumber.value, email.value, "false");
         alert("Din bruger er oprettet - du kan nu logge ind.");
         users.push(newClient);
         localStorage.setItem('userArray', JSON.stringify(users));
@@ -118,6 +64,67 @@ function storeUser() {
     }
 }
 
-//R: PHO: Super at du har fået samlet admintjekket og lagt testForAdmin() ind i StoreUser.
-//StoreUser() er dog skrevet med stort S, vil du rette det til småt?
-//D: EVNS: hov, det retter jeg lige.
+function validateSignUp() {
+    let adminCheck = false;
+    if (admin.value == adminKey) {
+        adminCheck = true;
+    }
+
+        const body = {
+        password: pw.value,
+        name: nm.value,
+        address: uAddress.value,
+        email: email.value,
+        phoneNumber: uNumber.value,
+        admin: adminCheck
+    };
+    axios.post('http://localhost:3000/users/validate', body)
+        .then((response) => {
+            if (response.status === 200 && adminCheck === true) {
+                console.log('admin true + valid');
+                console.log(response.data.message);
+                //INDSÆT create practitioner funktion her
+            }
+            if (response.status === 200 && adminCheck === false) {
+                console.log('admin false + valid');
+                console.log(response.data.message);
+                //INDSÆT create client funktion her
+            }
+        })
+        .catch((err) => {
+            console.log(err.data.message);
+        })
+}
+
+function storeUser() {
+    newPractitioner = new Practitioner(pw.value, nm.value, uAddress.value, uNumber.value, email.value,
+        "true");
+    const body = {
+        password: newPractitioner.pw,
+        name: newPractitioner.nm,
+        address: newPractitioner.uAddress,
+        email: newPractitioner.email,
+        phoneNumber: newPractitioner.uNumber,
+        admin: newPractitioner.admin
+    };
+
+    axios.post('http://localhost:3000/users/signup', body)
+        .then((response) => {
+            if (response.status === 200) {
+                alert('User created')
+            }
+            if (response.status === 409) {
+                alert(response.status.message);
+                console.log(response);
+                console.log(response.data);
+                console.log('triggered');
+            }
+        })
+        .catch((err) => {
+            //Denne catch skal fange min medelelse fra api'en
+            console.log(err);
+            console.log('test');
+            alert(err);
+        })
+}
+

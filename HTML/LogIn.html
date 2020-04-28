@@ -31,7 +31,7 @@
         <li><a href="BehandlingsTyper.html">Behandlingstyper</a></li>
         <li><a href="LogIn.html">Booking</a></li>
         <!--Client added navigation functions-->
-        <li><a href="seTiderB.html">Se mine tider</a></li>
+        <li><a href="minSide.html">Min side</a></li>
         <li><a onClick="logOut()" href="index.html">Log ud</a></li>
     </ul>
 </div>
@@ -64,16 +64,15 @@
     <!--Register form -->
     <h1>Registrer</h1>
     <form id="form" onsubmit="return validate();">
-        <h3>Vælg et brugernavn og et password</h3>
+        <h3>Indtast din e-mail og vælg et password</h3>
 
         <!-- The <input> tag is created. User has ability to enter data -->
-        <input type="text" id="un" placeholder="Vælg brugernavn" value=""/><br />
+        <input type="text" id="email" placeholder="E-mail" value=""/><br />
         <input type="password" id="pw" placeholder="Vælg password" value=""/><br />
         <h3>Personlige oplysninger</h3>
         <input type="text" id="nm" placeholder="Fulde navn" value=""/><br />
         <input type="text" id="address" placeholder="Addresse" value=""/><br />
         <input type="text" id="phoneNumber" placeholder="Telefonnummer" value=""/><br />
-        <input type="text" id="email" placeholder="E-mail" value=""/><br />
         <h5>Hvilket dyr har du?</h5>
         <select name="Dyr" id="animal">
             <option value="horse">Hest</option>
@@ -86,7 +85,7 @@
         <input type="text" id="admin" placeholder="Behandler kode" value=""/><br />
 
         <!--When "Opret Bruger"-button is clicked it triggers the storeUser() function-->
-        <input type="button" value="Opret bruger" onClick="validate()">
+        <input type="button" value="Opret bruger" onClick="validateSignUp()">
     </form>
 
     <script type="text/JavaScript" src="../Scripts/Classes.js"></script>
