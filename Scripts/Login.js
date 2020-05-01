@@ -6,6 +6,7 @@
 function logInApi() {
     let userEmail = document.getElementById('userE').value;
     let userPass = document.getElementById('userPw').value;
+
     const body = {
         email: userEmail,
         password: userPass
@@ -23,7 +24,7 @@ function logInApi() {
         })
         .catch((err) => {
             //Denne catch skal fange min medelelse fra api'en
-            alert('')
+            console.log(err);
         })
 }
 

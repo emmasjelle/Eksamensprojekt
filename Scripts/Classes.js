@@ -3,32 +3,32 @@
 
 //Parent User class in our system. The constructor contains variables which applies for both types of user
 class User {
-    constructor(pw, nm, uAddress, phoneNumber, email, admin) {
+    constructor(pw, nm, uAddress, phoneNumber, email, practitioner) {
         this.pw = pw;
         this.nm = nm;
         this.uAddress = uAddress;
         this.phoneNumber = phoneNumber;
         this.email = email;
-        this.admin = admin;
+        this.practitioner = practitioner;
     }
 }
-//Practitioner (admin) class which inherit from the parent class. This also applies for the next class "Client". In
+//Practitioner class which inherit from the parent class. This also applies for the next class "Client". In
 // order to inherit, we use "extends User".
 class Practitioner extends User {
-    constructor(pw, nm, uAddress, phoneNumber, email, admin, companyName) {
-        super(pw, nm, uAddress, phoneNumber, email, admin);
+    constructor(pw, nm, uAddress, phoneNumber, email, practitioner, companyName) {
+        super(pw, nm, uAddress, phoneNumber, email, practitioner);
         this.companyName = companyName;
     }
 }
 class Client extends User {
-    constructor(pw, nm, uAddress, phoneNumber, email, admin, animal) {
-        super(pw, nm, uAddress, phoneNumber, email, admin);
+    constructor(pw, nm, uAddress, phoneNumber, email, practitioner, animal) {
+        super(pw, nm, uAddress, phoneNumber, email, practitioner);
         this.animal = animal;
     }
 }
 
-//When you create a practitioner in local storage this admin-key must be used during creation.
-var adminKey = "888";
+//When you create a practitioner in local storage this practitioner-key must be used during creation.
+var practitionerKey = "888";
 
 //This function checks that all fields in the registerform is completed correctly. We use the getElementByID to collect
 //the values trough the ID and the .value enables us to collect the given value we get from the HTML form.
@@ -42,13 +42,13 @@ var uAddress = document.getElementById('address');
 var uNumber = document.getElementById('phoneNumber');
 var email = document.getElementById('email');
 var animal2 = document.getElementById('animal');
-var admin = document.getElementById('admin');
+var practitioner = document.getElementById('admin');
 
 //This function stores the information received in the register user form.
 function storeUserOld() {
     //See Navbar.js with createUserArr
     var users = JSON.parse(localStorage.getItem('userArray'));
-    if (admin.value == adminKey) {
+    if (admin.value == practitionerKey) {
         newPractitioner = new Practitioner(pw.value, nm.value, uAddress.value, uNumber.value, email.value,
             "true");
         alert("Din bruger er oprettet som behandler - du kan nu logge ind.");
@@ -65,66 +65,27 @@ function storeUserOld() {
 }
 
 function validateSignUp() {
-    let adminCheck = false;
-    if (admin.value == adminKey) {
-        adminCheck = true;
+    let practitionerCheck = false;
+    if (practitioner.value === practitionerKey) {
+        practitionerCheck = true;
+        newPractitioner = new Practitioner(pw.value, nm.value, uAddress.value, uNumber.value, email.value,
+            "true");
+    } else {
+        newClient = new Client(pw.value, nm.value, uAddress.value, uNumber.value, email.value, "false");
     }
-
         const body = {
         password: pw.value,
         name: nm.value,
         address: uAddress.value,
         email: email.value,
         phoneNumber: uNumber.value,
-        admin: adminCheck
+        practitioner: practitionerCheck
     };
-    axios.post('http://localhost:3000/users/validate', body)
-        .then((response) => {
-            if (response.status === 200 && adminCheck === true) {
-                console.log('admin true + valid');
-                console.log(response.data.message);
-                //INDSÆT create practitioner funktion her
-            }
-            if (response.status === 200 && adminCheck === false) {
-                console.log('admin false + valid');
-                console.log(response.data.message);
-                //INDSÆT create client funktion her
-            }
-        })
-        .catch((err) => {
-            console.log(err.data.message);
-        })
-}
-
-function storeUser() {
-    newPractitioner = new Practitioner(pw.value, nm.value, uAddress.value, uNumber.value, email.value,
-        "true");
-    const body = {
-        password: newPractitioner.pw,
-        name: newPractitioner.nm,
-        address: newPractitioner.uAddress,
-        email: newPractitioner.email,
-        phoneNumber: newPractitioner.uNumber,
-        admin: newPractitioner.admin
-    };
-
     axios.post('http://localhost:3000/users/signup', body)
         .then((response) => {
-            if (response.status === 200) {
-                alert('User created')
-            }
-            if (response.status === 409) {
-                alert(response.status.message);
-                console.log(response);
-                console.log(response.data);
-                console.log('triggered');
-            }
+            console.log('Sign up information is valid');
         })
         .catch((err) => {
-            //Denne catch skal fange min medelelse fra api'en
-            console.log(err);
-            console.log('test');
-            alert(err);
+            console.log('Sign up information is invalid');
         })
 }
-
