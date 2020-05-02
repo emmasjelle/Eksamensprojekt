@@ -2,17 +2,15 @@
 
 class Booking {
 
-    constructor(idB, dateB, startB, endB, practitionerB, avaiB, timeB, clientB) {
-        this.idB = idB;
+    constructor(dateB, timeB, practitionerB, avaiB, clientB) {
         this.dateB = dateB;
-        this.startB = startB;
-        this.endB = endB;
+        this.time = timeB;
         this.practitionerB = practitionerB;
-        this.avaiB = avaiB;
-        this.timeB = timeB;
         this.clientB = clientB;
+        this.avaiB = avaiB;
     }
 }
+/*
 //We create three booking times pr. working day at the moment(Categorized in timeB from 1-3)
 //10/12/2019 times
 Test1 = new Booking("0","10/12/2020","08:00","10:00","Sanel", true, 1,"");
@@ -28,3 +26,4 @@ Test7 = new Booking("6","12/12/2020","09:00","11:00","Sanel", true,1,"");
 //Our plan is also to add a journal in future, and here we would need the idB to stay the same at all times, even if
 //a time is deleted.
 //Times can move around, but they keep their number.
+ */

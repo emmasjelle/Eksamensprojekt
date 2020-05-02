@@ -6,11 +6,12 @@ This HTML document makes it possible for client to see his booked time and also 
     <meta charset="UTF-8">
     <link href='../CSS/navBar.css' rel='stylesheet'>
     <link rel="stylesheet" href="../CSS/showTimes.css">
+    <link rel="stylesheet" href="../CSS/showAnimals.css">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script type="text/javascript" src="../Scripts/Classes.js"></script>
     <title>Se mine tider</title>
 </head>
-<body onload="navBar()">
+<body onload="navBar(); showAnimals();">
 
 <!--Navigationbar created with a div element-->
 <!-- Gea's logo -->
@@ -71,10 +72,25 @@ This HTML document makes it possible for client to see his booked time and also 
     </div>
 </div>
 
+<div class="animalsTab">
+    <h3 id="seDyr">Her kan du se dine dyr</h3>
+    <div class="mineDyr">
+        <div>Type</div>
+        <div>Navn</div>
+        <div>Race</div>
+        <div>Alder</div>
+        <div>Lokation</div>
+    </div>
+    <div id="animalsShow">
+        <!--Klientens dyr vises herinde-->
+    </div>
+</div>
+
 <script type="text/JavaScript" src="../Scripts/Login.js"></script>
 <script type="text/javascript" src="../Scripts/Booking.js"></script>
 <script type="text/javascript" src="../Scripts/Navbar.js"></script>
 <script type="text/javascript" src="../Scripts/SeeTimesU.js"></script>
+<script type="text/javascript" src="../Scripts/animal.js"></script>
 
 </body>
 </html>
