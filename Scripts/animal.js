@@ -8,6 +8,11 @@ class Animal {
         this.owner = owner;
     }
 }
+let animal_spec = document.getElementById('animal');
+let animal_race = document.getElementById('race');
+let animal_name = document.getElementById('name');
+let animal_birth = document.getElementById('birthDate');
+let animal_location = document.getElementById('loc');
 
 function showAnimals() {
     //Denne del henter den aktive brugers id
@@ -42,14 +47,25 @@ function createAnimal() {
 
     axios.post('http://localhost:3000/users/check', body)
         .then((response) => {
-            let userId = response.data.id;
-            console.log(userId);
+            let ownerId = response.data.id;
+            const body2 = {
+                type: animal_spec.value,
+                race: animal_race.value,
+                name: animal_name.value,
+                age: animal_birth.value,
+                location: animal_location.value,
+                owner: ownerId
+            };
+            //Her hentes alle dyr som er tilknyttet den aktive bruger
+            axios.post('http://localhost:3000/animals/create', body2)
+                .then((res) => {
+                    showAnimals();
+                })
         })
         .catch((err) => {
             //Denne catch skal fange min medelelse fra api'en
             console.log(err)
         })
-
 }
 
 //pracCount = animalCount
@@ -58,17 +74,19 @@ function createAnimal() {
 //timesShowClient = animalsShow
 //newPrac = newAnimal
 //times = animalArr
-
-
 function nextAnimal() {
     let animalArr = JSON.parse(sessionStorage.getItem('animalArr'));
     let animalCount = animalArr.length;
-
-    //Same function used in fillCalenderDays()
+    if (animalArr.length == 0) {
+        document.getElementById('animalsShow').innerHTML = 'Tilføj et dyr på knappen nedenfor';
+    } else {
+        document.getElementById('animalsShow').innerHTML = '';
+        //Same function used in fillCalenderDays()
     (function repeat(number) {
         fillAnimals(number);
         if (number > 1) repeat(number - 1);
     })(animalCount);
+    }
 }
 function fillAnimals() {
     //sets the highest (date) and highestId just as the nextDate function in Calender.js

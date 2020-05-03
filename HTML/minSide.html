@@ -9,7 +9,7 @@ This HTML document makes it possible for client to see his booked time and also 
     <link rel="stylesheet" href="../CSS/showAnimals.css">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script type="text/javascript" src="../Scripts/Classes.js"></script>
-    <title>Se mine tider</title>
+    <title>Min side</title>
 </head>
 <body onload="navBar(); showAnimals();">
 
@@ -78,12 +78,34 @@ This HTML document makes it possible for client to see his booked time and also 
         <div>Type</div>
         <div>Navn</div>
         <div>Race</div>
-        <div>Alder</div>
+        <div>Fødselsdag</div>
         <div>Lokation</div>
     </div>
     <div id="animalsShow">
         <!--Klientens dyr vises herinde-->
     </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<div class="row">
+    <div class="column" onclick="openTab('b1');" style="background:grey;">Tilføj et dyr her</div>
+</div>
+<div id="b1" class="containerTab" style="display:none;background:lightgrey">
+    <span onclick="this.parentElement.style.display='none'" class="closebtn">Luk vindue</span>
+    <h3>Indtast informationerne om det dyr du ønsker at tilføje</h3>
+
+    <h4>Hvilken art er der tale om?</h4><select name="Dyr" id="animal">
+        <option value="horse">Hest</option>
+        <option value="dog">Hund</option>
+    </select><br />
+    <input type="text" id="race" placeholder="Hvilken race er det?" value=""/><br />
+    <input type="text" id="name" placeholder="Navn" value=""/><br />
+    <h4>Fødselsdag</h4>
+    <input type="date" id="birthDate" placeholder="Fødselsdag" value=""/><br />
+    <input type="text" id="loc" placeholder="Lokation" value=""/><br />
+    <input type="button" value="Opret dyr" onClick="createAnimal();">
 </div>
 
 <script type="text/JavaScript" src="../Scripts/Login.js"></script>
@@ -91,6 +113,16 @@ This HTML document makes it possible for client to see his booked time and also 
 <script type="text/javascript" src="../Scripts/Navbar.js"></script>
 <script type="text/javascript" src="../Scripts/SeeTimesU.js"></script>
 <script type="text/javascript" src="../Scripts/animal.js"></script>
+<script>
+    function openTab(tabName) {
+        var i, x;
+        x = document.getElementsByClassName("containerTab");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        document.getElementById(tabName).style.display = "block";
+    }
+</script>
 
 </body>
 </html>
