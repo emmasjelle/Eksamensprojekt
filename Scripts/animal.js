@@ -8,6 +8,17 @@ class Animal {
         this.owner = owner;
     }
 }
+function calcAge(dateString) {
+    let today = new Date();
+    let birthDate = new Date(dateString);
+    let age = today.getFullYear() - birthDate.getFullYear();
+    let m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+    return age;
+}
+
 let animal_spec = document.getElementById('animal');
 let animal_race = document.getElementById('race');
 let animal_name = document.getElementById('name');
@@ -131,7 +142,7 @@ function fillAnimals() {
     parent.appendChild(animalRace1);
     //Paste age
     var animalAge1 = document.createElement('div');
-    animalAge1.innerHTML = animalArr[newAnimal].age;
+    animalAge1.innerHTML = calcAge(animalArr[newAnimal].age);
     animalAge1.id = highestId * 1 + 1;
     parent.appendChild(animalAge1);
     //Paste location
