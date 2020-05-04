@@ -124,6 +124,7 @@ function cancelTime() {
     for(let i = 0; i < bookingArr.length; i++){
         if(bookingArr[i].date === selectedPart[0] && bookingArr[i].time === selectedPart[2]) {
             alert('lol');
+            //Patching hvor den fjerner clienten og indsætter pracs id
         }
 
     }
