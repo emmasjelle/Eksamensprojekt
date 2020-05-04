@@ -12,8 +12,8 @@ function calcAge(dateString) {
     let today = new Date();
     let birthDate = new Date(dateString);
     let age = today.getFullYear() - birthDate.getFullYear();
-    let m = today.getMonth() - birthDate.getMonth();
-    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+    let i = today.getMonth() - birthDate.getMonth();
+    if (i < 0 || (i === 0 && today.getDate() < birthDate.getDate())) {
         age--;
     }
     return age;
@@ -59,6 +59,7 @@ function createAnimal() {
     axios.post('http://localhost:3000/users/check', body)
         .then((response) => {
             let ownerId = response.data.id;
+            newAnimal = new Animal(animal_spec,animal_race,animal_name,animal_birth,animal_location);
             const body2 = {
                 type: animal_spec.value,
                 race: animal_race.value,

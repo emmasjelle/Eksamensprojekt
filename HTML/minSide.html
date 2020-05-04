@@ -11,7 +11,7 @@ This HTML document makes it possible for client to see his booked time and also 
     <script type="text/javascript" src="../Scripts/Classes.js"></script>
     <title>Min side</title>
 </head>
-<body onload="navBar(); showAnimals();">
+<body onload="navBar(); showAnimals(); showBookings();">
 
 <!--Navigationbar created with a div element-->
 <!-- Gea's logo -->
@@ -53,22 +53,20 @@ This HTML document makes it possible for client to see his booked time and also 
 </br>
 
 <!-- A div tag i created that makes it possible for the client to see his booked time -->
-<div class="calTimesWrapper">
-    <h3 id="seTider"></h3>
-    <div class="timesNav">
+<div class="bookingsTab">
+    <h3 id="seBookings">Her kan du se dine tider</h3>
+    <div class="mineBookings">
         <div>Dato</div>
-        <div>Tidspunkt</div>
+        <div>Tid</div>
         <div>Behandler</div>
     </div>
-
-    <div class="timesShow">
-        <div id="myDateCal1"></div>
-        <div id="myTimeCal1">Ingen bookinger</div>
-        <div id="myPracCal1"></div>
+    <div id="bookingsShow">
+        <!--Klientens dyr vises herinde-->
     </div>
+</div>
     <!-- When button is clicked it triggers cancelTime() which cancels the booked time -->
     <div class="timeBook">
-        <button id="myTime1" onclick="cancelTime()">Aflys</button>
+        <button id="myTime1" onclick="">Aflys</button>
     </div>
 </div>
 
@@ -78,7 +76,7 @@ This HTML document makes it possible for client to see his booked time and also 
         <div>Type</div>
         <div>Navn</div>
         <div>Race</div>
-        <div>Fødselsdag</div>
+        <div>Alder</div>
         <div>Lokation</div>
     </div>
     <div id="animalsShow">

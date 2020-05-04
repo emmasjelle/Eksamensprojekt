@@ -209,3 +209,28 @@ function logInUserTest() {
             }
         });
 }
+
+
+
+//Minside før seeTimesU
+function showBookings() {
+    //Gets bookedTimes from the booking buttons from string format into new array
+    var times = JSON.parse(localStorage.getItem('timesArray'));
+
+    //Fills times into the chosen day window
+    if(times == null) {
+        console.log("error");
+    } else {
+        //Tjek rækkefølge ifht hvilket tid der bookes - udkommenter andet if statement måske if else
+        for (var i = 0; i < times.length; i++) {
+            //Users booked time
+            if (times[i].clientB == activeUs) {
+                document.getElementById('myDateCal1').innerHTML = times[i].dateB;
+                document.getElementById('myTimeCal1').innerHTML = times[i].startB + "-" + times[i].endB;
+                document.getElementById('myPracCal1').innerHTML = times[i].practitionerB;
+                document.getElementById('myTime1').style.visibility = "visible";
+                console.log("Time found")
+            }
+        }
+    }
+}
