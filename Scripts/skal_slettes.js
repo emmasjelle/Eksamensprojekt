@@ -234,3 +234,18 @@ function showBookings() {
         }
     }
 }
+
+function cancelTimeOld() {
+    var times = JSON.parse(localStorage.getItem('timesArray'));
+    for(var i = 0; i < times.length; i++){
+        if(times[i].clientB == activeUs) {
+            times[times[i].idB].avaiB = true;
+            times[times[i].idB].clientB = "";
+            document.getElementById('myDateCal1').innerHTML = "";
+            document.getElementById('myTimeCal1').innerHTML = "Ingen bookinger";
+            document.getElementById('myPracCal1').innerHTML = "";
+            document.getElementById('myTime1').style.visibility = "hidden";
+            alert("Din tid er aflyst");
+        }
+    }
+}

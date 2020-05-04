@@ -11,7 +11,7 @@ This HTML document makes it possible for client to see his booked time and also 
     <script type="text/javascript" src="../Scripts/Classes.js"></script>
     <title>Min side</title>
 </head>
-<body onload="navBar(); showAnimals(); showBookings();">
+<body onload="navBar(); showAnimals(); showBookings(); chooseBooking();">
 
 <!--Navigationbar created with a div element-->
 <!-- Gea's logo -->
@@ -64,10 +64,13 @@ This HTML document makes it possible for client to see his booked time and also 
         <!--Klientens dyr vises herinde-->
     </div>
 </div>
-    <!-- When button is clicked it triggers cancelTime() which cancels the booked time -->
-    <div class="timeBook">
-        <button id="myTime1" onclick="">Aflys</button>
-    </div>
+<br>
+<div id="showBookingsList">
+    <select id="bookings">
+        <option>Aflys tid</option>
+    </select>
+    <button id="cancelTime" onclick="cancelTime()">Aflys den valgte tid</button>
+</div>
 </div>
 
 <div class="animalsTab">

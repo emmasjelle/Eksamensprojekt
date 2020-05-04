@@ -28,6 +28,7 @@ function showBookings(){
         })
 }
 
+//Shows the name of the practitioner and not the id
 function getPracName(id) {
     const body = {userId: id};
     axios.post('http://localhost:3000/users/checkName', body)
@@ -62,6 +63,7 @@ function nextBooking() {
     }
 }
 function fillBookings() {
+    let bookings = document.getElementById('bookings');
     //sets the highest (date) and highestId just as the nextDate function in Calender.js
     let highest = 0;
     let highestId = 1;
@@ -102,25 +104,29 @@ function fillBookings() {
     bookingPrac1.innerHTML = getPracName(bookingArr[newBooking].practitioner);
     bookingPrac1.id = highestId * 1 + 1;
     parent.appendChild(bookingPrac1);
+    //Add option to booking cancel
 }
 
-
-//Ikke opdateret til API
-/* function cancelTime() {
-    var times = JSON.parse(localStorage.getItem('timesArray'));
-    for(var i = 0; i < times.length; i++){
-        if(times[i].clientB == activeUs) {
-            times[times[i].idB].avaiB = true;
-            times[times[i].idB].clientB = "";
-            document.getElementById('myDateCal1').innerHTML = "";
-            document.getElementById('myTimeCal1').innerHTML = "Ingen bookinger";
-            document.getElementById('myPracCal1').innerHTML = "";
-            document.getElementById('myTime1').style.visibility = "hidden";
-            alert("Din tid er aflyst");
-        }
+function chooseBooking() {
+    let bookings = document.getElementById('bookings');
+    let bookingArr = JSON.parse(sessionStorage.getItem('bookingArr'));
+    for (let key in bookingArr) {
+        let booking = bookingArr[key];
+        bookings.options[bookings.options.length] = new Option(booking.date+' - '+booking.time);
     }
-    localStorage.setItem('timesArray', JSON.stringify(times));
+    document.body.appendChild(bookings);
+}
+
+function cancelTime() {
+    let bookingArr = JSON.parse(sessionStorage.getItem('bookingArr'));
+    let selected = bookings.options[bookings.selectedIndex].text;
+    let selectedPart = selected.split(' '); //selectedPart[3] targets the times array index of the chosen booking
+    for(let i = 0; i < bookingArr.length; i++){
+        if(bookingArr[i].date === selectedPart[0] && bookingArr[i].time === selectedPart[2]) {
+            alert('lol');
+        }
+
+    }
 }
 
 
- */
