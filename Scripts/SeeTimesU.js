@@ -20,6 +20,7 @@ function showBookings(){
                     sessionStorage.setItem('bookingArr', JSON.stringify(res.data));
                     //Denne metode henter dyrerne i læslig form fra animalArr: console.log(JSON.parse(sessionStorage.getItem('animalArr')));
                     nextBooking();
+                    chooseBooking();
                 })
         })
         .catch((err) => {
@@ -29,6 +30,7 @@ function showBookings(){
 }
 
 //Shows the name of the practitioner and not the id
+//SKAL RYKKES NED I SELVE FILLBOOKINGS evt. prøv noget async
 function getPracName(id) {
     const body = {userId: id};
     axios.post('http://localhost:3000/users/checkName', body)
@@ -104,12 +106,12 @@ function fillBookings() {
     bookingPrac1.innerHTML = getPracName(bookingArr[newBooking].practitioner);
     bookingPrac1.id = highestId * 1 + 1;
     parent.appendChild(bookingPrac1);
-    //Add option to booking cancel
 }
 
 function chooseBooking() {
     let bookings = document.getElementById('bookings');
     let bookingArr = JSON.parse(sessionStorage.getItem('bookingArr'));
+    document.getElementById('bookings').innerText = null
     for (let key in bookingArr) {
         let booking = bookingArr[key];
         bookings.options[bookings.options.length] = new Option(booking.date+' - '+booking.time);
@@ -123,11 +125,24 @@ function cancelTime() {
     let selectedPart = selected.split(' '); //selectedPart[3] targets the times array index of the chosen booking
     for(let i = 0; i < bookingArr.length; i++){
         if(bookingArr[i].date === selectedPart[0] && bookingArr[i].time === selectedPart[2]) {
+            showBookings(); //VIRKER DETTE? Skal testes
             const body = [{
                 propName: 'client',
                 value: bookingArr[i].practitioner
             }];
             axios.patch('http://localhost:3000/bookings/'+bookingArr[i]._id, body)
+                .then((response) => {
+                    console.log(response);
+                })
+                .catch((err) => {
+                    //Denne catch skal fange min medelelse fra api'en
+                    console.log(err)
+                });
+            const body2 = [{
+                propName: 'availability',
+                value: 'true'
+            }];
+            axios.patch('http://localhost:3000/bookings/'+bookingArr[i]._id, body2)
                 .then((response) => {
                     console.log(response);
                 })
