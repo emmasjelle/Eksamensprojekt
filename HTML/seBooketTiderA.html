@@ -1,0 +1,113 @@
+<!-- This document only contains admin functions that are only shown when a admin is logged in on our page. This HTML
+document makes it possible for admins to see all booked times and also cancel times -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href='../CSS/navBar.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../CSS/showTimes.css">
+    <link rel="stylesheet" href="../CSS/showAnimals.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="../Scripts/Classes.js"></script>
+    <title>Se bookede tider</title>
+</head>
+<body onload="navBar(); showBookings(); chooseBooking();">
+<!--Navigationbar created with a div element-->
+<!-- Gea's logo -->
+<img src="https://i.imgur.com/AiPTQKP.png"
+     style="width:13%;height:20%;float:right;padding:5px">
+<div class="NavigationBar" id="all" style="display: none">
+    <ul>
+        <!--Guest navigationbar-->
+        <li><a href="index.html">Forside</a></li>
+        <li><a href="BehandlingsTyper.html">Behandlingstyper</a></li>
+        <li><a href="LogIn.html">Booking</a></li>
+    </ul>
+</div>
+<div class="NavigationBar" id="user" style="display: none">
+    <ul>
+        <!--Guest navigationbar. All the gust-feautres are also available for the client-->
+        <li><a href="index.html">Forside</a></li>
+        <li><a href="BehandlingsTyper.html">Behandlingstyper</a></li>
+        <li><a href="Bookingside.html">Booking</a></li>
+        <!--Client added navigation functions-->
+        <li><a href="minSide.html">Se mine tider</a></li>
+        <li><a onClick="logOut()" href="index.html">Log ud</a></li>
+    </ul>
+</div>
+<div class="NavigationBar" id="adm" style="display: none">
+    <ul>
+        <!--Guest navigationbar. All the gust-feautres are also available for the admin-->
+        <li><a href="index.html">Forside</a></li>
+        <li><a href="BehandlingsTyper.html">Behandlingstyper</a></li>
+        <li><a href="Bookingside.html">Booking</a></li>
+        <!--Admin added navigation functions-->
+        <li><a href="seBooketTiderA.html">Se booket tider</a></li>
+        <li><a onClick="logOut()" href="index.html">Log ud</a></li>
+    </ul>
+</div>
+</br>
+<!-- A div tag i created that makes it possible for the client to see his booked time -->
+<div class="bookingsTab">
+    <h3 id="seBookings">Her kan du se dine tider</h3>
+    <div class="mineBookings">
+        <div>Dato</div>
+        <div>Tid</div>
+        <div>Klient</div>
+        <div>Dyr</div>
+    </div>
+    <div id="bookingsShow">
+        <!--Klientens tider vises herinde-->
+    </div>
+</div>
+<br>
+<div id="showBookingsList">
+    <button id="cancelTime" onclick="cancelTime()">Slet den valgte tid</button>
+</div>
+<div id="selectDiv">
+    <select id="bookings">
+        <option>Slet tid</option>
+    </select>
+</div>
+<br>
+<br>
+<div class="animalsTab">
+    <h3 id="seDyr">Her kan du se dine dyr</h3>
+    <div class="mineDyr">
+        <div>Type</div>
+        <div>Navn</div>
+        <div>Race</div>
+        <div>Alder</div>
+        <div>Lokation</div>
+    </div>
+    <div id="animalsShow">
+        <!--Klientens dyr vises herinde-->
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<div class="row">
+    <div class="column" onclick="openTab('b1');" style="background:grey;">Tilføj et dyr her</div>
+</div>
+<div id="b1" class="containerTab" style="display:none;background:lightgrey">
+    <span onclick="this.parentElement.style.display='none'" class="closebtn">Luk vindue</span>
+    <h3>Indtast informationerne om det dyr du ønsker at tilføje</h3>
+    <h4>Hvilken art er der tale om?</h4><select name="Dyr" id="animal">
+    <option value="horse">Hest</option>
+    <option value="dog">Hund</option>
+</select><br />
+    <input type="text" id="race" placeholder="Hvilken race er det?" value=""/><br />
+    <input type="text" id="name" placeholder="Navn" value=""/><br />
+    <h4>Fødselsdag</h4>
+    <input type="date" id="birthDate" placeholder="Fødselsdag" value=""/><br />
+    <input type="text" id="loc" placeholder="Lokation" value=""/><br />
+    <input type="button" value="Opret dyr" onClick="createAnimal();">
+</div>
+<script type="text/JavaScript" src="../Scripts/Login.js"></script>
+<script type="text/javascript" src="../Scripts/Booking.js"></script>
+<script type="text/javascript" src="../Scripts/Navbar.js"></script>
+<script type="text/javascript" src="../Scripts/ShowBookedA.js"></script>
+</body>
+</html>
