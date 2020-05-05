@@ -116,3 +116,27 @@ function chooseBooking() {
     }
     document.body.appendChild(bookings);
 }
+
+function cancelTime() {
+    let bookingArr = JSON.parse(sessionStorage.getItem('bookingArr'));
+    let selected = bookings.options[bookings.selectedIndex].text;
+    let selectedPart = selected.split(' '); //selectedPart[3] targets the times array index of the chosen booking
+    for(let i = 0; i < bookingArr.length; i++){
+        if(bookingArr[i].date === selectedPart[0] && bookingArr[i].time === selectedPart[2]) {
+            const body = [{
+                propName: 'client',
+                value: bookingArr[i].practitioner
+            }];
+            axios.patch('http://localhost:3000/bookings/'+bookingArr[i]._id, body)
+                .then((response) => {
+                    console.log(response);
+                })
+                .catch((err) => {
+                    //Denne catch skal fange min medelelse fra api'en
+                    console.log(err)
+                })
+        }
+    }
+}
+
+
