@@ -97,15 +97,20 @@ function fillBookings() {
     let parent = document.getElementById('bookingsShow');
     parent.appendChild(highest);
     //Paste Time
-    var bookingTime1 = document.createElement('div');
+    let bookingTime1 = document.createElement('div');
     bookingTime1.innerHTML = bookingArr[newBooking].time;
     bookingTime1.id = highestId * 1 + 1;
     parent.appendChild(bookingTime1);
     //Paste Practitioner
-    var bookingPrac1 = document.createElement('div');
+    let bookingPrac1 = document.createElement('div');
     bookingPrac1.innerHTML = getPracName(bookingArr[newBooking].practitioner);
     bookingPrac1.id = highestId * 1 + 1;
     parent.appendChild(bookingPrac1);
+    //Paste Animal
+    let bookingAnimal1 = document.createElement('div');
+    bookingAnimal1.innerHTML = bookingArr[newBooking].animal;
+    bookingAnimal1.id = highestId * 1 + 1;
+    parent.appendChild(bookingAnimal1);
 }
 
 function chooseBooking() {
