@@ -61,17 +61,20 @@ This HTML document makes it possible for client to see his booked time and also 
         <div>Behandler</div>
     </div>
     <div id="bookingsShow">
-        <!--Klientens dyr vises herinde-->
+        <!--Klientens tider vises herinde-->
     </div>
 </div>
 <br>
 <div id="showBookingsList">
+    <button id="cancelTime" onclick="cancelTime()">Aflys den valgte tid</button>
+</div>
+<div id="selectDiv">
     <select id="bookings">
         <option>Aflys tid</option>
     </select>
-    <button id="cancelTime" onclick="cancelTime()">Aflys den valgte tid</button>
 </div>
-</div>
+<br>
+<br>
 
 <div class="animalsTab">
     <h3 id="seDyr">Her kan du se dine dyr</h3>

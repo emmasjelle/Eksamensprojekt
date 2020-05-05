@@ -34,3 +34,7 @@
     -ms-user-select: none;
     user-select: none;
 }
+ #selectDiv{
+    align-content: center;
+    text-align: center;
+}

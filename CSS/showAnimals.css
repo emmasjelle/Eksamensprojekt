@@ -44,6 +44,7 @@
     -ms-user-select: none; /* IE10+/Edge */
     user-select: none; /* Standard */
 }
+
 #b1 {
     align-content: center;
     text-align: center;

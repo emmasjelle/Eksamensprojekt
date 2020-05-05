@@ -126,8 +126,8 @@ function cancelTime() {
             alert('lol');
             //Patching hvor den fjerner clienten og indsætter pracs id
         }
-
     }
+
 }
 
 
