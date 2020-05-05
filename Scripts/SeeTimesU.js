@@ -144,8 +144,8 @@ function cancelTime() {
                     console.log(err)
                 });
             const body2 = [{
-                propName: 'availability',
-                value: 'true'
+                propName: 'animal',
+                value: 'Available'
             }];
             axios.patch('http://localhost:3000/bookings/'+bookingArr[i]._id, body2)
                 .then((response) => {
