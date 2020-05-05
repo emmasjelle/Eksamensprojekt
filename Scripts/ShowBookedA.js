@@ -1,6 +1,7 @@
 //Shows name of active User Client
 let activeUs = sessionStorage.getItem('activeUser');
 //document.getElementById('seTider').innerHTML = "Nedenfor kan du se dine booking";
+
 function showBookings(){
     //Denne del henter den aktive brugers id
     let userEmail = sessionStorage.activeUser;
@@ -24,6 +25,7 @@ function showBookings(){
             console.log(err)
         })
 }
+
 //Shows the name of the practitioner and not the id
 function getPracName(id) {
     const body = {userId: id};
@@ -41,6 +43,7 @@ function getPracName(id) {
     let name = JSON.parse(sessionStorage.getItem('Prac'));
     return name;
 }
+
 function nextBooking() {
     let bookingArr = JSON.parse(sessionStorage.getItem('bookingArr'));
     let bookingCount = bookingArr.length;
@@ -55,6 +58,7 @@ function nextBooking() {
         })(bookingCount);
     }
 }
+
 function fillBookings() {
     let bookings = document.getElementById('bookings');
     //sets the highest (date) and highestId just as the nextDate function in Calender.js
@@ -102,6 +106,7 @@ function fillBookings() {
     bookingAnimal1.id = highestId * 1 + 1;
     parent.appendChild(bookingAnimal1);
 }
+
 function chooseBooking() {
     let bookings = document.getElementById('bookings');
     let bookingArr = JSON.parse(sessionStorage.getItem('bookingArr'));
@@ -112,13 +117,14 @@ function chooseBooking() {
     }
     document.body.appendChild(bookings);
 }
+
 function cancelTime() {
     let bookingArr = JSON.parse(sessionStorage.getItem('bookingArr'));
     let selected = bookings.options[bookings.selectedIndex].text;
     let selectedPart = selected.split(' '); //selectedPart[3] targets the times array index of the chosen booking
     for(let i = 0; i < bookingArr.length; i++){
         if(bookingArr[i].date === selectedPart[0] && bookingArr[i].time === selectedPart[2]) {
-            showBookings(); //SKAL DELETE I STEDET FOR
+            showBookings();
             axios.delete('http://localhost:3000/bookings/'+bookingArr[i]._id)
                 .then((response) => {
                     console.log(response);

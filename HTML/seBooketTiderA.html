@@ -70,44 +70,87 @@ document makes it possible for admins to see all booked times and also cancel ti
     </select>
 </div>
 <br>
-<br>
-<div class="animalsTab">
-    <h3 id="seDyr">Her kan du se dine dyr</h3>
-    <div class="mineDyr">
-        <div>Type</div>
-        <div>Navn</div>
-        <div>Race</div>
-        <div>Alder</div>
-        <div>Lokation</div>
-    </div>
-    <div id="animalsShow">
-        <!--Klientens dyr vises herinde-->
-    </div>
-</div>
-<br>
-<br>
-<br>
-<br>
+
 <div class="row">
-    <div class="column" onclick="openTab('b1');" style="background:grey;">Tilføj et dyr her</div>
+    <div class="column" onclick="openTab('b1');" style="background:grey;">Opret en tid her</div>
 </div>
 <div id="b1" class="containerTab" style="display:none;background:lightgrey">
     <span onclick="this.parentElement.style.display='none'" class="closebtn">Luk vindue</span>
-    <h3>Indtast informationerne om det dyr du ønsker at tilføje</h3>
-    <h4>Hvilken art er der tale om?</h4><select name="Dyr" id="animal">
-    <option value="horse">Hest</option>
-    <option value="dog">Hund</option>
+    <h3>Indtast bookinginformationerne her</h3>
+
+    <h4>Dato</h4><input type="date" id="date" placeholder="Dato" value=""/><br />
+    <h4>Starttidspunkt</h4><select name="start" id="start">
+    <option value="06:00">06:00</option>
+    <option value="06:30">06:30</option>
+    <option value="07:00">07:00</option>
+    <option value="07:30">07:30</option>
+    <option value="08:00">08:00</option>
+    <option value="08:30">08:30</option>
+    <option value="09:00">09:00</option>
+    <option value="09:30">09:30</option>
+    <option value="10:00">10:00</option>
+    <option value="10:30">10:30</option>
+    <option value="11:00">11:00</option>
+    <option value="11:30">11:30</option>
+    <option value="12:00">12:00</option>
+    <option value="12:30">12:30</option>
+    <option value="13:00">13:00</option>
+    <option value="13:30">13:30</option>
+    <option value="14:00">14:00</option>
+    <option value="14:30">14:30</option>
+    <option value="15:00">15:00</option>
+    <option value="15:30">15:30</option>
+    <option value="16:00">16:00</option>
+    <option value="16:30">16:30</option>
+    <option value="17:00">17:00</option>
+    <option value="17:30">17:30</option>
 </select><br />
-    <input type="text" id="race" placeholder="Hvilken race er det?" value=""/><br />
-    <input type="text" id="name" placeholder="Navn" value=""/><br />
-    <h4>Fødselsdag</h4>
-    <input type="date" id="birthDate" placeholder="Fødselsdag" value=""/><br />
-    <input type="text" id="loc" placeholder="Lokation" value=""/><br />
-    <input type="button" value="Opret dyr" onClick="createAnimal();">
+    <h4>Sluttidspunkt</h4><select name="slut" id="slut">
+    <option value="06:00">06:00</option>
+    <option value="06:30">06:30</option>
+    <option value="07:00">07:00</option>
+    <option value="07:30">07:30</option>
+    <option value="08:00">08:00</option>
+    <option value="08:30">08:30</option>
+    <option value="09:00">09:00</option>
+    <option value="09:30">09:30</option>
+    <option value="10:00">10:00</option>
+    <option value="10:30">10:30</option>
+    <option value="11:00">11:00</option>
+    <option value="11:30">11:30</option>
+    <option value="12:00">12:00</option>
+    <option value="12:30">12:30</option>
+    <option value="13:00">13:00</option>
+    <option value="13:30">13:30</option>
+    <option value="14:00">14:00</option>
+    <option value="14:30">14:30</option>
+    <option value="15:00">15:00</option>
+    <option value="15:30">15:30</option>
+    <option value="16:00">16:00</option>
+    <option value="16:30">16:30</option>
+    <option value="17:00">17:00</option>
+    <option value="17:30">17:30</option>
+</select><br />
+
+    <input type="button" value="Opret tid" onClick="createBooking();">
 </div>
+
 <script type="text/JavaScript" src="../Scripts/Login.js"></script>
 <script type="text/javascript" src="../Scripts/Booking.js"></script>
 <script type="text/javascript" src="../Scripts/Navbar.js"></script>
 <script type="text/javascript" src="../Scripts/ShowBookedA.js"></script>
+<script type="text/javascript" src="../Scripts/PracBooking.js"></script>
+<script>
+    function openTab(tabName) {
+        var i, x;
+        x = document.getElementsByClassName("containerTab");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        document.getElementById(tabName).style.display = "block";
+    }
+</script>
+
 </body>
+
 </html>
