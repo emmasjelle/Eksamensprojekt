@@ -3,6 +3,7 @@ let activeUs = sessionStorage.getItem('activeUser');
 //document.getElementById('seTider').innerHTML = "Nedenfor kan du se dine booking";
 
 function showBookings(){
+    console.log('showBookings');
     //Denne del henter den aktive brugers id
     let userEmail = sessionStorage.activeUser;
     const body = {email: userEmail};
@@ -45,6 +46,7 @@ function getPracName(id) {
 }
 
 function nextBooking() {
+    console.log('nextBooking');
     let bookingArr = JSON.parse(sessionStorage.getItem('bookingArr'));
     let bookingCount = bookingArr.length;
     if (bookingArr.length == 0) {
@@ -60,13 +62,14 @@ function nextBooking() {
 }
 
 function fillBookings() {
+    console.log('fillBookings');
     let bookings = document.getElementById('bookings');
     //sets the highest (date) and highestId just as the nextDate function in Calender.js
     let highest = 0;
     let highestId = 1;
     let bookingNumber = 0;
     let booking = document.getElementById('bookingsShow').childNodes;
-    //Forloop checks the week class from html
+    //Forloop checks the class from html
     for (i = 0; i < booking.length; i++) {
         //finds the newHigh value within all the week.innerHTMl elements
         newHigh = parseInt(booking[i].id, 10);
@@ -77,7 +80,7 @@ function fillBookings() {
             highestId = booking[i].id * 1 + 1;
         }
         if (booking[i].id == highest) {
-            bookingNumber = bookingNumber * 1 + 1 / 5;
+            bookingNumber = bookingNumber * 1 + 1 / 4;
         }
     }
     //Uses the rounded pracNumber as inded in the pracArr array to get the id and use it as index to get info from times

@@ -82,7 +82,7 @@ function fillBookings() {
             highestId = booking[i].id * 1 + 1;
         }
         if (booking[i].id == highest) {
-            bookingNumber = bookingNumber * 1 + 1 / 5;
+            bookingNumber = bookingNumber * 1 + 1 / 4;
         }
     }
 

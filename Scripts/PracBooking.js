@@ -2,6 +2,7 @@ function createBooking() {
     let booking_date = document.getElementById('date');
     let booking_start = document.getElementById('start');
     let booking_slut = document.getElementById('slut');
+
     //Denne del henter den aktive brugers id
     let userEmail = sessionStorage.activeUser;
     const body = {email: userEmail};
