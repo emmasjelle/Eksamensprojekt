@@ -7,10 +7,9 @@ class Booking {
         this.time = timeB;
         this.practitionerB = practitionerB;
         this.clientB = clientB;
-        this.avaiB = avaiB;
     }
 }
-/*
+/* kan slettes
 //We create three booking times pr. working day at the moment(Categorized in timeB from 1-3)
 //10/12/2019 times
 Test1 = new Booking("0","10/12/2020","08:00","10:00","Sanel", true, 1,"");
