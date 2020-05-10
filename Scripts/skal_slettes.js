@@ -346,3 +346,193 @@ function removeTime() {
     localStorage.setItem('timesArray', JSON.stringify(times));
     window.location.reload(true);
 }
+
+/*
+//Function that clears the available dates window and buttons
+function clear() {
+    //Clears buttons
+    document.getElementById('time1').style.visibility = "hidden";
+    document.getElementById('time2').style.visibility = "hidden";
+    document.getElementById('time3').style.visibility = "hidden";
+    //Clears available dates window to avoid mixing of dates and times
+    document.getElementById('timeCal1').innerHTML = "";
+    document.getElementById('pracCal1').innerHTML = "";
+    document.getElementById('avaiCal1').innerHTML = "";
+    document.getElementById('timeCal2').innerHTML = "";
+    document.getElementById('pracCal2').innerHTML = "";
+    document.getElementById('avaiCal2').innerHTML = "";
+    document.getElementById('timeCal3').innerHTML = "";
+    document.getElementById('pracCal3').innerHTML = "";
+    document.getElementById('avaiCal3').innerHTML = "";
+
+}
+
+ */
+
+//Books the date chosen by the client. Takes the date and time, and splits the time into two. The first part of the time
+//is going to be used in order to make each booking unique.
+function book1() {
+    var x = document.getElementById('dateField').innerHTML;
+    //Gets the times for the booked time
+    let time = document.getElementById('timeCal1').innerHTML; //Ex 08:00-10:00
+    let timee = time.split('-'); // Ex timeSplit = ["08:00","10:00"];
+    let start = timee[0]; // = 08:00
+
+    var times = JSON.parse(localStorage.getItem('timesArray'));
+    var active = sessionStorage.getItem('activeUser');
+
+//Checks if there is a match between chosen date and chosen time when creating the booking. Also it checks if the
+//client already has a booking (Only one booking pr client). If there is a match in date and time, it sets the
+//availability as booked and the visibility of the booking button as hidden.
+    for (var i = 0; i < times.length; i++) {
+        if (times[i].clientB == active) {
+            alert("Du har overskredet maks antal bookinger - se dine bookinger under Se mine tider");
+            break;
+        }
+        //R: EVNS: Du skriver at man kun skal kunne booke en tid per person, men det gælder kun hvis du booker en
+        //tid som er længere fremme i times arrayet. Hvis man booker en tid 'før' den i forvejen bookede tid,
+        //så kan man godt booke tiden. Jeg tænker, at fejlen ligger i loopet, da den ikke tjekker indexnumrene før
+        //den bookede tid.
+
+        //D: PHO: Ja, det kan jeg da godt se. Jeg har prøvet at kigge på loopet, men jeg kan pt. ikke lige finde en
+        //løsning på problemet.
+
+        if (times[i].clientB != active && times[i].dateB == x && times[i].startB == start) {
+            times[i].avaiB = false;
+            times[i].clientB = active;
+            console.log(times[i].dateB + " " + times[i].avaiB);
+            alert("Din tid er booked");
+            document.getElementById('avaiCal1').innerHTML = "Optaget";
+            document.getElementById('time1').style.visibility = "hidden";
+            break;
+
+        }
+    }
+    localStorage.setItem('timesArray', JSON.stringify(times));
+    console.log(localStorage);
+}
+
+//Made similar to  book1
+function book2() {
+    var x = document.getElementById('dateField').innerHTML;
+    //Gets the times for the booked time
+    let time = document.getElementById('timeCal2').innerHTML;
+    let timee = time.split('-');
+    let start = timee[0];
+
+    var times = JSON.parse(localStorage.getItem('timesArray'));
+    var active = sessionStorage.getItem('activeUser');
+
+    //Samme problem som i SeeTimesU - den tager den første og låser tiderne efter den. tider før den valgte kan stadig bookes
+    for (var i = 0; i < times.length; i++) {
+        if (times[i].clientB == active) {
+            alert("Du har overskredet maks antal bookinger - se dine bookinger under Se mine tider");
+            break;
+        }
+        if (times[i].clientB != active && times[i].dateB == x && times[i].startB == start) {
+
+            times[times[i].idB].avaiB = false;
+            times[times[i].idB].clientB = active;
+            console.log(times[i].dateB + " " + times[i].avaiB);
+            alert("Din tid er booked");
+            document.getElementById('avaiCal2').innerHTML = "Optaget";
+            document.getElementById('time2').style.visibility = "hidden";
+            break;
+
+        }
+    }
+    localStorage.setItem('timesArray', JSON.stringify(times));
+    console.log(localStorage);
+}
+
+////Made similar to  book1
+function book3() {
+    var x = document.getElementById('dateField').innerHTML;
+    //Gets the times for the booked time
+    let time = document.getElementById('timeCal3').innerHTML;
+    let timee = time.split('-');
+    let start = timee[0];
+
+    var times = JSON.parse(localStorage.getItem('timesArray'));
+    var active = sessionStorage.getItem('activeUser');
+
+    //Samme problem som i SeeTimesU - den tager den første og låser tiderne efter den. tider før den valgte kan stadig bookes
+    for (var i = 0; i < times.length; i++) {
+        if (times[i].clientB == active) {
+            alert("Du har overskredet maks antal bookinger - se dine bookinger under Se mine tider");
+            break;
+        }
+        if (times[i].clientB != active && times[i].dateB == x && times[i].startB == start) {
+
+            times[times[i].idB].avaiB = false;
+            times[times[i].idB].clientB = active;
+            console.log(times[i].dateB + " " + times[i].avaiB);
+            alert("Din tid er booked");
+            document.getElementById('avaiCal3').innerHTML = "Optaget";
+            document.getElementById('time3').style.visibility = "hidden";
+            break;
+
+        }
+    }
+    localStorage.setItem('timesArray', JSON.stringify(times));
+    console.log(localStorage);
+}
+
+//This part fills in the available dates on the chosen day
+function fillWindowOld() {
+    //Gets the 'real' date dd/mm(1-12)/yyyy from the HTML
+    let x = document.getElementById('dateField').innerHTML;
+    //Gets bookedTimes from the booking buttons from string format into new array
+    let times = JSON.parse(localStorage.getItem('availableTimes'));
+    /*//Fills times into the chosen day window
+    for (i = 0; i < times.length; i++) {
+        //Time 1
+        if (x == times[i].dateB && times[i].timeB == 1 && times[i].idB != "-1") {
+            document.getElementById('timeCal1').innerHTML = times[i].startB + "-" + times[i].endB;
+            document.getElementById('pracCal1').innerHTML = times[i].practitionerB;
+            if (times[i].avaiB == true) {
+                document.getElementById('avaiCal1').innerHTML = "Ledig";
+                document.getElementById('time1').style.visibility = "visible";
+            }
+            if (times[i].avaiB != true) {
+                document.getElementById('avaiCal1').innerHTML = "Optaget";
+                document.getElementById('time1').style.visibility = "hidden";
+            }
+        }
+        //Time 2
+        if (x == times[i].dateB && times[i].timeB == 2 && times[i].idB != "-1") {
+            document.getElementById('timeCal2').innerHTML = times[i].startB + "-" + times[i].endB;
+            document.getElementById('pracCal2').innerHTML = times[i].practitionerB;
+            if (times[i].avaiB == true) {
+                document.getElementById('avaiCal2').innerHTML = "Ledig";
+                document.getElementById('time2').style.visibility = "visible";
+            }
+            if (times[i].avaiB != true) {
+                document.getElementById('avaiCal2').innerHTML = "Optaget";
+                document.getElementById('time2').style.visibility = "hidden";
+            }
+        }
+        //Time 3
+        if (x == times[i].dateB && times[i].timeB == 3 && times[i].idB != "-1") {
+            document.getElementById('timeCal3').innerHTML = times[i].startB + "-" + times[i].endB;
+            document.getElementById('pracCal3').innerHTML = times[i].practitionerB;
+            if (times[i].avaiB == true) {
+                document.getElementById('avaiCal3').innerHTML = "Ledig";
+                document.getElementById('time3').style.visibility = "visible";
+            }
+            if (times[i].avaiB != true) {
+                document.getElementById('avaiCal3').innerHTML = "Optaget";
+                document.getElementById('time3').style.visibility = "hidden";
+            }
+        }
+    }
+    //If there are no times on the chosen date, display the "No times on chosen date" message.
+    var check1 = document.getElementById('pracCal1').innerHTML;
+    var check2 = document.getElementById('pracCal2').innerHTML;
+    var check3 = document.getElementById('pracCal3').innerHTML;
+    if(check1.trim().length == 0 && check2.trim().length == 0 && check3.trim().length == 0) {
+        document.getElementById('pracCal1').innerHTML = "Ingen fundne tider på den valgte dato";
+    }
+
+     */
+}
