@@ -116,7 +116,7 @@ function fillBookings() {
 function chooseBooking() {
     let bookings = document.getElementById('bookings');
     let bookingArr = JSON.parse(sessionStorage.getItem('bookingArr'));
-    document.getElementById('bookings').innerText = null
+    document.getElementById('bookings').innerText = null;
     for (let key in bookingArr) {
         let booking = bookingArr[key];
         bookings.options[bookings.options.length] = new Option(booking.date+' - '+booking.time);

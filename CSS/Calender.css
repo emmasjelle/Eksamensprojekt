@@ -38,6 +38,10 @@
     text-align: center;
     margin: auto;
 }
+.calButtonWrapper2 {
+    text-align: center;
+    margin: auto;
+}
 .calButtonWrapper {
     background-color: #00CA85;
 }
@@ -74,7 +78,7 @@
 
 #timesShow {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     text-align: center;
     grid-gap: 2px;
