@@ -13,7 +13,7 @@ perspective -->
     <title>Booking</title>
 </head>
 
-<body onload="navBar(); isLoggedIn();">
+<body onload="navBar(); isLoggedIn(); chooseAnimal();">
 
 <!--Navigationbar created with a div element-->
 <!-- Gea's logo -->
@@ -141,15 +141,23 @@ perspective -->
     <button class="calSearch" id="search" onclick="checkDate()">Søg</button>
 </div>
 </br>
+
 <div class="calTimesWrapper">
     <div class="timesNav">
-        <div>Tidspunkt</div>
-        <div>Behandler</div>
+        <div>Behandler    -    Tidspunkt</div>
     </div>
-    <div id="timesShow">
+    <div id="timesShow" class="times">
     <!--Available bookings for the date will be shown here-->
-        </div>
+    </div>
+    <br><br><br><br>
+    <div class="calButtonWrapper2">
+        <h5>Vælg dyret du ønsker at bestille en behandling til</h5>
+        <select class="select" id="animalSelect">
+        </select>
+        <button class="calSearch" id="book" onclick="book();">Book tid</button>
+    </div>
 </div>
+
 
 <!-- Reference to js files -->
 <script type="text/javascript" src="../Scripts/Booking.js"></script>

@@ -98,12 +98,12 @@ function fillBookings() {
     bookingTime1.innerHTML = bookingArr[newBooking].time;
     bookingTime1.id = highestId * 1 + 1;
     parent.appendChild(bookingTime1);
-    //Paste Practitioner
+    //Paste Client
     let bookingPrac1 = document.createElement('div');
-    bookingPrac1.innerHTML = bookingArr[newBooking].client; //GetPracName skal bruges her
+    bookingPrac1.innerHTML = bookingArr[newBooking].client;
     bookingPrac1.id = highestId * 1 + 1;
     parent.appendChild(bookingPrac1);
-    //Paste Time
+    //Paste Animal
     let bookingAnimal1 = document.createElement('div');
     bookingAnimal1.innerHTML = bookingArr[newBooking].animal;
     bookingAnimal1.id = highestId * 1 + 1;
