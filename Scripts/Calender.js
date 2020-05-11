@@ -223,19 +223,19 @@ function fillWindow() {
     let newBooking = Math.round(bookingNumber);
     console.log("bookingNumber = " + newBooking);
     //Paste time
-        highest = document.createElement('div');
-        highest.innerHTML = bookingArr[newBooking].time;
-        highest.id = highestId;
-        highest.className = 'target';
-        let parent = document.getElementById('timesShow');
-        parent.appendChild(highest);
+    highest = document.createElement('div');
+    highest.innerHTML = bookingArr[newBooking].time;
+    highest.id = highestId;
+    highest.className = 'target';
+    let parent = document.getElementById('timesShow');
+    parent.appendChild(highest);
     //Paste practitioner
-        const body = {userId: bookingArr[newBooking].practitioner};
-        axios.post('http://localhost:3000/users/checkName', body)
-            .then((response) => {
-                highest.innerHTML = response.data.name+' - '+bookingArr[newBooking].time;
-    });
-        //Adds event listener on the times shown in the window.
+    const body = {userId: bookingArr[newBooking].practitioner};
+    axios.post('http://localhost:3000/users/checkName', body)
+        .then((response) => {
+            highest.innerHTML = response.data.name+' - '+bookingArr[newBooking].time;
+        });
+    //Adds event listener on the times shown in the window.
     document.querySelector('div.times').addEventListener('click', function () {
         let clickedBooking = event.target.textContent;
         console.log(clickedBooking);
@@ -280,4 +280,72 @@ function chooseAnimal() {
             //Denne catch skal fange min medelelse fra api'en
             console.log(err)
         })
+}
+
+function book() {
+    let clickedBooking = sessionStorage.getItem('clickedBooking');
+    if (clickedBooking === null) {
+        alert('Find en dato og en ledig tid i kalenderen ovenfor');
+    } else {
+        let timeSplit = clickedBooking.split(' ');
+        let time = timeSplit[2];
+        let bookingArr = JSON.parse(sessionStorage.getItem('availableTimes'));
+
+        for (let i = 0; i < bookingArr.length; i++){
+            //For loop loops through available times, finds match, uses match id for patch
+            if (bookingArr[i].time === time) {
+                let userEmail = sessionStorage.activeUser;
+                const body = {email: userEmail};
+                axios.post('http://localhost:3000/users/check', body)
+                    .then((response) => {
+                        //Patches Client
+                        let userId = response.data.id;
+                        const body2 = [{
+                            propName: 'client',
+                            value: userId
+                        }];
+                        axios.patch('http://localhost:3000/bookings/'+bookingArr[i]._id, body2)
+                            .then((response) => {
+                                //Removes booking from window when booking is patched
+                                let chosen = document.getElementsByClassName('target');
+                                for (let i = 0; i < chosen.length; i++) {
+                                    if(chosen[i].innerHTML === clickedBooking) {
+                                        chosen[i].style.backgroundColor = "";
+                                        chosen[i].innerHTML = '';
+                                    }
+                                }
+                                console.log(response);
+                            })
+                            .catch((err) => {
+                                //Denne catch skal fange min medelelse fra api'en
+                                console.log(err)
+                            });
+                        //Patches animal
+                        let selected = animalSelect.options[animalSelect.selectedIndex].text;
+                        let animalArr = JSON.parse(sessionStorage.getItem('animalArr'));
+                        for (let i = 0; i < animalArr.length; i++){
+                            if(animalArr[i].name === selected){
+                                console.log(animalArr[i].name);
+                                const body3 = [{
+                                    propName: 'animal',
+                                    value: animalArr[i]._id
+                                }];
+                                axios.patch('http://localhost:3000/bookings/'+bookingArr[i]._id, body3)
+                                    .then((response) => {
+                                        console.log(response);
+                                    })
+                                    .catch((err) => {
+                                        //Denne catch skal fange min medelelse fra api'en
+                                        console.log(err)
+                                    })
+                            }
+                        }
+                    })
+                    .catch((err) => {
+                        //Denne catch skal fange min medelelse fra api'en
+                        console.log(err)
+                    })
+            }
+        }
+    }
 }
