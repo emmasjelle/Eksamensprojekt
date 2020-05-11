@@ -111,6 +111,8 @@ function nextDate() {
 //modified during API conversion
 //Selected date saved in localStorage and date shown in top window
 document.querySelector('div.datesWrapper').addEventListener('click', function () {
+    //Disables 'Book tid' button
+    sessionStorage.removeItem('clickedBooking');
     let clickedMonth = sessionStorage.getItem('clickedMonth');
     let cMonth = clickedMonth * 1;
     let clickedDate = event.target.textContent;
@@ -180,8 +182,8 @@ document.querySelector('div.datesWrapper').addEventListener('click', function ()
 
 //Colors the chosen date
 function colorDate() {
-    var x = document.getElementById('dateField').innerHTML;
-    var day = document.getElementsByClassName('day');
+    let x = document.getElementById('dateField').innerHTML;
+    let day = document.getElementsByClassName('day');
     //Splits the dateField into a string of elements seperated by "/" and gets [0] which is the chosen date
     let chosenDay = x.split("/")[0];
     for (i = 0; i < day.length; i++) {
@@ -213,7 +215,7 @@ function fillWindow() {
             highestId = booking[i].id * 1 + 1;
         }
         if (booking[i].id == highest) {
-            bookingNumber = bookingNumber * 1 + 1 / 3;
+            bookingNumber = bookingNumber * 1 + 1;
         }
     }
     //Uses the rounded pracNumber as inded in the pracArr array to get the id and use it as index to get info from times
@@ -221,30 +223,61 @@ function fillWindow() {
     let newBooking = Math.round(bookingNumber);
     console.log("bookingNumber = " + newBooking);
     //Paste time
-    highest = document.createElement('div');
-    highest.innerHTML = bookingArr[newBooking].time;
-    highest.id = highestId;
-    let parent = document.getElementById('timesShow');
-    parent.appendChild(highest);
+        highest = document.createElement('div');
+        highest.innerHTML = bookingArr[newBooking].time;
+        highest.id = highestId;
+        highest.className = 'target';
+        let parent = document.getElementById('timesShow');
+        parent.appendChild(highest);
     //Paste practitioner
-    let practitioner1 = document.createElement('div');
-    practitioner1.innerHTML = bookingArr[newBooking].practitioner;
-    practitioner1.id = highestId * 1 + 1;
-    parent.appendChild(practitioner1);
-    //Paste race
-    var animalRace1 = document.createElement('div');
-    animalRace1.innerHTML = 'Indsæt array med dyr';
-    animalRace1.id = highestId * 1 + 1;
-    parent.appendChild(animalRace1);
+        const body = {userId: bookingArr[newBooking].practitioner};
+        axios.post('http://localhost:3000/users/checkName', body)
+            .then((response) => {
+                highest.innerHTML = response.data.name+' - '+bookingArr[newBooking].time;
+    });
+        //Adds event listener on the times shown in the window.
+    document.querySelector('div.times').addEventListener('click', function () {
+        let clickedBooking = event.target.textContent;
+        console.log(clickedBooking);
+        sessionStorage.setItem('clickedBooking',clickedBooking);
+        //Color chosen date
+        let chosen = document.getElementsByClassName('target');
+        for (let i = 0; i < chosen.length; i++) {
+            if(chosen[i].innerHTML === clickedBooking) {
+                chosen[i].style.backgroundColor = "#00CA85";
+            } else {
+                chosen[i].style.backgroundColor = "";
+            }
+        }
+    });
 }
 
-/* TO-DO:
-1. lav fill window som fillBookings osv
-1.2 tilføj at den henter den aktive bruger dyr, og at man skal vælge hvem af dem man booker med
-1.2.a "Tidspunkt - Behandler - Vælg dyr"
-1.2.b Book kanp under ledigheds vinduet
-2. lav query selector der er bundet sammen med en book knap (ligesom søg knappen)
-3. Query funktionen laver en patch på den givne booking
-3.1 bookingen hentes via samme funktion som delete booking
-3.2 herefter ændres den
- */
+function chooseAnimal() {
+    //Denne del henter den aktive brugers id
+    let userEmail = sessionStorage.activeUser;
+    const body = {email: userEmail};
+
+    axios.post('http://localhost:3000/users/check', body)
+        .then((response) => {
+            let ownerId = response.data.id;
+            const body2 = {userId: ownerId};
+            console.log('ownerId = '+ownerId);
+
+            //Her hentes alle dyr som er tilknyttet den aktive bruger
+            axios.post('http://localhost:3000/animals/getByOwner', body2)
+                .then((res) => {
+                    let animalArr = res.data;
+                    let books = document.getElementById('animalSelect');
+                    document.getElementById('animalSelect').innerText = null;
+                    for (let key in animalArr) {
+                        let booking = animalArr[key];
+                        books.options[books.options.length] = new Option(booking.name);
+                    }
+                    document.body.appendChild(books);
+                })
+        })
+        .catch((err) => {
+            //Denne catch skal fange min medelelse fra api'en
+            console.log(err)
+        })
+}
