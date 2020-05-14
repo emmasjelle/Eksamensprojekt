@@ -1,8 +1,8 @@
 function navBar() {
     // Defining variables that are used often in the following. They are defined in global scope.
-    var allNavBar = document.getElementById("all");
-    var userNavBar = document.getElementById("user");
-    var admNavBar = document.getElementById("adm");
+    let allNavBar = document.getElementById("all");
+    let userNavBar = document.getElementById("user");
+    let admNavBar = document.getElementById("adm");
 
     let userEmail = sessionStorage.activeUser;
     const body = {email: userEmail};
@@ -29,7 +29,6 @@ function navBar() {
                 }
             })
             .catch((err) => {
-                //Denne catch skal fange min medelelse fra api'en
                 console.log(err)
             })
         }

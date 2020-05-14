@@ -28,7 +28,7 @@ class Client extends User {
 }
 
 //When you create a practitioner in local storage this practitioner-key must be used during creation.
-var practitionerKey = "888";
+const practitionerKey = "888";
 
 //This function checks that all fields in the registerform is completed correctly. We use the getElementByID to collect
 //the values trough the ID and the .value enables us to collect the given value we get from the HTML form.
@@ -36,18 +36,17 @@ var practitionerKey = "888";
 //also why we commented out the related if-statements.
 
 //Information recived from the register form.
-var pw = document.getElementById('pw');
-var nm = document.getElementById('nm');
-var uAddress = document.getElementById('address');
-var uNumber = document.getElementById('phoneNumber');
-var email = document.getElementById('email');
-var animal2 = document.getElementById('animal');
-var practitioner = document.getElementById('admin');
+let pw = document.getElementById('pw');
+let nm = document.getElementById('nm');
+let uAddress = document.getElementById('address');
+let uNumber = document.getElementById('phoneNumber');
+let email = document.getElementById('email');
+let practitioner = document.getElementById('admin');
 
 //This function stores the information received in the register user form.
 function storeUserOld() {
     //See Navbar.js with createUserArr
-    var users = JSON.parse(localStorage.getItem('userArray'));
+    let users = JSON.parse(localStorage.getItem('userArray'));
     if (admin.value == practitionerKey) {
         newPractitioner = new Practitioner(pw.value, nm.value, uAddress.value, uNumber.value, email.value,
             "true");

@@ -24,7 +24,6 @@ function showBookings(){
                 })
         })
         .catch((err) => {
-            //Denne catch skal fange min medelelse fra api'en
             console.log(err)
         })
 }
@@ -140,7 +139,6 @@ function cancelTime() {
                     console.log(response);
                 })
                 .catch((err) => {
-                    //Denne catch skal fange min medelelse fra api'en
                     console.log(err)
                 });
             const body2 = [{
@@ -152,7 +150,6 @@ function cancelTime() {
                     console.log(response);
                 })
                 .catch((err) => {
-                    //Denne catch skal fange min medelelse fra api'en
                     console.log(err)
                 })
         }

@@ -23,7 +23,6 @@ function createBooking() {
                 })
         })
         .catch((err) => {
-            //Denne catch skal fange min medelelse fra api'en
             console.log(err)
         })
 }

@@ -46,7 +46,6 @@ function showAnimals() {
                 })
         })
         .catch((err) => {
-            //Denne catch skal fange min medelelse fra api'en
             console.log(err)
         })
 }
@@ -75,7 +74,6 @@ function createAnimal() {
                 })
         })
         .catch((err) => {
-            //Denne catch skal fange min medelelse fra api'en
             console.log(err)
         })
 }
@@ -132,22 +130,22 @@ function fillAnimals() {
     let parent = document.getElementById('animalsShow');
     parent.appendChild(highest);
     //Paste name
-    var animalName1 = document.createElement('div');
+    let animalName1 = document.createElement('div');
     animalName1.innerHTML = animalArr[newAnimal].name;
     animalName1.id = highestId * 1 + 1;
     parent.appendChild(animalName1);
     //Paste race
-    var animalRace1 = document.createElement('div');
+    let animalRace1 = document.createElement('div');
     animalRace1.innerHTML = animalArr[newAnimal].race;
     animalRace1.id = highestId * 1 + 1;
     parent.appendChild(animalRace1);
     //Paste age
-    var animalAge1 = document.createElement('div');
+    let animalAge1 = document.createElement('div');
     animalAge1.innerHTML = calcAge(animalArr[newAnimal].age);
     animalAge1.id = highestId * 1 + 1;
     parent.appendChild(animalAge1);
     //Paste location
-    var animalLocation1 = document.createElement('div');
+    let animalLocation1 = document.createElement('div');
     animalLocation1.innerHTML = animalArr[newAnimal].location;
     animalLocation1.id = highestId * 1 + 1;
     parent.appendChild(animalLocation1);

@@ -28,7 +28,7 @@ function checkDate() {
         console.log(month);
     }
     //Gets first day of the chosen month in 1-7[monday-to-sunday]
-    var firstDay = new Date(choosenYear.value + "-" + choosenMonth.value + "-01").getDay();
+    let firstDay = new Date(choosenYear.value + "-" + choosenMonth.value + "-01").getDay();
     console.log(firstDay); // firstDay = 0
     firstDay = (firstDay === 0) ? 7 : firstDay;
     console.log(firstDay); // firstDay = 7
@@ -36,7 +36,7 @@ function checkDate() {
     //Calls fillCalenderDays() function
     fillCalenderDays();
     //Clears the colors of previous chosen dates from colorDates()
-    var day = document.getElementsByClassName('day');
+    let day = document.getElementsByClassName('day');
     for (i = 0; i < day.length; i++) {
         if (day[i].innerHTML >= 0) {
             day[i].style.backgroundColor = "";
@@ -50,11 +50,11 @@ function checkDate() {
 //Fills in the 'first' weekday of the month and calls nextDate() to fill in the rest of the month
 function fillCalenderDays() {
     //loads number of first weekday from SessionStorage
-    var firstD = sessionStorage.getItem('fDayInMonthS');
+    let firstD = sessionStorage.getItem('fDayInMonthS');
     //Gets all days and weekday numbers
-    var firstW = document.getElementsByClassName('day');
+    let firstW = document.getElementsByClassName('day');
     //Clears the calender to avoid merging of dates
-    for (var i = 0; i < firstW.length; i++) {
+    for (let i = 0; i < firstW.length; i++) {
         firstW[i].innerHTML = "";
     }
     document.getElementById('dateField').innerHTML = "";
@@ -72,7 +72,7 @@ function fillCalenderDays() {
         }
     }
     //iii = days in the chosen month
-    var iii = sessionStorage.getItem('daysInMonthS');
+    let iii = sessionStorage.getItem('daysInMonthS');
     //This part fills the rest of the month with dates
     //Using recursion, this function repeats the nextDate() function x times depending on the days in the chosen month
     (function repeat(number) {
@@ -84,11 +84,11 @@ function fillCalenderDays() {
 //Fills in the days after the 'first' day is defined in fillCalenderDays()
 function nextDate() {
     //loads number of first weekday from SessionStorage
-    var firstD = sessionStorage.getItem('fDayInMonthS');
+    let firstD = sessionStorage.getItem('fDayInMonthS');
     //sets the highest (date) and highestId
     let highest = 0;
     let highestId = null;
-    var day = document.getElementsByClassName('day');
+    let day = document.getElementsByClassName('day');
     //Forloop checks the day class from html
     for (i = 0; i < day.length; i++) {
         //finds the newHigh value within all the day.innerHTMl elements
@@ -173,7 +173,6 @@ document.querySelector('div.datesWrapper').addEventListener('click', function ()
             }
         })
         .catch((err) => {
-            //Denne catch skal fange min medelelse fra api'en
             console.log(err)
         });
     //Calls colorDate() function from below - colors the chosen day
@@ -198,6 +197,7 @@ function colorDate() {
 }
 
 //modified during API conversion
+//When a date is clicked, it loads the bookings from the server and displays them (if any)
 function fillWindow() {
     //sets the highest (date) and highestId just as the nextDate function in Calender.js
     let highest = 0;
@@ -233,8 +233,8 @@ function fillWindow() {
     const body = {userId: bookingArr[newBooking].practitioner};
     axios.post('http://localhost:3000/users/checkName', body)
         .then((response) => {
-            highest.innerHTML = response.data.name+' - '+bookingArr[newBooking].time;
-        });
+        highest.innerHTML = response.data.name+' - '+bookingArr[newBooking].time;
+    });
     //Adds event listener on the times shown in the window.
     document.querySelector('div.times').addEventListener('click', function () {
         let clickedBooking = event.target.textContent;
@@ -277,11 +277,19 @@ function chooseAnimal() {
                 })
         })
         .catch((err) => {
-            //Denne catch skal fange min medelelse fra api'en
             console.log(err)
         })
 }
 
+
+/*
+* Gets the time that the client has pressed in the bookings window
+*  - If a client has clicked one = get times array
+* Use the clients email to get their id
+* uses that id in a body to endpoint PATCH ...bookings/:bookingId
+* - upadtes the client in the booking
+* Finds the selected animal and patches that in a similar method to above
+* */
 function book() {
     let clickedBooking = sessionStorage.getItem('clickedBooking');
     if (clickedBooking === null) {
@@ -317,7 +325,6 @@ function book() {
                                 console.log(response);
                             })
                             .catch((err) => {
-                                //Denne catch skal fange min medelelse fra api'en
                                 console.log(err)
                             });
                         //Patches animal
@@ -335,14 +342,12 @@ function book() {
                                         console.log(response);
                                     })
                                     .catch((err) => {
-                                        //Denne catch skal fange min medelelse fra api'en
                                         console.log(err)
                                     })
                             }
                         }
                     })
                     .catch((err) => {
-                        //Denne catch skal fange min medelelse fra api'en
                         console.log(err)
                     })
             }

@@ -16,14 +16,12 @@ function logInApi() {
             if (response.status === 200) {
                 console.log(response);
                 sessionStorage.setItem("activeUser", response.data.email);
-                //Skal save JWT token på en eller anden måde
                 window.location.href = "Bookingside.html";
             } else {
                 console.log(response.status.message);
             }
         })
         .catch((err) => {
-            //Denne catch skal fange min medelelse fra api'en
             console.log(err);
         })
 }
